@@ -19,7 +19,9 @@ uvicorn app:app --reload --port 8000
 ```
 
 Interactive API docs (Swagger UI): http://127.0.0.1:8000/docs
-See `docs/API.md` for endpoint documentation and example requests/responses.
+See [`../docs/API.md`](../docs/API.md) for endpoint documentation and
+example requests/responses, and [`../frontend/`](../frontend/) for the UI
+this backend serves at `/ui`.
 
 ## Workflow
 
@@ -128,4 +130,4 @@ and a clean, swappable backend architecture around it.
 | GET | `/status/{sample_id}` | Pipeline status for one sample |
 | GET | `/history` | All aggregated predictions produced so far |
 
-Full request/response examples: `docs/API.md`.
+Full request/response examples: [`../docs/API.md`](../docs/API.md).

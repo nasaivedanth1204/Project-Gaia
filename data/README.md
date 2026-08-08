@@ -5,7 +5,10 @@ This directory contains all datasets and reference databases used in the project
 ## Folder Structure
 
 ```
-datasets/
+data/
+│
+├── accessions.txt          # SRA run accessions (manifest, tracked in git)
+├── .gitignore              # keeps the large files below out of git
 │
 ├── raw/
 │   ├── SRR17137384.fastq
@@ -136,3 +139,15 @@ Visualization Dashboard
 ## Note
 
 Large datasets and reference databases may exceed GitHub's file size limits. For public repositories, it is recommended to exclude large files using `.gitignore` and provide download instructions in the main project README.
+
+### Status of this directory
+
+That recommendation is now enforced by `data/.gitignore`, which excludes
+`raw/`, `references/`, `taxonomy/`, and common sequence formats. GitHub
+hard-rejects any file over 100 MB, and git retains every version of a
+file forever — so a large file committed once bloats the repository
+permanently, even after deletion.
+
+**Tracked here:** `accessions.txt`, `metadata/`, and this README.
+**Not tracked:** everything under `raw/`, `references/`, and `taxonomy/` —
+download those to your local disk before running the pipeline.

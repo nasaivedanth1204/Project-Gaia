@@ -59,3 +59,19 @@ entry is appended at the end of a session that made changes — see
   assessments populate, backend validation errors surface correctly and
   flag the failing stage, no JS errors, no horizontal overflow at mobile
   width.
+- Reorganized the repository into `backend/ frontend/ data/ docs/`:
+  - `Datasets/` -> `data/` (chose `data/` over lowercase `datasets/`
+    deliberately — a case-only rename is unreliable on macOS/Windows
+    checkouts).
+  - `backend/docs/API.md` -> `docs/API.md`; this log -> `docs/SESSION_LOG.md`
+    (`CLAUDE.md` updated to point at the new path).
+  - Consolidated ignores into a root `.gitignore`, removed
+    `backend/.gitignore`; `data/.gitignore` stays put since its rules are
+    specific to that directory.
+  - Deleted a stray 1-byte `DATASETS` file left at the repo root.
+  - Rewrote the root `README.md` as a real entry point (layout map, quick
+    start, doc index) and fixed every cross-reference the moves broke.
+  - Left `backend/`'s Python module layout untouched on purpose — the flat
+    imports work and repackaging them would risk a working demo for no
+    functional gain. All moves recorded by git as renames, so history is
+    preserved; re-verified the API and UI end-to-end afterwards.

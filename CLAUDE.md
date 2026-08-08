@@ -3,7 +3,7 @@
 ## Session logging
 
 At the end of any session where you made changes to this repo, append a
-new dated entry to `SESSION_LOG.md` (top-level) summarizing what changed
+new dated entry to `docs/SESSION_LOG.md` summarizing what changed
 and why, then commit and push it along with your other changes (don't
 create a separate commit just for the log unless your other changes are
 already pushed). Keep entries short — a few bullet points, not a full
