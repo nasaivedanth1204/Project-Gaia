@@ -23,3 +23,20 @@ entry is appended at the end of a session that made changes — see
   currently a draft. No CI configured in the repo yet.
 - Added `SESSION_LOG.md` (this file) and a `CLAUDE.md` instruction to
   keep it updated automatically going forward.
+
+## 2026-08-07
+
+- PR #1 merged to `main` (by repo owner via GitHub web UI).
+- Noted external contributions from a teammate directly on `main`:
+  `Datasets/readme.md` (documents a planned `raw/references/taxonomy/
+  metadata` layout sourced from NCBI SRA, BOLD, SILVA, MitoFish, UNITE)
+  and `Datasets/metadata/SRA_RunInfo.xlsx`.
+- Added `Datasets/.gitignore` (excludes raw reads/reference DBs/taxonomy
+  dumps — GB-scale files that must never be committed to git) and
+  `Datasets/accessions.txt` (the 8 SRA run accessions already named in
+  `Datasets/readme.md`, as a plain list other scripts/teammates can read).
+- Decided against committing the team's actual dataset (hosted on Google
+  Drive) to the repo: GitHub hard-caps files at 100 MB and git retains
+  every version forever, so large files bloat the repo permanently even
+  after deletion. Recommended downloading data directly to disk (e.g.
+  `gdown`) and pointing the backend at the local path instead.

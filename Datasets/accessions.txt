@@ -1,0 +1,11 @@
+# NCBI SRA run accessions used by this project.
+# One accession per line; blank lines and '#' comments are ignored.
+# Consumed by download_data.sh.
+SRR17137384
+SRR37879006
+SRR38080555
+SRR39683131
+SRR39742893
+SRR39848019
+SRR39993450
+SRR39993451

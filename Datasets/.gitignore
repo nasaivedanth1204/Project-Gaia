@@ -1,0 +1,33 @@
+# Large data files must NOT be committed to git.
+#
+# GitHub hard-rejects any file over 100 MB, and git keeps every version
+# forever — a large file committed once bloats the repo permanently, even
+# if deleted later. Raw reads and reference databases are GB-scale, so
+# they are fetched on demand by download_data.sh instead.
+#
+# Anything genuinely needed in-repo (small demo subsamples, metadata,
+# manifests) is force-added and listed under "Tracked exceptions" below.
+
+raw/
+references/
+taxonomy/
+
+# Common sequence + archive formats, wherever they appear
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.fasta
+*.fa
+*.fna
+*.sra
+*.gz
+*.zip
+*.tar
+*.dmp
+
+# --- Tracked exceptions -----------------------------------------------
+# Small, committed-on-purpose files that the patterns above would catch.
+!samples/**
+!metadata/**
+!.gitignore
