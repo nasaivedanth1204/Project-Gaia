@@ -1,0 +1,2183 @@
+[
+  {
+    "analysis_id": "ANL-001",
+    "sample_id": "SMP-002",
+    "sample": {
+      "sample_id": "SMP-002",
+      "site_id": "SITE-002",
+      "site_name": "Western Ghats Forest Soil Plot",
+      "sample_type": "Soil",
+      "marker_region": "16S",
+      "season": "Post-monsoon",
+      "collection_date": "2025-10-14",
+      "status": "Processed"
+    },
+    "environment": {
+      "location_id": "LOC-001",
+      "region": "Western Ghats",
+      "state": "Kerala",
+      "country": "India",
+      "ecosystem_id": "ECO-001",
+      "ecosystem_name": "Tropical Rainforest Ecosystem",
+      "ecosystem_type": "Terrestrial",
+      "terrain_id": "TER-001",
+      "biome_id": "BIOM-001",
+      "biosphere_id": "BIOS-001",
+      "conditions": {
+        "temperature_c": 24.7,
+        "ph": 6.18,
+        "humidity_pct": 90.8,
+        "soil_moisture_pct": 30.6,
+        "elevation_m": 980,
+        "nutrient_level": "High"
+      }
+    },
+    "identification_ids": [
+      "IDN-001",
+      "IDN-002"
+    ],
+    "organism_ids": [
+      "ORG-002",
+      "ORG-034"
+    ],
+    "biodiversity_metric_id": "BDM-001",
+    "biodiversity_metrics": {
+      "species_richness": 2,
+      "shannon_index": 0.6931,
+      "simpson_index": 0.5,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-001",
+      "BDA-002"
+    ],
+    "population_assessment_ids": [
+      "POP-002",
+      "POP-034"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-002",
+      "HAB-034"
+    ],
+    "threat_assessment_ids": [
+      "THR-006",
+      "THR-007",
+      "THR-079"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-002",
+      "CSA-034"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-002",
+      "EXT-034"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.899,
+      "min_identification_confidence": 0.891,
+      "max_identification_confidence": 0.908,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-002",
+    "sample_id": "SMP-003",
+    "sample": {
+      "sample_id": "SMP-003",
+      "site_id": "SITE-003",
+      "site_name": "Karnataka Restoration Plot",
+      "sample_type": "Soil",
+      "marker_region": "ITS",
+      "season": "Winter",
+      "collection_date": "2025-11-11",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-002",
+      "region": "Western Ghats",
+      "state": "Karnataka",
+      "country": "India",
+      "ecosystem_id": "ECO-024",
+      "ecosystem_name": "Restored Forest Ecosystem",
+      "ecosystem_type": "Anthropogenic",
+      "terrain_id": "TER-001",
+      "biome_id": "BIOM-001",
+      "biosphere_id": "BIOS-005",
+      "conditions": {
+        "temperature_c": 27.7,
+        "ph": 8.02,
+        "humidity_pct": 78.8,
+        "soil_moisture_pct": 15.2,
+        "elevation_m": 760,
+        "nutrient_level": "Moderate"
+      }
+    },
+    "identification_ids": [
+      "IDN-003",
+      "IDN-004",
+      "IDN-005",
+      "IDN-006"
+    ],
+    "organism_ids": [
+      "ORG-037",
+      "ORG-041",
+      "ORG-045"
+    ],
+    "biodiversity_metric_id": "BDM-002",
+    "biodiversity_metrics": {
+      "species_richness": 3,
+      "shannon_index": 1.0397,
+      "simpson_index": 0.625,
+      "pielou_evenness": 0.9464,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-003",
+      "BDA-004",
+      "BDA-005",
+      "BDA-006"
+    ],
+    "population_assessment_ids": [
+      "POP-037",
+      "POP-041",
+      "POP-045"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-037"
+    ],
+    "threat_assessment_ids": [
+      "THR-086",
+      "THR-087",
+      "THR-096",
+      "THR-097",
+      "THR-098",
+      "THR-106",
+      "THR-107",
+      "THR-108"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-037",
+      "CSA-041",
+      "CSA-045"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-037",
+      "EXT-041",
+      "EXT-045"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.543,
+      "min_identification_confidence": 0.284,
+      "max_identification_confidence": 0.936,
+      "confidence_level": "Medium",
+      "low_confidence_count": 3
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-003",
+    "sample_id": "SMP-004",
+    "sample": {
+      "sample_id": "SMP-004",
+      "site_id": "SITE-004",
+      "site_name": "Nilgiri Montane Stream",
+      "sample_type": "Freshwater",
+      "marker_region": "18S",
+      "season": "Post-monsoon",
+      "collection_date": "2024-03-17",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-003",
+      "region": "Nilgiri Hills",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "ecosystem_id": "ECO-006",
+      "ecosystem_name": "Montane Forest Ecosystem",
+      "ecosystem_type": "Terrestrial",
+      "terrain_id": "TER-015",
+      "biome_id": "BIOM-007",
+      "biosphere_id": "BIOS-001",
+      "conditions": {
+        "temperature_c": 15.3,
+        "ph": 7.79,
+        "dissolved_oxygen_mg_l": 9.89,
+        "turbidity_ntu": 48.3,
+        "humidity_pct": 68.8,
+        "water_depth_m": 0.3,
+        "elevation_m": 2200,
+        "conductivity_us_cm": 172.0,
+        "nutrient_level": "Moderate"
+      }
+    },
+    "identification_ids": [
+      "IDN-007",
+      "IDN-008"
+    ],
+    "organism_ids": [
+      "ORG-001",
+      "ORG-026"
+    ],
+    "biodiversity_metric_id": "BDM-003",
+    "biodiversity_metrics": {
+      "species_richness": 2,
+      "shannon_index": 0.6931,
+      "simpson_index": 0.5,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-007",
+      "BDA-008"
+    ],
+    "population_assessment_ids": [
+      "POP-001",
+      "POP-026"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-001",
+      "HAB-026"
+    ],
+    "threat_assessment_ids": [
+      "THR-001",
+      "THR-002",
+      "THR-003",
+      "THR-004",
+      "THR-005",
+      "THR-066"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-001",
+      "CSA-026"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-001",
+      "EXT-026"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.816,
+      "min_identification_confidence": 0.788,
+      "max_identification_confidence": 0.843,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-004",
+    "sample_id": "SMP-007",
+    "sample": {
+      "sample_id": "SMP-007",
+      "site_id": "SITE-007",
+      "site_name": "Sundarbans Mangrove Channel",
+      "sample_type": "Brackish water",
+      "marker_region": "16S",
+      "season": "Monsoon",
+      "collection_date": "2026-04-21",
+      "status": "Processed"
+    },
+    "environment": {
+      "location_id": "LOC-006",
+      "region": "Sundarbans",
+      "state": "West Bengal",
+      "country": "India",
+      "ecosystem_id": "ECO-018",
+      "ecosystem_name": "Mangrove Ecosystem",
+      "ecosystem_type": "Transitional",
+      "terrain_id": "TER-003",
+      "biome_id": "BIOM-008",
+      "biosphere_id": "BIOS-004",
+      "conditions": {
+        "temperature_c": 30.3,
+        "ph": 8.12,
+        "salinity_psu": 12.8,
+        "dissolved_oxygen_mg_l": 6.25,
+        "turbidity_ntu": 4.5,
+        "water_depth_m": 1.2,
+        "elevation_m": 3,
+        "nutrient_level": "Moderate"
+      }
+    },
+    "identification_ids": [
+      "IDN-009",
+      "IDN-010",
+      "IDN-011",
+      "IDN-012"
+    ],
+    "organism_ids": [
+      "ORG-007",
+      "ORG-035",
+      "ORG-041",
+      "ORG-044"
+    ],
+    "biodiversity_metric_id": "BDM-004",
+    "biodiversity_metrics": {
+      "species_richness": 4,
+      "shannon_index": 1.3863,
+      "simpson_index": 0.75,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Moderate"
+    },
+    "ecological_assessment_ids": [
+      "BDA-009",
+      "BDA-010",
+      "BDA-011"
+    ],
+    "population_assessment_ids": [
+      "POP-007",
+      "POP-035",
+      "POP-041",
+      "POP-044"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-007",
+      "HAB-035"
+    ],
+    "threat_assessment_ids": [
+      "THR-016",
+      "THR-017",
+      "THR-080",
+      "THR-081",
+      "THR-082",
+      "THR-096",
+      "THR-097",
+      "THR-098",
+      "THR-104",
+      "THR-105"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-007",
+      "CSA-035",
+      "CSA-041",
+      "CSA-044"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-007",
+      "EXT-035",
+      "EXT-041",
+      "EXT-044"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.708,
+      "min_identification_confidence": 0.586,
+      "max_identification_confidence": 0.792,
+      "confidence_level": "Medium",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-005",
+    "sample_id": "SMP-009",
+    "sample": {
+      "sample_id": "SMP-009",
+      "site_id": "SITE-009",
+      "site_name": "Andaman Reef Flat",
+      "sample_type": "Marine water",
+      "marker_region": "16S",
+      "season": "Winter",
+      "collection_date": "2025-04-05",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-007",
+      "region": "Andaman Islands",
+      "state": "Andaman & Nicobar Islands",
+      "country": "India",
+      "ecosystem_id": "ECO-014",
+      "ecosystem_name": "Coral Reef Ecosystem",
+      "ecosystem_type": "Marine",
+      "terrain_id": "TER-005",
+      "biome_id": "BIOM-009",
+      "biosphere_id": "BIOS-003",
+      "conditions": {
+        "temperature_c": 29.3,
+        "ph": 8.12,
+        "salinity_psu": 32.0,
+        "dissolved_oxygen_mg_l": 5.87,
+        "turbidity_ntu": 9.5,
+        "water_depth_m": 6.0,
+        "elevation_m": -12,
+        "nutrient_level": "Low"
+      }
+    },
+    "identification_ids": [
+      "IDN-013",
+      "IDN-014",
+      "IDN-015"
+    ],
+    "organism_ids": [
+      "ORG-009",
+      "ORG-019",
+      "ORG-038"
+    ],
+    "biodiversity_metric_id": "BDM-005",
+    "biodiversity_metrics": {
+      "species_richness": 3,
+      "shannon_index": 1.0986,
+      "simpson_index": 0.6667,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-012",
+      "BDA-013"
+    ],
+    "population_assessment_ids": [
+      "POP-009",
+      "POP-019",
+      "POP-038"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-009",
+      "HAB-019"
+    ],
+    "threat_assessment_ids": [
+      "THR-020",
+      "THR-021",
+      "THR-022",
+      "THR-023",
+      "THR-024",
+      "THR-051",
+      "THR-052",
+      "THR-053",
+      "THR-054",
+      "THR-088",
+      "THR-089"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-009",
+      "CSA-019",
+      "CSA-038"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-009",
+      "EXT-019",
+      "EXT-038"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.799,
+      "min_identification_confidence": 0.58,
+      "max_identification_confidence": 0.974,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-006",
+    "sample_id": "SMP-011",
+    "sample": {
+      "sample_id": "SMP-011",
+      "site_id": "SITE-011",
+      "site_name": "Thar Desert Soil Transect",
+      "sample_type": "Soil",
+      "marker_region": "16S",
+      "season": "Winter",
+      "collection_date": "2024-06-15",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-009",
+      "region": "Thar Desert",
+      "state": "Rajasthan",
+      "country": "India",
+      "ecosystem_id": "ECO-005",
+      "ecosystem_name": "Desert Ecosystem",
+      "ecosystem_type": "Terrestrial",
+      "terrain_id": "TER-013",
+      "biome_id": "BIOM-005",
+      "biosphere_id": "BIOS-001",
+      "conditions": {
+        "temperature_c": 10.9,
+        "ph": 8.23,
+        "humidity_pct": 19.9,
+        "soil_moisture_pct": 33.6,
+        "elevation_m": 240,
+        "nutrient_level": "Moderate"
+      }
+    },
+    "identification_ids": [
+      "IDN-016",
+      "IDN-017",
+      "IDN-018"
+    ],
+    "organism_ids": [
+      "ORG-001",
+      "ORG-002",
+      "ORG-029"
+    ],
+    "biodiversity_metric_id": "BDM-006",
+    "biodiversity_metrics": {
+      "species_richness": 3,
+      "shannon_index": 1.0986,
+      "simpson_index": 0.6667,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-014",
+      "BDA-015"
+    ],
+    "population_assessment_ids": [
+      "POP-001",
+      "POP-002",
+      "POP-029"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-001",
+      "HAB-002",
+      "HAB-029"
+    ],
+    "threat_assessment_ids": [
+      "THR-001",
+      "THR-002",
+      "THR-003",
+      "THR-004",
+      "THR-005",
+      "THR-006",
+      "THR-007",
+      "THR-070"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-001",
+      "CSA-002",
+      "CSA-029"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-001",
+      "EXT-002",
+      "EXT-029"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.739,
+      "min_identification_confidence": 0.573,
+      "max_identification_confidence": 0.952,
+      "confidence_level": "Medium",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-007",
+    "sample_id": "SMP-013",
+    "sample": {
+      "sample_id": "SMP-013",
+      "site_id": "SITE-013",
+      "site_name": "Brahmaputra Main Channel",
+      "sample_type": "Freshwater",
+      "marker_region": "16S",
+      "season": "Monsoon",
+      "collection_date": "2026-02-14",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-011",
+      "region": "Brahmaputra Basin",
+      "state": "Assam",
+      "country": "India",
+      "ecosystem_id": "ECO-008",
+      "ecosystem_name": "River Ecosystem",
+      "ecosystem_type": "Freshwater",
+      "terrain_id": "TER-008",
+      "biome_id": "BIOM-013",
+      "biosphere_id": "BIOS-002",
+      "conditions": {
+        "temperature_c": 28.4,
+        "ph": 7.31,
+        "dissolved_oxygen_mg_l": 6.48,
+        "turbidity_ntu": 7.5,
+        "water_depth_m": 2.5,
+        "elevation_m": 55,
+        "conductivity_us_cm": 617.0,
+        "nutrient_level": "Low"
+      }
+    },
+    "identification_ids": [
+      "IDN-019",
+      "IDN-020"
+    ],
+    "organism_ids": [
+      "ORG-017",
+      "ORG-033"
+    ],
+    "biodiversity_metric_id": "BDM-007",
+    "biodiversity_metrics": {
+      "species_richness": 2,
+      "shannon_index": 0.6931,
+      "simpson_index": 0.5,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-016",
+      "BDA-017",
+      "BDA-018"
+    ],
+    "population_assessment_ids": [
+      "POP-017",
+      "POP-033"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-017",
+      "HAB-033"
+    ],
+    "threat_assessment_ids": [
+      "THR-046",
+      "THR-047",
+      "THR-048",
+      "THR-076",
+      "THR-077",
+      "THR-078"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-017",
+      "CSA-033"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-017",
+      "EXT-033"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.75,
+      "min_identification_confidence": 0.621,
+      "max_identification_confidence": 0.878,
+      "confidence_level": "Medium",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-008",
+    "sample_id": "SMP-014",
+    "sample": {
+      "sample_id": "SMP-014",
+      "site_id": "SITE-014",
+      "site_name": "Ganga Midstream Station",
+      "sample_type": "Freshwater",
+      "marker_region": "16S",
+      "season": "Post-monsoon",
+      "collection_date": "2026-02-26",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-012",
+      "region": "Ganga Basin",
+      "state": "Uttar Pradesh",
+      "country": "India",
+      "ecosystem_id": "ECO-008",
+      "ecosystem_name": "River Ecosystem",
+      "ecosystem_type": "Freshwater",
+      "terrain_id": "TER-008",
+      "biome_id": "BIOM-013",
+      "biosphere_id": "BIOS-002",
+      "conditions": {
+        "temperature_c": 28.1,
+        "ph": 6.87,
+        "dissolved_oxygen_mg_l": 7.23,
+        "turbidity_ntu": 35.8,
+        "water_depth_m": 3.0,
+        "elevation_m": 80,
+        "conductivity_us_cm": 348.0,
+        "nutrient_level": "High"
+      }
+    },
+    "identification_ids": [
+      "IDN-021",
+      "IDN-022",
+      "IDN-023"
+    ],
+    "organism_ids": [
+      "ORG-009",
+      "ORG-015",
+      "ORG-038"
+    ],
+    "biodiversity_metric_id": "BDM-008",
+    "biodiversity_metrics": {
+      "species_richness": 3,
+      "shannon_index": 1.0986,
+      "simpson_index": 0.6667,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-019",
+      "BDA-020"
+    ],
+    "population_assessment_ids": [
+      "POP-009",
+      "POP-015",
+      "POP-038"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-009",
+      "HAB-015"
+    ],
+    "threat_assessment_ids": [
+      "THR-020",
+      "THR-021",
+      "THR-022",
+      "THR-023",
+      "THR-024",
+      "THR-042",
+      "THR-043",
+      "THR-044",
+      "THR-088",
+      "THR-089"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-009",
+      "CSA-015",
+      "CSA-038"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-009",
+      "EXT-015",
+      "EXT-038"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.751,
+      "min_identification_confidence": 0.688,
+      "max_identification_confidence": 0.866,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-009",
+    "sample_id": "SMP-015",
+    "sample": {
+      "sample_id": "SMP-015",
+      "site_id": "SITE-015",
+      "site_name": "Godavari Reservoir Outflow",
+      "sample_type": "Freshwater",
+      "marker_region": "16S",
+      "season": "Summer",
+      "collection_date": "2026-05-26",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-013",
+      "region": "Godavari Basin",
+      "state": "Telangana",
+      "country": "India",
+      "ecosystem_id": "ECO-008",
+      "ecosystem_name": "River Ecosystem",
+      "ecosystem_type": "Freshwater",
+      "terrain_id": "TER-008",
+      "biome_id": "BIOM-013",
+      "biosphere_id": "BIOS-002",
+      "conditions": {
+        "temperature_c": 18.7,
+        "ph": 8.09,
+        "dissolved_oxygen_mg_l": 7.21,
+        "turbidity_ntu": 22.0,
+        "water_depth_m": 1.8,
+        "elevation_m": 145,
+        "conductivity_us_cm": 684.0,
+        "nutrient_level": "High"
+      }
+    },
+    "identification_ids": [
+      "IDN-024",
+      "IDN-025",
+      "IDN-026",
+      "IDN-027"
+    ],
+    "organism_ids": [
+      "ORG-017",
+      "ORG-048"
+    ],
+    "biodiversity_metric_id": "BDM-009",
+    "biodiversity_metrics": {
+      "species_richness": 2,
+      "shannon_index": 0.5623,
+      "simpson_index": 0.375,
+      "pielou_evenness": 0.8113,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-021",
+      "BDA-022"
+    ],
+    "population_assessment_ids": [
+      "POP-017",
+      "POP-048"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-017",
+      "HAB-040"
+    ],
+    "threat_assessment_ids": [
+      "THR-046",
+      "THR-047",
+      "THR-048",
+      "THR-113",
+      "THR-114"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-017",
+      "CSA-048"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-017",
+      "EXT-048"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.869,
+      "min_identification_confidence": 0.74,
+      "max_identification_confidence": 0.975,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-010",
+    "sample_id": "SMP-017",
+    "sample": {
+      "sample_id": "SMP-017",
+      "site_id": "SITE-017",
+      "site_name": "Gulf of Mannar Seagrass Bed",
+      "sample_type": "Marine water",
+      "marker_region": "COI",
+      "season": "Pre-monsoon",
+      "collection_date": "2025-08-15",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-015",
+      "region": "Gulf of Mannar",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "ecosystem_id": "ECO-016",
+      "ecosystem_name": "Coastal Waters Ecosystem",
+      "ecosystem_type": "Marine",
+      "terrain_id": "TER-004",
+      "biome_id": "BIOM-015",
+      "biosphere_id": "BIOS-009",
+      "conditions": {
+        "temperature_c": 19.0,
+        "ph": 7.94,
+        "salinity_psu": 28.6,
+        "dissolved_oxygen_mg_l": 5.55,
+        "turbidity_ntu": 4.7,
+        "water_depth_m": 5.0,
+        "elevation_m": -18,
+        "nutrient_level": "High"
+      }
+    },
+    "identification_ids": [
+      "IDN-028",
+      "IDN-029",
+      "IDN-030",
+      "IDN-031"
+    ],
+    "organism_ids": [
+      "ORG-010",
+      "ORG-019",
+      "ORG-031",
+      "ORG-040"
+    ],
+    "biodiversity_metric_id": "BDM-010",
+    "biodiversity_metrics": {
+      "species_richness": 4,
+      "shannon_index": 1.3863,
+      "simpson_index": 0.75,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Moderate"
+    },
+    "ecological_assessment_ids": [
+      "BDA-023",
+      "BDA-024"
+    ],
+    "population_assessment_ids": [
+      "POP-010",
+      "POP-019",
+      "POP-031",
+      "POP-040"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-010",
+      "HAB-019",
+      "HAB-031"
+    ],
+    "threat_assessment_ids": [
+      "THR-025",
+      "THR-026",
+      "THR-027",
+      "THR-028",
+      "THR-051",
+      "THR-052",
+      "THR-053",
+      "THR-054",
+      "THR-072",
+      "THR-073",
+      "THR-093",
+      "THR-094",
+      "THR-095"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-010",
+      "CSA-019",
+      "CSA-031",
+      "CSA-040"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-010",
+      "EXT-019",
+      "EXT-031",
+      "EXT-040"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.835,
+      "min_identification_confidence": 0.641,
+      "max_identification_confidence": 0.965,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-011",
+    "sample_id": "SMP-018",
+    "sample": {
+      "sample_id": "SMP-018",
+      "site_id": "SITE-018",
+      "site_name": "Rann Salt Marsh Flat",
+      "sample_type": "Sediment",
+      "marker_region": "COI",
+      "season": "Winter",
+      "collection_date": "2025-04-17",
+      "status": "Low Quality"
+    },
+    "environment": {
+      "location_id": "LOC-016",
+      "region": "Rann of Kutch",
+      "state": "Gujarat",
+      "country": "India",
+      "ecosystem_id": "ECO-020",
+      "ecosystem_name": "Salt Marsh Ecosystem",
+      "ecosystem_type": "Transitional",
+      "terrain_id": "TER-003",
+      "biome_id": "BIOM-008",
+      "biosphere_id": "BIOS-004",
+      "conditions": {
+        "temperature_c": 41.6,
+        "ph": 6.87,
+        "humidity_pct": 21.9,
+        "water_depth_m": 0.1,
+        "elevation_m": 12,
+        "nutrient_level": "Low"
+      }
+    },
+    "identification_ids": [
+      "IDN-032",
+      "IDN-033"
+    ],
+    "organism_ids": [
+      "ORG-043"
+    ],
+    "biodiversity_metric_id": "BDM-011",
+    "biodiversity_metrics": {
+      "species_richness": 1,
+      "shannon_index": -0.0,
+      "simpson_index": 0.0,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Very Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-025",
+      "BDA-026",
+      "BDA-027"
+    ],
+    "population_assessment_ids": [
+      "POP-043"
+    ],
+    "habitat_assessment_ids": [],
+    "threat_assessment_ids": [
+      "THR-101",
+      "THR-102",
+      "THR-103"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-043"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-043"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.306,
+      "min_identification_confidence": 0.229,
+      "max_identification_confidence": 0.384,
+      "confidence_level": "Low",
+      "low_confidence_count": 2
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-012",
+    "sample_id": "SMP-019",
+    "sample": {
+      "sample_id": "SMP-019",
+      "site_id": "SITE-019",
+      "site_name": "Kaziranga Floodplain Wetland",
+      "sample_type": "Freshwater",
+      "marker_region": "COI",
+      "season": "Monsoon",
+      "collection_date": "2024-10-15",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-017",
+      "region": "Kaziranga Floodplain",
+      "state": "Assam",
+      "country": "India",
+      "ecosystem_id": "ECO-011",
+      "ecosystem_name": "Wetland Ecosystem",
+      "ecosystem_type": "Freshwater",
+      "terrain_id": "TER-010",
+      "biome_id": "BIOM-014",
+      "biosphere_id": "BIOS-002",
+      "conditions": {
+        "temperature_c": 12.0,
+        "ph": 6.31,
+        "dissolved_oxygen_mg_l": 7.05,
+        "turbidity_ntu": 13.4,
+        "water_depth_m": 0.8,
+        "elevation_m": 70,
+        "conductivity_us_cm": 272.0,
+        "nutrient_level": "Low"
+      }
+    },
+    "identification_ids": [
+      "IDN-034",
+      "IDN-035",
+      "IDN-036",
+      "IDN-037"
+    ],
+    "organism_ids": [
+      "ORG-008",
+      "ORG-011",
+      "ORG-044",
+      "ORG-047"
+    ],
+    "biodiversity_metric_id": "BDM-012",
+    "biodiversity_metrics": {
+      "species_richness": 4,
+      "shannon_index": 1.3863,
+      "simpson_index": 0.75,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Moderate"
+    },
+    "ecological_assessment_ids": [
+      "BDA-028",
+      "BDA-029",
+      "BDA-030"
+    ],
+    "population_assessment_ids": [
+      "POP-008",
+      "POP-011",
+      "POP-044",
+      "POP-047"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-008",
+      "HAB-011",
+      "HAB-039"
+    ],
+    "threat_assessment_ids": [
+      "THR-018",
+      "THR-019",
+      "THR-029",
+      "THR-030",
+      "THR-031",
+      "THR-032",
+      "THR-033",
+      "THR-104",
+      "THR-105",
+      "THR-110",
+      "THR-111",
+      "THR-112"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-008",
+      "CSA-011",
+      "CSA-044",
+      "CSA-047"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-008",
+      "EXT-011",
+      "EXT-044",
+      "EXT-047"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.901,
+      "min_identification_confidence": 0.824,
+      "max_identification_confidence": 0.971,
+      "confidence_level": "Very High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-013",
+    "sample_id": "SMP-020",
+    "sample": {
+      "sample_id": "SMP-020",
+      "site_id": "SITE-020",
+      "site_name": "Punjab Irrigation Canal",
+      "sample_type": "Freshwater",
+      "marker_region": "COI",
+      "season": "Summer",
+      "collection_date": "2025-08-03",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-018",
+      "region": "Indo-Gangetic Plain",
+      "state": "Punjab",
+      "country": "India",
+      "ecosystem_id": "ECO-021",
+      "ecosystem_name": "Agricultural Ecosystem",
+      "ecosystem_type": "Anthropogenic",
+      "terrain_id": "TER-018",
+      "biome_id": "BIOM-017",
+      "biosphere_id": "BIOS-005",
+      "conditions": {
+        "temperature_c": 36.4,
+        "ph": 6.75,
+        "dissolved_oxygen_mg_l": 7.6,
+        "turbidity_ntu": 28.4,
+        "water_depth_m": 0.9,
+        "elevation_m": 244,
+        "conductivity_us_cm": 115.0,
+        "nutrient_level": "Low"
+      }
+    },
+    "identification_ids": [
+      "IDN-038",
+      "IDN-039",
+      "IDN-040",
+      "IDN-041"
+    ],
+    "organism_ids": [
+      "ORG-023",
+      "ORG-036",
+      "ORG-037"
+    ],
+    "biodiversity_metric_id": "BDM-013",
+    "biodiversity_metrics": {
+      "species_richness": 3,
+      "shannon_index": 1.0397,
+      "simpson_index": 0.625,
+      "pielou_evenness": 0.9464,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-031",
+      "BDA-032",
+      "BDA-033"
+    ],
+    "population_assessment_ids": [
+      "POP-023",
+      "POP-036",
+      "POP-037"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-023",
+      "HAB-036",
+      "HAB-037"
+    ],
+    "threat_assessment_ids": [
+      "THR-060",
+      "THR-083",
+      "THR-084",
+      "THR-085",
+      "THR-086",
+      "THR-087"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-023",
+      "CSA-036",
+      "CSA-037"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-023",
+      "EXT-036",
+      "EXT-037"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.556,
+      "min_identification_confidence": 0.236,
+      "max_identification_confidence": 0.721,
+      "confidence_level": "Medium",
+      "low_confidence_count": 1
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-014",
+    "sample_id": "SMP-021",
+    "sample": {
+      "sample_id": "SMP-021",
+      "site_id": "SITE-021",
+      "site_name": "Mumbai Urban Creek",
+      "sample_type": "Freshwater",
+      "marker_region": "16S",
+      "season": "Monsoon",
+      "collection_date": "2024-09-22",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-019",
+      "region": "Mumbai Metropolitan",
+      "state": "Maharashtra",
+      "country": "India",
+      "ecosystem_id": "ECO-022",
+      "ecosystem_name": "Urban Freshwater Ecosystem",
+      "ecosystem_type": "Anthropogenic",
+      "terrain_id": "TER-019",
+      "biome_id": "BIOM-017",
+      "biosphere_id": "BIOS-005",
+      "conditions": {
+        "temperature_c": 27.5,
+        "ph": 6.56,
+        "dissolved_oxygen_mg_l": 10.65,
+        "turbidity_ntu": 28.6,
+        "water_depth_m": 1.1,
+        "elevation_m": 14,
+        "conductivity_us_cm": 125.0,
+        "nutrient_level": "Low"
+      }
+    },
+    "identification_ids": [
+      "IDN-042",
+      "IDN-043",
+      "IDN-044"
+    ],
+    "organism_ids": [
+      "ORG-043",
+      "ORG-044"
+    ],
+    "biodiversity_metric_id": "BDM-014",
+    "biodiversity_metrics": {
+      "species_richness": 2,
+      "shannon_index": 0.6365,
+      "simpson_index": 0.4444,
+      "pielou_evenness": 0.9183,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-034",
+      "BDA-035"
+    ],
+    "population_assessment_ids": [
+      "POP-043",
+      "POP-044"
+    ],
+    "habitat_assessment_ids": [],
+    "threat_assessment_ids": [
+      "THR-101",
+      "THR-102",
+      "THR-103",
+      "THR-104",
+      "THR-105"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-043",
+      "CSA-044"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-043",
+      "EXT-044"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.786,
+      "min_identification_confidence": 0.711,
+      "max_identification_confidence": 0.833,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-015",
+    "sample_id": "SMP-022",
+    "sample": {
+      "sample_id": "SMP-022",
+      "site_id": "SITE-022",
+      "site_name": "Bay of Bengal Deep Station",
+      "sample_type": "Sediment",
+      "marker_region": "18S",
+      "season": "Winter",
+      "collection_date": "2025-03-13",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-020",
+      "region": "Bay of Bengal Shelf",
+      "state": "Andhra Pradesh",
+      "country": "India",
+      "ecosystem_id": "ECO-015",
+      "ecosystem_name": "Deep Sea Ecosystem",
+      "ecosystem_type": "Marine",
+      "terrain_id": "TER-020",
+      "biome_id": "BIOM-011",
+      "biosphere_id": "BIOS-003",
+      "conditions": {
+        "temperature_c": 3.2,
+        "ph": 6.68,
+        "salinity_psu": 34.5,
+        "water_depth_m": 850.0,
+        "elevation_m": -850,
+        "nutrient_level": "High"
+      }
+    },
+    "identification_ids": [
+      "IDN-045",
+      "IDN-046"
+    ],
+    "organism_ids": [
+      "ORG-020",
+      "ORG-046"
+    ],
+    "biodiversity_metric_id": "BDM-015",
+    "biodiversity_metrics": {
+      "species_richness": 2,
+      "shannon_index": 0.6931,
+      "simpson_index": 0.5,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-036",
+      "BDA-037",
+      "BDA-038"
+    ],
+    "population_assessment_ids": [
+      "POP-020",
+      "POP-046"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-020",
+      "HAB-038"
+    ],
+    "threat_assessment_ids": [
+      "THR-055",
+      "THR-056",
+      "THR-109"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-020",
+      "CSA-046"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-020",
+      "EXT-046"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.767,
+      "min_identification_confidence": 0.707,
+      "max_identification_confidence": 0.828,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-016",
+    "sample_id": "SMP-023",
+    "sample": {
+      "sample_id": "SMP-023",
+      "site_id": "SITE-001",
+      "site_name": "Western Ghats Stream Transect",
+      "sample_type": "Freshwater",
+      "marker_region": "COI",
+      "season": "Monsoon",
+      "collection_date": "2026-08-22",
+      "status": "Processed"
+    },
+    "environment": {
+      "location_id": "LOC-001",
+      "region": "Western Ghats",
+      "state": "Kerala",
+      "country": "India",
+      "ecosystem_id": "ECO-001",
+      "ecosystem_name": "Tropical Rainforest Ecosystem",
+      "ecosystem_type": "Terrestrial",
+      "terrain_id": "TER-001",
+      "biome_id": "BIOM-001",
+      "biosphere_id": "BIOS-001",
+      "conditions": {
+        "temperature_c": 30.8,
+        "ph": 6.96,
+        "dissolved_oxygen_mg_l": 7.7,
+        "turbidity_ntu": 57.0,
+        "humidity_pct": 85.6,
+        "water_depth_m": 0.4,
+        "elevation_m": 980,
+        "conductivity_us_cm": 345.0,
+        "nutrient_level": "Low"
+      }
+    },
+    "identification_ids": [
+      "IDN-047",
+      "IDN-048",
+      "IDN-049",
+      "IDN-050"
+    ],
+    "organism_ids": [
+      "ORG-020",
+      "ORG-021",
+      "ORG-028",
+      "ORG-031"
+    ],
+    "biodiversity_metric_id": "BDM-016",
+    "biodiversity_metrics": {
+      "species_richness": 4,
+      "shannon_index": 1.3863,
+      "simpson_index": 0.75,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Moderate"
+    },
+    "ecological_assessment_ids": [
+      "BDA-039",
+      "BDA-040",
+      "BDA-041"
+    ],
+    "population_assessment_ids": [
+      "POP-020",
+      "POP-021",
+      "POP-028",
+      "POP-031"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-020",
+      "HAB-021",
+      "HAB-028",
+      "HAB-031"
+    ],
+    "threat_assessment_ids": [
+      "THR-055",
+      "THR-056",
+      "THR-057",
+      "THR-058",
+      "THR-068",
+      "THR-069",
+      "THR-072",
+      "THR-073"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-020",
+      "CSA-021",
+      "CSA-028",
+      "CSA-031"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-020",
+      "EXT-021",
+      "EXT-028",
+      "EXT-031"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.695,
+      "min_identification_confidence": 0.592,
+      "max_identification_confidence": 0.82,
+      "confidence_level": "Medium",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-017",
+    "sample_id": "SMP-024",
+    "sample": {
+      "sample_id": "SMP-024",
+      "site_id": "SITE-007",
+      "site_name": "Sundarbans Mangrove Channel",
+      "sample_type": "Brackish water",
+      "marker_region": "12S",
+      "season": "Monsoon",
+      "collection_date": "2024-09-27",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-006",
+      "region": "Sundarbans",
+      "state": "West Bengal",
+      "country": "India",
+      "ecosystem_id": "ECO-018",
+      "ecosystem_name": "Mangrove Ecosystem",
+      "ecosystem_type": "Transitional",
+      "terrain_id": "TER-003",
+      "biome_id": "BIOM-008",
+      "biosphere_id": "BIOS-004",
+      "conditions": {
+        "temperature_c": 30.3,
+        "ph": 8.12,
+        "salinity_psu": 12.8,
+        "dissolved_oxygen_mg_l": 6.25,
+        "turbidity_ntu": 4.5,
+        "water_depth_m": 1.2,
+        "elevation_m": 3,
+        "nutrient_level": "Moderate"
+      }
+    },
+    "identification_ids": [
+      "IDN-051",
+      "IDN-052"
+    ],
+    "organism_ids": [
+      "ORG-025",
+      "ORG-036"
+    ],
+    "biodiversity_metric_id": "BDM-017",
+    "biodiversity_metrics": {
+      "species_richness": 2,
+      "shannon_index": 0.6931,
+      "simpson_index": 0.5,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-042",
+      "BDA-043"
+    ],
+    "population_assessment_ids": [
+      "POP-025",
+      "POP-036"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-025",
+      "HAB-036"
+    ],
+    "threat_assessment_ids": [
+      "THR-063",
+      "THR-064",
+      "THR-065",
+      "THR-083",
+      "THR-084",
+      "THR-085"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-025",
+      "CSA-036"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-025",
+      "EXT-036"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.874,
+      "min_identification_confidence": 0.871,
+      "max_identification_confidence": 0.877,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-018",
+    "sample_id": "SMP-025",
+    "sample": {
+      "sample_id": "SMP-025",
+      "site_id": "SITE-009",
+      "site_name": "Andaman Reef Flat",
+      "sample_type": "Marine water",
+      "marker_region": "16S",
+      "season": "Winter",
+      "collection_date": "2026-02-28",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-007",
+      "region": "Andaman Islands",
+      "state": "Andaman & Nicobar Islands",
+      "country": "India",
+      "ecosystem_id": "ECO-014",
+      "ecosystem_name": "Coral Reef Ecosystem",
+      "ecosystem_type": "Marine",
+      "terrain_id": "TER-005",
+      "biome_id": "BIOM-009",
+      "biosphere_id": "BIOS-003",
+      "conditions": {
+        "temperature_c": 29.3,
+        "ph": 8.12,
+        "salinity_psu": 32.0,
+        "dissolved_oxygen_mg_l": 5.87,
+        "turbidity_ntu": 9.5,
+        "water_depth_m": 6.0,
+        "elevation_m": -12,
+        "nutrient_level": "Low"
+      }
+    },
+    "identification_ids": [
+      "IDN-053",
+      "IDN-054"
+    ],
+    "organism_ids": [
+      "ORG-004",
+      "ORG-019"
+    ],
+    "biodiversity_metric_id": "BDM-018",
+    "biodiversity_metrics": {
+      "species_richness": 2,
+      "shannon_index": 0.6931,
+      "simpson_index": 0.5,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-044",
+      "BDA-045"
+    ],
+    "population_assessment_ids": [
+      "POP-004",
+      "POP-019"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-004",
+      "HAB-019"
+    ],
+    "threat_assessment_ids": [
+      "THR-009",
+      "THR-051",
+      "THR-052",
+      "THR-053",
+      "THR-054"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-004",
+      "CSA-019"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-004",
+      "EXT-019"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.772,
+      "min_identification_confidence": 0.737,
+      "max_identification_confidence": 0.808,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-019",
+    "sample_id": "SMP-026",
+    "sample": {
+      "sample_id": "SMP-026",
+      "site_id": "SITE-013",
+      "site_name": "Brahmaputra Main Channel",
+      "sample_type": "Freshwater",
+      "marker_region": "16S",
+      "season": "Monsoon",
+      "collection_date": "2026-05-01",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-011",
+      "region": "Brahmaputra Basin",
+      "state": "Assam",
+      "country": "India",
+      "ecosystem_id": "ECO-008",
+      "ecosystem_name": "River Ecosystem",
+      "ecosystem_type": "Freshwater",
+      "terrain_id": "TER-008",
+      "biome_id": "BIOM-013",
+      "biosphere_id": "BIOS-002",
+      "conditions": {
+        "temperature_c": 28.4,
+        "ph": 7.31,
+        "dissolved_oxygen_mg_l": 6.48,
+        "turbidity_ntu": 7.5,
+        "water_depth_m": 2.5,
+        "elevation_m": 55,
+        "conductivity_us_cm": 617.0,
+        "nutrient_level": "Low"
+      }
+    },
+    "identification_ids": [
+      "IDN-055",
+      "IDN-056"
+    ],
+    "organism_ids": [
+      "ORG-009",
+      "ORG-033"
+    ],
+    "biodiversity_metric_id": "BDM-019",
+    "biodiversity_metrics": {
+      "species_richness": 2,
+      "shannon_index": 0.6931,
+      "simpson_index": 0.5,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-046",
+      "BDA-047",
+      "BDA-048"
+    ],
+    "population_assessment_ids": [
+      "POP-009",
+      "POP-033"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-009",
+      "HAB-033"
+    ],
+    "threat_assessment_ids": [
+      "THR-020",
+      "THR-021",
+      "THR-022",
+      "THR-023",
+      "THR-024",
+      "THR-076",
+      "THR-077",
+      "THR-078"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-009",
+      "CSA-033"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-009",
+      "EXT-033"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.726,
+      "min_identification_confidence": 0.586,
+      "max_identification_confidence": 0.865,
+      "confidence_level": "Medium",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-020",
+    "sample_id": "SMP-027",
+    "sample": {
+      "sample_id": "SMP-027",
+      "site_id": "SITE-014",
+      "site_name": "Ganga Midstream Station",
+      "sample_type": "Freshwater",
+      "marker_region": "rbcL",
+      "season": "Post-monsoon",
+      "collection_date": "2025-08-21",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-012",
+      "region": "Ganga Basin",
+      "state": "Uttar Pradesh",
+      "country": "India",
+      "ecosystem_id": "ECO-008",
+      "ecosystem_name": "River Ecosystem",
+      "ecosystem_type": "Freshwater",
+      "terrain_id": "TER-008",
+      "biome_id": "BIOM-013",
+      "biosphere_id": "BIOS-002",
+      "conditions": {
+        "temperature_c": 28.1,
+        "ph": 6.87,
+        "dissolved_oxygen_mg_l": 7.23,
+        "turbidity_ntu": 35.8,
+        "water_depth_m": 3.0,
+        "elevation_m": 80,
+        "conductivity_us_cm": 348.0,
+        "nutrient_level": "High"
+      }
+    },
+    "identification_ids": [
+      "IDN-057",
+      "IDN-058",
+      "IDN-059",
+      "IDN-060"
+    ],
+    "organism_ids": [
+      "ORG-003",
+      "ORG-038",
+      "ORG-048"
+    ],
+    "biodiversity_metric_id": "BDM-020",
+    "biodiversity_metrics": {
+      "species_richness": 3,
+      "shannon_index": 1.0397,
+      "simpson_index": 0.625,
+      "pielou_evenness": 0.9464,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-049",
+      "BDA-050",
+      "BDA-051"
+    ],
+    "population_assessment_ids": [
+      "POP-003",
+      "POP-038",
+      "POP-048"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-003",
+      "HAB-040"
+    ],
+    "threat_assessment_ids": [
+      "THR-008",
+      "THR-088",
+      "THR-089",
+      "THR-113",
+      "THR-114"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-003",
+      "CSA-038",
+      "CSA-048"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-003",
+      "EXT-038",
+      "EXT-048"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.802,
+      "min_identification_confidence": 0.566,
+      "max_identification_confidence": 0.977,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-021",
+    "sample_id": "SMP-031",
+    "sample": {
+      "sample_id": "SMP-031",
+      "site_id": "SITE-008",
+      "site_name": "Sundarbans Mangrove Sediment",
+      "sample_type": "Sediment",
+      "marker_region": "COI",
+      "season": "Winter",
+      "collection_date": "2025-07-09",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-006",
+      "region": "Sundarbans",
+      "state": "West Bengal",
+      "country": "India",
+      "ecosystem_id": "ECO-018",
+      "ecosystem_name": "Mangrove Ecosystem",
+      "ecosystem_type": "Transitional",
+      "terrain_id": "TER-003",
+      "biome_id": "BIOM-008",
+      "biosphere_id": "BIOS-004",
+      "conditions": {
+        "temperature_c": 27.8,
+        "ph": 7.83,
+        "salinity_psu": 20.1,
+        "water_depth_m": 0.3,
+        "elevation_m": 3,
+        "nutrient_level": "High"
+      }
+    },
+    "identification_ids": [
+      "IDN-061",
+      "IDN-062"
+    ],
+    "organism_ids": [
+      "ORG-044",
+      "ORG-046"
+    ],
+    "biodiversity_metric_id": "BDM-021",
+    "biodiversity_metrics": {
+      "species_richness": 2,
+      "shannon_index": 0.6931,
+      "simpson_index": 0.5,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-052",
+      "BDA-053",
+      "BDA-054"
+    ],
+    "population_assessment_ids": [
+      "POP-044",
+      "POP-046"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-038"
+    ],
+    "threat_assessment_ids": [
+      "THR-104",
+      "THR-105",
+      "THR-109"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-044",
+      "CSA-046"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-044",
+      "EXT-046"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.813,
+      "min_identification_confidence": 0.676,
+      "max_identification_confidence": 0.95,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  },
+  {
+    "analysis_id": "ANL-022",
+    "sample_id": "SMP-033",
+    "sample": {
+      "sample_id": "SMP-033",
+      "site_id": "SITE-004",
+      "site_name": "Nilgiri Montane Stream",
+      "sample_type": "Freshwater",
+      "marker_region": "COI",
+      "season": "Post-monsoon",
+      "collection_date": "2024-10-14",
+      "status": "Analyzed"
+    },
+    "environment": {
+      "location_id": "LOC-003",
+      "region": "Nilgiri Hills",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "ecosystem_id": "ECO-006",
+      "ecosystem_name": "Montane Forest Ecosystem",
+      "ecosystem_type": "Terrestrial",
+      "terrain_id": "TER-015",
+      "biome_id": "BIOM-007",
+      "biosphere_id": "BIOS-001",
+      "conditions": {
+        "temperature_c": 15.3,
+        "ph": 7.79,
+        "dissolved_oxygen_mg_l": 9.89,
+        "turbidity_ntu": 48.3,
+        "humidity_pct": 68.8,
+        "water_depth_m": 0.3,
+        "elevation_m": 2200,
+        "conductivity_us_cm": 172.0,
+        "nutrient_level": "Moderate"
+      }
+    },
+    "identification_ids": [
+      "IDN-063",
+      "IDN-064"
+    ],
+    "organism_ids": [
+      "ORG-001",
+      "ORG-034"
+    ],
+    "biodiversity_metric_id": "BDM-022",
+    "biodiversity_metrics": {
+      "species_richness": 2,
+      "shannon_index": 0.6931,
+      "simpson_index": 0.5,
+      "pielou_evenness": 1.0,
+      "biodiversity_category": "Low"
+    },
+    "ecological_assessment_ids": [
+      "BDA-055",
+      "BDA-056"
+    ],
+    "population_assessment_ids": [
+      "POP-001",
+      "POP-034"
+    ],
+    "habitat_assessment_ids": [
+      "HAB-001",
+      "HAB-034"
+    ],
+    "threat_assessment_ids": [
+      "THR-001",
+      "THR-002",
+      "THR-003",
+      "THR-004",
+      "THR-005",
+      "THR-079"
+    ],
+    "conservation_assessment_ids": [
+      "CSA-001",
+      "CSA-034"
+    ],
+    "extinction_risk_assessment_ids": [
+      "EXT-001",
+      "EXT-034"
+    ],
+    "confidence": {
+      "mean_identification_confidence": 0.828,
+      "min_identification_confidence": 0.819,
+      "max_identification_confidence": 0.837,
+      "confidence_level": "High",
+      "low_confidence_count": 0
+    },
+    "metadata": {
+      "is_synthetic": true,
+      "model_version": "prototype-0.1",
+      "seed_version": "prototype-0.1",
+      "generated_on": "2026-08-08",
+      "source_type": "Calculated",
+      "disclaimer": "Aggregated from synthetic records. Not a real analysis result."
+    }
+  }
+]

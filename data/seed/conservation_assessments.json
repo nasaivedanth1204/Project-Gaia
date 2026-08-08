@@ -1,0 +1,2207 @@
+[
+  {
+    "conservation_assessment_id": "CSA-001",
+    "organism_id": "ORG-001",
+    "conservation_status_id": "CST-001",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 11.9% over 10 years.",
+        "value": 11.9,
+        "confidence": 0.67
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 196661.0 km2 with Severe fragmentation.",
+        "value": 196661.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.67
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-002",
+    "organism_id": "ORG-002",
+    "conservation_status_id": "CST-002",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 30.9% over 10 years.",
+        "value": 30.9,
+        "confidence": 0.73
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 801232.0 km2 with Moderate fragmentation.",
+        "value": 801232.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.73
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-003",
+    "organism_id": "ORG-003",
+    "conservation_status_id": "CST-003",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 28.7% over 10 years.",
+        "value": 28.7,
+        "confidence": 0.67
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 569542.0 km2 with Low fragmentation.",
+        "value": 569542.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.67
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-004",
+    "organism_id": "ORG-004",
+    "conservation_status_id": "CST-004",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 12.5% over 10 years.",
+        "value": 12.5,
+        "confidence": 0.55
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 3178.0 km2 with Severe fragmentation.",
+        "value": 3178.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.55
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-005",
+    "organism_id": "ORG-005",
+    "conservation_status_id": "CST-005",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 5.0% over 10 years.",
+        "value": 5.0,
+        "confidence": 0.67
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 2105.0 km2 with High fragmentation.",
+        "value": 2105.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": true,
+        "evidence": "Synthetic mature population estimate of 328 individuals.",
+        "value": 328,
+        "confidence": 0.67
+      },
+      "D_restricted_population": {
+        "applicable": true,
+        "evidence": "Very small synthetic population (328 mature individuals).",
+        "value": 328,
+        "confidence": 0.55
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-006",
+    "organism_id": "ORG-006",
+    "conservation_status_id": "CST-006",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 75.9% over 10 years.",
+        "value": 75.9,
+        "confidence": 0.72
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 3461.0 km2 with Severe fragmentation.",
+        "value": 3461.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": true,
+        "evidence": "Synthetic mature population estimate of 134 individuals.",
+        "value": 134,
+        "confidence": 0.72
+      },
+      "D_restricted_population": {
+        "applicable": true,
+        "evidence": "Very small synthetic population (134 mature individuals).",
+        "value": 134,
+        "confidence": 0.55
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-007",
+    "organism_id": "ORG-007",
+    "conservation_status_id": "CST-007",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 16.6% over 10 years.",
+        "value": 16.6,
+        "confidence": 0.5
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 866728.0 km2 with Severe fragmentation.",
+        "value": 866728.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.5
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-008",
+    "organism_id": "ORG-008",
+    "conservation_status_id": "CST-008",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 14.8% over 10 years.",
+        "value": 14.8,
+        "confidence": 0.63
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 569430.0 km2 with Moderate fragmentation.",
+        "value": 569430.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.63
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-009",
+    "organism_id": "ORG-009",
+    "conservation_status_id": "CST-009",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 80.4% over 10 years.",
+        "value": 80.4,
+        "confidence": 0.79
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 1155.0 km2 with Severe fragmentation.",
+        "value": 1155.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.79
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-010",
+    "organism_id": "ORG-010",
+    "conservation_status_id": "CST-010",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 6.2% over 10 years.",
+        "value": 6.2,
+        "confidence": 0.59
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 73396.0 km2 with None fragmentation.",
+        "value": 73396.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.59
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-011",
+    "organism_id": "ORG-011",
+    "conservation_status_id": "CST-011",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 67.1% over 10 years.",
+        "value": 67.1,
+        "confidence": 0.7
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 499.0 km2 with Severe fragmentation.",
+        "value": 499.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.7
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-012",
+    "organism_id": "ORG-012",
+    "conservation_status_id": "CST-012",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 4.2% over 10 years.",
+        "value": 4.2,
+        "confidence": 0.69
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 12311.0 km2 with Low fragmentation.",
+        "value": 12311.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": true,
+        "evidence": "Synthetic mature population estimate of 7493 individuals.",
+        "value": 7493,
+        "confidence": 0.69
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-013",
+    "organism_id": "ORG-013",
+    "conservation_status_id": "CST-013",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 22.3% over 10 years.",
+        "value": 22.3,
+        "confidence": 0.68
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 78444.0 km2 with Low fragmentation.",
+        "value": 78444.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.68
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-014",
+    "organism_id": "ORG-014",
+    "conservation_status_id": "CST-014",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 2.6% over 10 years.",
+        "value": 2.6,
+        "confidence": 0.6
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 96926.0 km2 with Moderate fragmentation.",
+        "value": 96926.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": true,
+        "evidence": "Synthetic mature population estimate of 167 individuals.",
+        "value": 167,
+        "confidence": 0.6
+      },
+      "D_restricted_population": {
+        "applicable": true,
+        "evidence": "Very small synthetic population (167 mature individuals).",
+        "value": 167,
+        "confidence": 0.55
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-015",
+    "organism_id": "ORG-015",
+    "conservation_status_id": "CST-015",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 42.5% over 10 years.",
+        "value": 42.5,
+        "confidence": 0.66
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 437999.0 km2 with High fragmentation.",
+        "value": 437999.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.66
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-016",
+    "organism_id": "ORG-016",
+    "conservation_status_id": "CST-016",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 28.1% over 10 years.",
+        "value": 28.1,
+        "confidence": 0.64
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 846146.0 km2 with Low fragmentation.",
+        "value": 846146.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.64
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-017",
+    "organism_id": "ORG-017",
+    "conservation_status_id": "CST-017",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 152471.0 km2 with Low fragmentation.",
+        "value": 152471.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.2
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Insufficient synthetic evidence for an interpretation.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-018",
+    "organism_id": "ORG-018",
+    "conservation_status_id": "CST-018",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 1.8% over 10 years.",
+        "value": 1.8,
+        "confidence": 0.78
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 157323.0 km2 with Moderate fragmentation.",
+        "value": 157323.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.78
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-019",
+    "organism_id": "ORG-019",
+    "conservation_status_id": "CST-019",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 59.9% over 10 years.",
+        "value": 59.9,
+        "confidence": 0.75
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 383607.0 km2 with High fragmentation.",
+        "value": 383607.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.75
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-020",
+    "organism_id": "ORG-020",
+    "conservation_status_id": "CST-020",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 15.5% over 10 years.",
+        "value": 15.5,
+        "confidence": 0.41
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 218410.0 km2 with Moderate fragmentation.",
+        "value": 218410.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.41
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-021",
+    "organism_id": "ORG-021",
+    "conservation_status_id": "CST-021",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 2.5% over 10 years.",
+        "value": 2.5,
+        "confidence": 0.59
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 62349.0 km2 with High fragmentation.",
+        "value": 62349.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.59
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-022",
+    "organism_id": "ORG-022",
+    "conservation_status_id": "CST-022",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 20.8% over 10 years.",
+        "value": 20.8,
+        "confidence": 0.65
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 643603.0 km2 with High fragmentation.",
+        "value": 643603.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.65
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-023",
+    "organism_id": "ORG-023",
+    "conservation_status_id": "CST-023",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 0.4% over 10 years.",
+        "value": 0.4,
+        "confidence": 0.71
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 109179.0 km2 with Low fragmentation.",
+        "value": 109179.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.71
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-024",
+    "organism_id": "ORG-024",
+    "conservation_status_id": "CST-024",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 47.7% over 10 years.",
+        "value": 47.7,
+        "confidence": 0.67
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 13041.0 km2 with None fragmentation.",
+        "value": 13041.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.67
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-025",
+    "organism_id": "ORG-025",
+    "conservation_status_id": "CST-025",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 21.8% over 10 years.",
+        "value": 21.8,
+        "confidence": 0.6
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 316604.0 km2 with Moderate fragmentation.",
+        "value": 316604.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.6
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-026",
+    "organism_id": "ORG-026",
+    "conservation_status_id": "CST-026",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 28.3% over 10 years.",
+        "value": 28.3,
+        "confidence": 0.67
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 588062.0 km2 with None fragmentation.",
+        "value": 588062.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": true,
+        "evidence": "Synthetic mature population estimate of 2568 individuals.",
+        "value": 2568,
+        "confidence": 0.67
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-027",
+    "organism_id": "ORG-027",
+    "conservation_status_id": "CST-027",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 3.6% over 10 years.",
+        "value": 3.6,
+        "confidence": 0.6
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 779861.0 km2 with High fragmentation.",
+        "value": 779861.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.6
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-028",
+    "organism_id": "ORG-028",
+    "conservation_status_id": "CST-028",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 19.1% over 10 years.",
+        "value": 19.1,
+        "confidence": 0.5
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 1209.0 km2 with High fragmentation.",
+        "value": 1209.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.5
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-029",
+    "organism_id": "ORG-029",
+    "conservation_status_id": "CST-029",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 1.7% over 10 years.",
+        "value": 1.7,
+        "confidence": 0.7
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 623537.0 km2 with Moderate fragmentation.",
+        "value": 623537.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.7
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-030",
+    "organism_id": "ORG-030",
+    "conservation_status_id": "CST-030",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 17.3% over 10 years.",
+        "value": 17.3,
+        "confidence": 0.51
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 194563.0 km2 with Moderate fragmentation.",
+        "value": 194563.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.51
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-031",
+    "organism_id": "ORG-031",
+    "conservation_status_id": "CST-031",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 12.5% over 10 years.",
+        "value": 12.5,
+        "confidence": 0.61
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 870681.0 km2 with Moderate fragmentation.",
+        "value": 870681.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": true,
+        "evidence": "Synthetic mature population estimate of 6282 individuals.",
+        "value": 6282,
+        "confidence": 0.61
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-032",
+    "organism_id": "ORG-032",
+    "conservation_status_id": "CST-032",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 15.7% over 10 years.",
+        "value": 15.7,
+        "confidence": 0.48
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 556129.0 km2 with Low fragmentation.",
+        "value": 556129.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.48
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-033",
+    "organism_id": "ORG-033",
+    "conservation_status_id": "CST-033",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 23.4% over 10 years.",
+        "value": 23.4,
+        "confidence": 0.47
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 295687.0 km2 with High fragmentation.",
+        "value": 295687.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.47
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-034",
+    "organism_id": "ORG-034",
+    "conservation_status_id": "CST-034",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 17.2% over 10 years.",
+        "value": 17.2,
+        "confidence": 0.47
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 280645.0 km2 with None fragmentation.",
+        "value": 280645.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.47
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-035",
+    "organism_id": "ORG-035",
+    "conservation_status_id": "CST-035",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 5.6% over 10 years.",
+        "value": 5.6,
+        "confidence": 0.67
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 635006.0 km2 with Moderate fragmentation.",
+        "value": 635006.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.67
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-036",
+    "organism_id": "ORG-036",
+    "conservation_status_id": "CST-036",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 6.2% over 10 years.",
+        "value": 6.2,
+        "confidence": 0.46
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 400129.0 km2 with High fragmentation.",
+        "value": 400129.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.46
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-037",
+    "organism_id": "ORG-037",
+    "conservation_status_id": "CST-037",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 23.1% over 10 years.",
+        "value": 23.1,
+        "confidence": 0.44
+      },
+      "B_geographic_range": {
+        "applicable": true,
+        "evidence": "Synthetic extent of occurrence 529290.0 km2 with None fragmentation.",
+        "value": 529290.0,
+        "confidence": 0.6
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": 0.44
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-038",
+    "organism_id": "ORG-038",
+    "conservation_status_id": "CST-038",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "B_geographic_range": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-039",
+    "organism_id": "ORG-039",
+    "conservation_status_id": "CST-039",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "B_geographic_range": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-040",
+    "organism_id": "ORG-040",
+    "conservation_status_id": "CST-040",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "B_geographic_range": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-041",
+    "organism_id": "ORG-041",
+    "conservation_status_id": "CST-041",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": true,
+        "evidence": "Synthetic population decline of 3.6% over 10 years.",
+        "value": 3.6,
+        "confidence": 0.67
+      },
+      "B_geographic_range": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-042",
+    "organism_id": "ORG-042",
+    "conservation_status_id": "CST-042",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "B_geographic_range": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-043",
+    "organism_id": "ORG-043",
+    "conservation_status_id": "CST-043",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "B_geographic_range": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Insufficient synthetic evidence for an interpretation.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-044",
+    "organism_id": "ORG-044",
+    "conservation_status_id": "CST-044",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "B_geographic_range": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Insufficient synthetic evidence for an interpretation.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-045",
+    "organism_id": "ORG-045",
+    "conservation_status_id": "CST-045",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "B_geographic_range": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-046",
+    "organism_id": "ORG-046",
+    "conservation_status_id": "CST-046",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "B_geographic_range": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-047",
+    "organism_id": "ORG-047",
+    "conservation_status_id": "CST-047",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "B_geographic_range": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-048",
+    "organism_id": "ORG-048",
+    "conservation_status_id": "CST-048",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "B_geographic_range": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "conservation_assessment_id": "CSA-049",
+    "organism_id": "ORG-049",
+    "conservation_status_id": "CST-049",
+    "criteria": {
+      "A_population_reduction": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "B_geographic_range": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "C_small_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "D_restricted_population": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null
+      },
+      "E_quantitative_analysis": {
+        "applicable": false,
+        "evidence": null,
+        "value": null,
+        "confidence": null,
+        "note": "No population viability analysis is performed in this prototype."
+      }
+    },
+    "prototype_risk_interpretation": "Prototype interpretation only - derived from synthetic evidence, not an IUCN assessment.",
+    "assessment_date": "2026-08-08",
+    "assessed_by": "Gaia prototype criteria template prototype-0.1",
+    "is_official_assessment": false,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  }
+]

@@ -1,0 +1,2033 @@
+[
+  {
+    "extinction_risk_assessment_id": "EXT-001",
+    "organism_id": "ORG-001",
+    "extinction_probability": 0.115,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.64,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "MODERATE",
+      "habitat_loss": "LOW",
+      "fragmentation": "VERY_HIGH",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 33,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 3.57,
+      "population_size": 3.75,
+      "habitat_loss": 0.84,
+      "range_restriction": 6.84,
+      "threat_pressure": 17.8
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (11.9% in the synthetic record).",
+      "The recorded population is geographically fragmented (severe fragmentation).",
+      "Multiple ongoing environmental pressures are present (Agricultural Expansion, Climate Change, Deforestation, Habitat Loss, Hunting)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-002",
+    "organism_id": "ORG-002",
+    "extinction_probability": 0.11,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.42,
+    "risk_indicators": {
+      "population_decline": "MODERATE",
+      "population_size": "MODERATE",
+      "geographic_range": "HIGH",
+      "habitat_loss": "MODERATE",
+      "fragmentation": "MODERATE",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 36,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 9.27,
+      "population_size": 3.75,
+      "habitat_loss": 5.34,
+      "range_restriction": 7.62,
+      "threat_pressure": 10.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population trend indicates sustained decline (30.9% in the synthetic record).",
+      "Moderate habitat reduction is recorded (26.7% lost).",
+      "Environmental pressure recorded from: Deforestation, Hunting."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-003",
+    "organism_id": "ORG-003",
+    "extinction_probability": 0.108,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.53,
+    "risk_indicators": {
+      "population_decline": "MODERATE",
+      "population_size": "MODERATE",
+      "geographic_range": "LOW",
+      "habitat_loss": "MODERATE",
+      "fragmentation": "LOW",
+      "threat_pressure": "MODERATE"
+    },
+    "gaia_risk_score": 33,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 8.61,
+      "population_size": 3.75,
+      "habitat_loss": 8.9,
+      "range_restriction": 3.09,
+      "threat_pressure": 9.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population trend indicates sustained decline (28.7% in the synthetic record).",
+      "Significant habitat reduction is present in the synthetic dataset (44.5% lost).",
+      "Environmental pressure recorded from: Pollution."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-004",
+    "organism_id": "ORG-004",
+    "extinction_probability": 0.104,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.51,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "HIGH",
+      "habitat_loss": "LOW",
+      "fragmentation": "VERY_HIGH",
+      "threat_pressure": "LOW"
+    },
+    "gaia_risk_score": 23,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 3.75,
+      "population_size": 3.75,
+      "habitat_loss": 3.56,
+      "range_restriction": 8.14,
+      "threat_pressure": 4.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (12.5% in the synthetic record).",
+      "The recorded population is geographically fragmented (severe fragmentation).",
+      "Environmental pressure recorded from: Habitat Loss."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-005",
+    "organism_id": "ORG-005",
+    "extinction_probability": 0.121,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.37,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "VERY_HIGH",
+      "geographic_range": "HIGH",
+      "habitat_loss": "LOW",
+      "fragmentation": "HIGH",
+      "threat_pressure": "LOW"
+    },
+    "gaia_risk_score": 30,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 1.5,
+      "population_size": 12.75,
+      "habitat_loss": 2.12,
+      "range_restriction": 9.42,
+      "threat_pressure": 4.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population appears stable in the synthetic record.",
+      "The estimated mature population is very small, which raises risk independently of trend.",
+      "The recorded population is geographically fragmented (high fragmentation).",
+      "Environmental pressure recorded from: Human Disturbance."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-006",
+    "organism_id": "ORG-006",
+    "extinction_probability": 0.518,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.66,
+    "risk_indicators": {
+      "population_decline": "VERY_HIGH",
+      "population_size": "VERY_HIGH",
+      "geographic_range": "VERY_HIGH",
+      "habitat_loss": "HIGH",
+      "fragmentation": "VERY_HIGH",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 85,
+    "risk_level": "Critical Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 22.77,
+      "population_size": 15.0,
+      "habitat_loss": 12.58,
+      "range_restriction": 15.0,
+      "threat_pressure": 20.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population trend indicates severe decline (75.9% in the synthetic record).",
+      "The estimated mature population is very small, which raises risk independently of trend.",
+      "Significant habitat reduction is present in the synthetic dataset (62.9% lost).",
+      "The recorded population is geographically fragmented (severe fragmentation).",
+      "Multiple ongoing environmental pressures are present (Climate Change, Deforestation, Habitat Loss, Human Disturbance, Hunting)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-007",
+    "organism_id": "ORG-007",
+    "extinction_probability": 0.112,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.6,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "HIGH",
+      "habitat_loss": "LOW",
+      "fragmentation": "VERY_HIGH",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 37,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 4.98,
+      "population_size": 3.75,
+      "habitat_loss": 3.82,
+      "range_restriction": 8.52,
+      "threat_pressure": 15.5
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (16.6% in the synthetic record).",
+      "The recorded population is geographically fragmented (severe fragmentation).",
+      "Environmental pressure recorded from: Climate Change, Pollution."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-008",
+    "organism_id": "ORG-008",
+    "extinction_probability": 0.056,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.69,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "LOW",
+      "habitat_loss": "LOW",
+      "fragmentation": "MODERATE",
+      "threat_pressure": "MODERATE"
+    },
+    "gaia_risk_score": 21,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 4.44,
+      "population_size": 3.75,
+      "habitat_loss": 1.96,
+      "range_restriction": 3.24,
+      "threat_pressure": 7.5
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (14.8% in the synthetic record).",
+      "Environmental pressure recorded from: Infrastructure Development, Pollution."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-009",
+    "organism_id": "ORG-009",
+    "extinction_probability": 0.625,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.62,
+    "risk_indicators": {
+      "population_decline": "VERY_HIGH",
+      "population_size": "MODERATE",
+      "geographic_range": "VERY_HIGH",
+      "habitat_loss": "VERY_HIGH",
+      "fragmentation": "VERY_HIGH",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 79,
+    "risk_level": "Very High Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 24.12,
+      "population_size": 3.75,
+      "habitat_loss": 16.28,
+      "range_restriction": 14.4,
+      "threat_pressure": 20.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population trend indicates severe decline (80.4% in the synthetic record).",
+      "Significant habitat reduction is present in the synthetic dataset (81.4% lost).",
+      "The recorded population is geographically fragmented (severe fragmentation).",
+      "Multiple ongoing environmental pressures are present (Climate Change, Infrastructure Development, Invasive Species, Pollution, Water Extraction)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-010",
+    "organism_id": "ORG-010",
+    "extinction_probability": 0.111,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.49,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "HIGH",
+      "habitat_loss": "MODERATE",
+      "fragmentation": "LOW",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 37,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 1.86,
+      "population_size": 3.75,
+      "habitat_loss": 6.94,
+      "range_restriction": 9.63,
+      "threat_pressure": 15.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (6.2% in the synthetic record).",
+      "Moderate habitat reduction is recorded (34.7% lost).",
+      "Multiple ongoing environmental pressures are present (Climate Change, Ocean Acidification, Overfishing, Pollution)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-011",
+    "organism_id": "ORG-011",
+    "extinction_probability": 0.648,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.69,
+    "risk_indicators": {
+      "population_decline": "HIGH",
+      "population_size": "MODERATE",
+      "geographic_range": "VERY_HIGH",
+      "habitat_loss": "HIGH",
+      "fragmentation": "VERY_HIGH",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 71,
+    "risk_level": "Very High Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 20.13,
+      "population_size": 3.75,
+      "habitat_loss": 14.44,
+      "range_restriction": 12.91,
+      "threat_pressure": 20.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population trend indicates severe decline (67.1% in the synthetic record).",
+      "Significant habitat reduction is present in the synthetic dataset (72.2% lost).",
+      "The recorded population is geographically fragmented (severe fragmentation).",
+      "Multiple ongoing environmental pressures are present (Climate Change, Habitat Loss, Infrastructure Development, Invasive Species, Water Extraction)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-012",
+    "organism_id": "ORG-012",
+    "extinction_probability": 0.087,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.52,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "HIGH",
+      "habitat_loss": "LOW",
+      "fragmentation": "LOW",
+      "threat_pressure": "MODERATE"
+    },
+    "gaia_risk_score": 28,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 1.26,
+      "population_size": 6.75,
+      "habitat_loss": 1.64,
+      "range_restriction": 8.43,
+      "threat_pressure": 9.67
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population appears stable in the synthetic record.",
+      "The estimated mature population is small enough to be a contributing risk factor.",
+      "Multiple ongoing environmental pressures are present (Habitat Loss, Invasive Species, Water Extraction)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-013",
+    "organism_id": "ORG-013",
+    "extinction_probability": 0.117,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.45,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "MODERATE",
+      "habitat_loss": "MODERATE",
+      "fragmentation": "LOW",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 30,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 6.69,
+      "population_size": 3.75,
+      "habitat_loss": 5.34,
+      "range_restriction": 4.07,
+      "threat_pressure": 10.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (22.3% in the synthetic record).",
+      "Moderate habitat reduction is recorded (26.7% lost).",
+      "Environmental pressure recorded from: Climate Change, Ocean Acidification."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-014",
+    "organism_id": "ORG-014",
+    "extinction_probability": 0.135,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.68,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "VERY_HIGH",
+      "geographic_range": "MODERATE",
+      "habitat_loss": "MODERATE",
+      "fragmentation": "MODERATE",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 44,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 0.78,
+      "population_size": 15.0,
+      "habitat_loss": 5.52,
+      "range_restriction": 5.97,
+      "threat_pressure": 17.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population appears stable in the synthetic record.",
+      "The estimated mature population is very small, which raises risk independently of trend.",
+      "Moderate habitat reduction is recorded (27.6% lost).",
+      "Multiple ongoing environmental pressures are present (Climate Change, Pollution, Urban Expansion)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-015",
+    "organism_id": "ORG-015",
+    "extinction_probability": 0.137,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.63,
+    "risk_indicators": {
+      "population_decline": "MODERATE",
+      "population_size": "MODERATE",
+      "geographic_range": "VERY_HIGH",
+      "habitat_loss": "MODERATE",
+      "fragmentation": "HIGH",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 49,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 12.75,
+      "population_size": 3.75,
+      "habitat_loss": 5.72,
+      "range_restriction": 11.79,
+      "threat_pressure": 15.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population trend indicates sustained decline (42.5% in the synthetic record).",
+      "Moderate habitat reduction is recorded (28.6% lost).",
+      "The recorded population is geographically fragmented (high fragmentation).",
+      "Multiple ongoing environmental pressures are present (Habitat Loss, Invasive Species, Water Extraction)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-016",
+    "organism_id": "ORG-016",
+    "extinction_probability": 0.106,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.52,
+    "risk_indicators": {
+      "population_decline": "MODERATE",
+      "population_size": "MODERATE",
+      "geographic_range": "MODERATE",
+      "habitat_loss": "LOW",
+      "fragmentation": "LOW",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 38,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 8.43,
+      "population_size": 3.75,
+      "habitat_loss": 4.46,
+      "range_restriction": 6.73,
+      "threat_pressure": 15.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population trend indicates sustained decline (28.1% in the synthetic record).",
+      "Moderate habitat reduction is recorded (22.3% lost).",
+      "Environmental pressure recorded from: Urban Expansion."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-017",
+    "organism_id": "ORG-017",
+    "extinction_probability": null,
+    "extinction_probability_period_years": null,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": null,
+    "risk_indicators": {
+      "population_decline": "UNKNOWN",
+      "population_size": "MODERATE",
+      "geographic_range": "MODERATE",
+      "habitat_loss": "LOW",
+      "fragmentation": "LOW",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 23,
+    "risk_level": "Low Risk",
+    "risk_confidence": 0.7,
+    "score_components": {
+      "population_size": 3.75,
+      "habitat_loss": 1.62,
+      "range_restriction": 5.91,
+      "threat_pressure": 11.33
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "No population trend evidence is available, so decline could not be assessed.",
+      "Multiple ongoing environmental pressures are present (Habitat Loss, Pollution, Water Extraction).",
+      "Evidence is missing for: population_decline. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-018",
+    "organism_id": "ORG-018",
+    "extinction_probability": 0.132,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.68,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "HIGH",
+      "habitat_loss": "LOW",
+      "fragmentation": "MODERATE",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 29,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 0.54,
+      "population_size": 3.75,
+      "habitat_loss": 1.56,
+      "range_restriction": 9.9,
+      "threat_pressure": 13.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population appears stable in the synthetic record.",
+      "Environmental pressure recorded from: Invasive Species, Urban Expansion."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-019",
+    "organism_id": "ORG-019",
+    "extinction_probability": 0.15,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.56,
+    "risk_indicators": {
+      "population_decline": "HIGH",
+      "population_size": "MODERATE",
+      "geographic_range": "MODERATE",
+      "habitat_loss": "LOW",
+      "fragmentation": "HIGH",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 40,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 17.97,
+      "population_size": 3.75,
+      "habitat_loss": 1.42,
+      "range_restriction": 4.82,
+      "threat_pressure": 12.25
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population trend indicates severe decline (59.9% in the synthetic record).",
+      "The recorded population is geographically fragmented (high fragmentation).",
+      "Multiple ongoing environmental pressures are present (Climate Change, Ocean Acidification, Overfishing, Pollution)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-020",
+    "organism_id": "ORG-020",
+    "extinction_probability": 0.111,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.55,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "MODERATE",
+      "habitat_loss": "MODERATE",
+      "fragmentation": "MODERATE",
+      "threat_pressure": "MODERATE"
+    },
+    "gaia_risk_score": 26,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 4.65,
+      "population_size": 3.75,
+      "habitat_loss": 5.34,
+      "range_restriction": 5.16,
+      "threat_pressure": 7.5
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (15.5% in the synthetic record).",
+      "Moderate habitat reduction is recorded (26.7% lost).",
+      "Environmental pressure recorded from: Climate Change, Overfishing."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-021",
+    "organism_id": "ORG-021",
+    "extinction_probability": 0.14,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.44,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "HIGH",
+      "habitat_loss": "LOW",
+      "fragmentation": "HIGH",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 37,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 0.75,
+      "population_size": 3.75,
+      "habitat_loss": 1.82,
+      "range_restriction": 11.13,
+      "threat_pressure": 20.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population appears stable in the synthetic record.",
+      "The recorded population is geographically fragmented (high fragmentation).",
+      "Environmental pressure recorded from: Climate Change, Pollution."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-022",
+    "organism_id": "ORG-022",
+    "extinction_probability": 0.12,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.52,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "VERY_HIGH",
+      "habitat_loss": "LOW",
+      "fragmentation": "HIGH",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 41,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 6.24,
+      "population_size": 3.75,
+      "habitat_loss": 4.76,
+      "range_restriction": 11.51,
+      "threat_pressure": 15.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (20.8% in the synthetic record).",
+      "Moderate habitat reduction is recorded (23.8% lost).",
+      "The recorded population is geographically fragmented (high fragmentation).",
+      "Environmental pressure recorded from: Water Extraction."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-023",
+    "organism_id": "ORG-023",
+    "extinction_probability": 0.074,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.59,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "LOW",
+      "habitat_loss": "MODERATE",
+      "fragmentation": "LOW",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 25,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 0.12,
+      "population_size": 3.75,
+      "habitat_loss": 6.26,
+      "range_restriction": 0.27,
+      "threat_pressure": 15.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population appears stable in the synthetic record.",
+      "Moderate habitat reduction is recorded (31.3% lost).",
+      "Environmental pressure recorded from: Pollution."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-024",
+    "organism_id": "ORG-024",
+    "extinction_probability": 0.118,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.69,
+    "risk_indicators": {
+      "population_decline": "MODERATE",
+      "population_size": "MODERATE",
+      "geographic_range": "LOW",
+      "habitat_loss": "HIGH",
+      "fragmentation": "LOW",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 40,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 14.31,
+      "population_size": 3.75,
+      "habitat_loss": 11.34,
+      "range_restriction": 0.28,
+      "threat_pressure": 10.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population trend indicates sustained decline (47.7% in the synthetic record).",
+      "Significant habitat reduction is present in the synthetic dataset (56.7% lost).",
+      "Environmental pressure recorded from: Climate Change, Urban Expansion."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-025",
+    "organism_id": "ORG-025",
+    "extinction_probability": 0.082,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.48,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "LOW",
+      "habitat_loss": "LOW",
+      "fragmentation": "MODERATE",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 28,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 6.54,
+      "population_size": 3.75,
+      "habitat_loss": 2.86,
+      "range_restriction": 3.12,
+      "threat_pressure": 11.33
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (21.8% in the synthetic record).",
+      "Multiple ongoing environmental pressures are present (Climate Change, Habitat Loss, Pollution)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-026",
+    "organism_id": "ORG-026",
+    "extinction_probability": 0.122,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.49,
+    "risk_indicators": {
+      "population_decline": "MODERATE",
+      "population_size": "MODERATE",
+      "geographic_range": "HIGH",
+      "habitat_loss": "LOW",
+      "fragmentation": "LOW",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 43,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 8.49,
+      "population_size": 6.75,
+      "habitat_loss": 4.8,
+      "range_restriction": 7.63,
+      "threat_pressure": 15.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population trend indicates sustained decline (28.3% in the synthetic record).",
+      "The estimated mature population is small enough to be a contributing risk factor.",
+      "Moderate habitat reduction is recorded (24.0% lost).",
+      "Environmental pressure recorded from: Agricultural Expansion."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-027",
+    "organism_id": "ORG-027",
+    "extinction_probability": 0.103,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.63,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "MODERATE",
+      "habitat_loss": "LOW",
+      "fragmentation": "HIGH",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 26,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 1.08,
+      "population_size": 3.75,
+      "habitat_loss": 1.32,
+      "range_restriction": 4.89,
+      "threat_pressure": 15.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population appears stable in the synthetic record.",
+      "The recorded population is geographically fragmented (high fragmentation).",
+      "Environmental pressure recorded from: Habitat Loss."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-028",
+    "organism_id": "ORG-028",
+    "extinction_probability": 0.095,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.52,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "HIGH",
+      "habitat_loss": "LOW",
+      "fragmentation": "HIGH",
+      "threat_pressure": "MODERATE"
+    },
+    "gaia_risk_score": 28,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 5.73,
+      "population_size": 3.75,
+      "habitat_loss": 4.96,
+      "range_restriction": 8.51,
+      "threat_pressure": 5.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (19.1% in the synthetic record).",
+      "Moderate habitat reduction is recorded (24.8% lost).",
+      "The recorded population is geographically fragmented (high fragmentation).",
+      "Environmental pressure recorded from: Habitat Loss, Human Disturbance."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-029",
+    "organism_id": "ORG-029",
+    "extinction_probability": 0.111,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.38,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "MODERATE",
+      "habitat_loss": "MODERATE",
+      "fragmentation": "MODERATE",
+      "threat_pressure": "LOW"
+    },
+    "gaia_risk_score": 21,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 0.51,
+      "population_size": 3.75,
+      "habitat_loss": 6.2,
+      "range_restriction": 6.58,
+      "threat_pressure": 4.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population appears stable in the synthetic record.",
+      "Moderate habitat reduction is recorded (31.0% lost).",
+      "Environmental pressure recorded from: Deforestation."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-030",
+    "organism_id": "ORG-030",
+    "extinction_probability": 0.126,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.46,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "MODERATE",
+      "habitat_loss": "LOW",
+      "fragmentation": "MODERATE",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 31,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 5.19,
+      "population_size": 3.75,
+      "habitat_loss": 3.52,
+      "range_restriction": 4.03,
+      "threat_pressure": 15.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (17.3% in the synthetic record).",
+      "Environmental pressure recorded from: Hunting."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-031",
+    "organism_id": "ORG-031",
+    "extinction_probability": 0.11,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.43,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "MODERATE",
+      "habitat_loss": "LOW",
+      "fragmentation": "MODERATE",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 33,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 3.75,
+      "population_size": 6.75,
+      "habitat_loss": 2.32,
+      "range_restriction": 4.48,
+      "threat_pressure": 15.5
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (12.5% in the synthetic record).",
+      "The estimated mature population is small enough to be a contributing risk factor.",
+      "Environmental pressure recorded from: Climate Change, Overfishing."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-032",
+    "organism_id": "ORG-032",
+    "extinction_probability": 0.092,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.51,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "LOW",
+      "habitat_loss": "LOW",
+      "fragmentation": "LOW",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 25,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 4.71,
+      "population_size": 3.75,
+      "habitat_loss": 4.7,
+      "range_restriction": 1.64,
+      "threat_pressure": 10.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (15.7% in the synthetic record).",
+      "Moderate habitat reduction is recorded (23.5% lost).",
+      "Environmental pressure recorded from: Habitat Loss, Pollution."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-033",
+    "organism_id": "ORG-033",
+    "extinction_probability": 0.148,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.66,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "VERY_HIGH",
+      "habitat_loss": "LOW",
+      "fragmentation": "HIGH",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 45,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 7.02,
+      "population_size": 3.75,
+      "habitat_loss": 2.1,
+      "range_restriction": 11.69,
+      "threat_pressure": 20.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (23.4% in the synthetic record).",
+      "The recorded population is geographically fragmented (high fragmentation).",
+      "Multiple ongoing environmental pressures are present (Habitat Loss, Invasive Species, Pollution)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-034",
+    "organism_id": "ORG-034",
+    "extinction_probability": 0.092,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.5,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "LOW",
+      "habitat_loss": "LOW",
+      "fragmentation": "LOW",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 31,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 5.16,
+      "population_size": 3.75,
+      "habitat_loss": 3.26,
+      "range_restriction": 3.48,
+      "threat_pressure": 15.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (17.2% in the synthetic record).",
+      "Environmental pressure recorded from: Human Disturbance."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-035",
+    "organism_id": "ORG-035",
+    "extinction_probability": 0.062,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.55,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "MODERATE",
+      "habitat_loss": "LOW",
+      "fragmentation": "MODERATE",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 24,
+    "risk_level": "Low Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 1.68,
+      "population_size": 3.75,
+      "habitat_loss": 3.56,
+      "range_restriction": 4.02,
+      "threat_pressure": 11.33
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (5.6% in the synthetic record).",
+      "Multiple ongoing environmental pressures are present (Deforestation, Habitat Loss, Human Disturbance)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-036",
+    "organism_id": "ORG-036",
+    "extinction_probability": 0.111,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.46,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "HIGH",
+      "habitat_loss": "LOW",
+      "fragmentation": "HIGH",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 35,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 1.86,
+      "population_size": 3.75,
+      "habitat_loss": 4.16,
+      "range_restriction": 10.66,
+      "threat_pressure": 15.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (6.2% in the synthetic record).",
+      "Moderate habitat reduction is recorded (20.8% lost).",
+      "The recorded population is geographically fragmented (high fragmentation).",
+      "Multiple ongoing environmental pressures are present (Agricultural Expansion, Invasive Species, Urban Expansion)."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-037",
+    "organism_id": "ORG-037",
+    "extinction_probability": 0.099,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.68,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "MODERATE",
+      "geographic_range": "HIGH",
+      "habitat_loss": "LOW",
+      "fragmentation": "LOW",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 35,
+    "risk_level": "Moderate Risk",
+    "risk_confidence": 1.0,
+    "score_components": {
+      "population_decline": 6.93,
+      "population_size": 3.75,
+      "habitat_loss": 3.2,
+      "range_restriction": 8.07,
+      "threat_pressure": 13.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population shows a modest decline (23.1% in the synthetic record).",
+      "Environmental pressure recorded from: Agricultural Expansion, Invasive Species."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-038",
+    "organism_id": "ORG-038",
+    "extinction_probability": 0.029,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.58,
+    "risk_indicators": {
+      "population_decline": "UNKNOWN",
+      "population_size": "UNKNOWN",
+      "geographic_range": "UNKNOWN",
+      "habitat_loss": "UNKNOWN",
+      "fragmentation": "UNKNOWN",
+      "threat_pressure": "MODERATE"
+    },
+    "gaia_risk_score": 8,
+    "risk_level": "Minimal Risk",
+    "risk_confidence": 0.2,
+    "score_components": {
+      "threat_pressure": 7.5
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "No population trend evidence is available, so decline could not be assessed.",
+      "No population size estimate is available; eDNA detection alone does not provide one.",
+      "Environmental pressure recorded from: Infrastructure Development, Pollution.",
+      "Evidence is missing for: fragmentation, geographic_range, habitat_loss, population_decline, population_size. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-039",
+    "organism_id": "ORG-039",
+    "extinction_probability": 0.075,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.53,
+    "risk_indicators": {
+      "population_decline": "UNKNOWN",
+      "population_size": "UNKNOWN",
+      "geographic_range": "UNKNOWN",
+      "habitat_loss": "UNKNOWN",
+      "fragmentation": "UNKNOWN",
+      "threat_pressure": "MODERATE"
+    },
+    "gaia_risk_score": 10,
+    "risk_level": "Minimal Risk",
+    "risk_confidence": 0.2,
+    "score_components": {
+      "threat_pressure": 9.67
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "No population trend evidence is available, so decline could not be assessed.",
+      "No population size estimate is available; eDNA detection alone does not provide one.",
+      "Multiple ongoing environmental pressures are present (Ocean Acidification, Overfishing, Pollution).",
+      "Evidence is missing for: fragmentation, geographic_range, habitat_loss, population_decline, population_size. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-040",
+    "organism_id": "ORG-040",
+    "extinction_probability": 0.05,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.64,
+    "risk_indicators": {
+      "population_decline": "UNKNOWN",
+      "population_size": "UNKNOWN",
+      "geographic_range": "UNKNOWN",
+      "habitat_loss": "UNKNOWN",
+      "fragmentation": "UNKNOWN",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 17,
+    "risk_level": "Low Risk",
+    "risk_confidence": 0.2,
+    "score_components": {
+      "threat_pressure": 16.67
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "No population trend evidence is available, so decline could not be assessed.",
+      "No population size estimate is available; eDNA detection alone does not provide one.",
+      "Multiple ongoing environmental pressures are present (Ocean Acidification, Overfishing, Pollution).",
+      "Evidence is missing for: fragmentation, geographic_range, habitat_loss, population_decline, population_size. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-041",
+    "organism_id": "ORG-041",
+    "extinction_probability": 0.073,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.53,
+    "risk_indicators": {
+      "population_decline": "LOW",
+      "population_size": "UNKNOWN",
+      "geographic_range": "UNKNOWN",
+      "habitat_loss": "UNKNOWN",
+      "fragmentation": "UNKNOWN",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 14,
+    "risk_level": "Minimal Risk",
+    "risk_confidence": 0.5,
+    "score_components": {
+      "population_decline": 1.08,
+      "threat_pressure": 13.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "Population appears stable in the synthetic record.",
+      "No population size estimate is available; eDNA detection alone does not provide one.",
+      "Multiple ongoing environmental pressures are present (Agricultural Expansion, Invasive Species, Pollution).",
+      "Evidence is missing for: fragmentation, geographic_range, habitat_loss, population_size. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-042",
+    "organism_id": "ORG-042",
+    "extinction_probability": 0.077,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.51,
+    "risk_indicators": {
+      "population_decline": "UNKNOWN",
+      "population_size": "UNKNOWN",
+      "geographic_range": "UNKNOWN",
+      "habitat_loss": "UNKNOWN",
+      "fragmentation": "UNKNOWN",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 10,
+    "risk_level": "Minimal Risk",
+    "risk_confidence": 0.2,
+    "score_components": {
+      "threat_pressure": 10.5
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "No population trend evidence is available, so decline could not be assessed.",
+      "No population size estimate is available; eDNA detection alone does not provide one.",
+      "Environmental pressure recorded from: Invasive Species, Pollution.",
+      "Evidence is missing for: fragmentation, geographic_range, habitat_loss, population_decline, population_size. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-043",
+    "organism_id": "ORG-043",
+    "extinction_probability": null,
+    "extinction_probability_period_years": null,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": null,
+    "risk_indicators": {
+      "population_decline": "UNKNOWN",
+      "population_size": "UNKNOWN",
+      "geographic_range": "UNKNOWN",
+      "habitat_loss": "UNKNOWN",
+      "fragmentation": "UNKNOWN",
+      "threat_pressure": "MODERATE"
+    },
+    "gaia_risk_score": 9,
+    "risk_level": "Minimal Risk",
+    "risk_confidence": 0.2,
+    "score_components": {
+      "threat_pressure": 9.33
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "No population trend evidence is available, so decline could not be assessed.",
+      "No population size estimate is available; eDNA detection alone does not provide one.",
+      "Multiple ongoing environmental pressures are present (Climate Change, Habitat Loss, Urban Expansion).",
+      "Evidence is missing for: fragmentation, geographic_range, habitat_loss, population_decline, population_size. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-044",
+    "organism_id": "ORG-044",
+    "extinction_probability": null,
+    "extinction_probability_period_years": null,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": null,
+    "risk_indicators": {
+      "population_decline": "UNKNOWN",
+      "population_size": "UNKNOWN",
+      "geographic_range": "UNKNOWN",
+      "habitat_loss": "UNKNOWN",
+      "fragmentation": "UNKNOWN",
+      "threat_pressure": "MODERATE"
+    },
+    "gaia_risk_score": 5,
+    "risk_level": "Minimal Risk",
+    "risk_confidence": 0.2,
+    "score_components": {
+      "threat_pressure": 5.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "No population trend evidence is available, so decline could not be assessed.",
+      "No population size estimate is available; eDNA detection alone does not provide one.",
+      "Environmental pressure recorded from: Invasive Species, Water Extraction.",
+      "Evidence is missing for: fragmentation, geographic_range, habitat_loss, population_decline, population_size. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-045",
+    "organism_id": "ORG-045",
+    "extinction_probability": 0.034,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.53,
+    "risk_indicators": {
+      "population_decline": "UNKNOWN",
+      "population_size": "UNKNOWN",
+      "geographic_range": "UNKNOWN",
+      "habitat_loss": "UNKNOWN",
+      "fragmentation": "UNKNOWN",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 13,
+    "risk_level": "Minimal Risk",
+    "risk_confidence": 0.2,
+    "score_components": {
+      "threat_pressure": 13.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "No population trend evidence is available, so decline could not be assessed.",
+      "No population size estimate is available; eDNA detection alone does not provide one.",
+      "Multiple ongoing environmental pressures are present (Agricultural Expansion, Pollution, Urban Expansion).",
+      "Evidence is missing for: fragmentation, geographic_range, habitat_loss, population_decline, population_size. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-046",
+    "organism_id": "ORG-046",
+    "extinction_probability": 0.056,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.67,
+    "risk_indicators": {
+      "population_decline": "UNKNOWN",
+      "population_size": "UNKNOWN",
+      "geographic_range": "UNKNOWN",
+      "habitat_loss": "LOW",
+      "fragmentation": "UNKNOWN",
+      "threat_pressure": "MODERATE"
+    },
+    "gaia_risk_score": 12,
+    "risk_level": "Minimal Risk",
+    "risk_confidence": 0.4,
+    "score_components": {
+      "habitat_loss": 3.04,
+      "threat_pressure": 9.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "No population trend evidence is available, so decline could not be assessed.",
+      "No population size estimate is available; eDNA detection alone does not provide one.",
+      "Environmental pressure recorded from: Overfishing.",
+      "Evidence is missing for: fragmentation, geographic_range, population_decline, population_size. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-047",
+    "organism_id": "ORG-047",
+    "extinction_probability": 0.099,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.62,
+    "risk_indicators": {
+      "population_decline": "UNKNOWN",
+      "population_size": "UNKNOWN",
+      "geographic_range": "UNKNOWN",
+      "habitat_loss": "LOW",
+      "fragmentation": "UNKNOWN",
+      "threat_pressure": "VERY_HIGH"
+    },
+    "gaia_risk_score": 23,
+    "risk_level": "Low Risk",
+    "risk_confidence": 0.4,
+    "score_components": {
+      "habitat_loss": 4.42,
+      "threat_pressure": 18.67
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "No population trend evidence is available, so decline could not be assessed.",
+      "No population size estimate is available; eDNA detection alone does not provide one.",
+      "Moderate habitat reduction is recorded (22.1% lost).",
+      "Multiple ongoing environmental pressures are present (Habitat Loss, Infrastructure Development, Invasive Species).",
+      "Evidence is missing for: fragmentation, geographic_range, population_decline, population_size. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-048",
+    "organism_id": "ORG-048",
+    "extinction_probability": 0.054,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.44,
+    "risk_indicators": {
+      "population_decline": "UNKNOWN",
+      "population_size": "UNKNOWN",
+      "geographic_range": "UNKNOWN",
+      "habitat_loss": "LOW",
+      "fragmentation": "UNKNOWN",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 12,
+    "risk_level": "Minimal Risk",
+    "risk_confidence": 0.4,
+    "score_components": {
+      "habitat_loss": 1.94,
+      "threat_pressure": 10.5
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "No population trend evidence is available, so decline could not be assessed.",
+      "No population size estimate is available; eDNA detection alone does not provide one.",
+      "Environmental pressure recorded from: Infrastructure Development, Invasive Species.",
+      "Evidence is missing for: fragmentation, geographic_range, population_decline, population_size. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  },
+  {
+    "extinction_risk_assessment_id": "EXT-049",
+    "organism_id": "ORG-049",
+    "extinction_probability": 0.084,
+    "extinction_probability_period_years": 50,
+    "extinction_model": "Synthetic Prototype Model",
+    "extinction_probability_confidence": 0.36,
+    "risk_indicators": {
+      "population_decline": "UNKNOWN",
+      "population_size": "UNKNOWN",
+      "geographic_range": "UNKNOWN",
+      "habitat_loss": "LOW",
+      "fragmentation": "UNKNOWN",
+      "threat_pressure": "HIGH"
+    },
+    "gaia_risk_score": 14,
+    "risk_level": "Minimal Risk",
+    "risk_confidence": 0.4,
+    "score_components": {
+      "habitat_loss": 1.18,
+      "threat_pressure": 13.0
+    },
+    "score_weights": {
+      "population_decline": 0.3,
+      "population_size": 0.15,
+      "habitat_loss": 0.2,
+      "range_restriction": 0.15,
+      "threat_pressure": 0.2
+    },
+    "explanation": [
+      "No population trend evidence is available, so decline could not be assessed.",
+      "No population size estimate is available; eDNA detection alone does not provide one.",
+      "Multiple ongoing environmental pressures are present (Climate Change, Ocean Acidification, Pollution).",
+      "Evidence is missing for: fragmentation, geographic_range, population_decline, population_size. The score is computed only from the evidence that exists."
+    ],
+    "disclaimer": "Prototype synthetic estimate produced from synthetic inputs. This is NOT a scientific prediction and must not be read as one. It is not an IUCN category and not an official extinction probability.",
+    "is_synthetic": true,
+    "source_type": "Calculated",
+    "source": "Gaia prototype risk model over synthetic evidence."
+  }
+]

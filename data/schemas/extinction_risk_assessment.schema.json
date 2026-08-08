@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-gaia.example/schemas/extinction_risk_assessment.schema.json",
+  "title": "Extinction Risk Assessment",
+  "description": "A prototype Gaia Risk Score for one organism, computed from synthetic population/habitat/threat evidence. NOT an IUCN category and not an official extinction-probability estimate — see disclaimer.",
+  "type": "object",
+  "required": [
+    "extinction_risk_assessment_id", "organism_id",
+    "extinction_probability_confidence", "extinction_model",
+    "risk_indicators", "risk_level", "risk_confidence", "score_components",
+    "score_weights", "explanation", "disclaimer", "is_synthetic", "source_type", "source"
+  ],
+  "properties": {
+    "extinction_risk_assessment_id": { "type": "string", "pattern": "^EXT-[0-9]{3}$" },
+    "organism_id": { "type": "string", "pattern": "^ORG-[0-9]{3}$" },
+    "extinction_probability": {
+      "type": ["number", "null"],
+      "minimum": 0, "maximum": 1,
+      "description": "null when evidence is insufficient (e.g. Data Deficient organisms)."
+    },
+    "extinction_probability_period_years": { "type": ["integer", "null"], "minimum": 1 },
+    "extinction_model": { "const": "Synthetic Prototype Model" },
+    "extinction_probability_confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "risk_indicators": {
+      "type": "object",
+      "properties": {
+        "population_decline": { "$ref": "#/$defs/indicatorLevel" },
+        "population_size": { "$ref": "#/$defs/indicatorLevel" },
+        "geographic_range": { "$ref": "#/$defs/indicatorLevel" },
+        "habitat_loss": { "$ref": "#/$defs/indicatorLevel" },
+        "fragmentation": { "$ref": "#/$defs/indicatorLevel" },
+        "threat_pressure": { "$ref": "#/$defs/indicatorLevel" }
+      },
+      "required": [
+        "population_decline", "population_size", "geographic_range",
+        "habitat_loss", "fragmentation", "threat_pressure"
+      ],
+      "additionalProperties": false
+    },
+    "gaia_risk_score": {
+      "type": ["integer", "null"],
+      "minimum": 0, "maximum": 100,
+      "description": "'Gaia Prototype Risk Score' — deliberately not named an IUCN or official score."
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "Minimal Risk", "Low Risk", "Moderate Risk", "High Risk",
+        "Very High Risk", "Critical Risk", "Insufficient Data"
+      ]
+    },
+    "risk_confidence": {
+      "type": "number", "minimum": 0, "maximum": 1,
+      "description": "Fraction of total component weight actually backed by evidence."
+    },
+    "score_components": {
+      "type": "object",
+      "description": "Per-factor contribution to gaia_risk_score. Keys present only for factors with evidence.",
+      "additionalProperties": { "type": "number" }
+    },
+    "score_weights": {
+      "type": "object",
+      "description": "Snapshot of the weights used, from risk_weights.json.",
+      "additionalProperties": { "type": "number" }
+    },
+    "explanation": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Plain-language statements, each referencing the evidence that produced it."
+    },
+    "disclaimer": { "type": "string" },
+    "is_synthetic": { "const": true },
+    "source_type": { "const": "Calculated" },
+    "source": { "type": "string" }
+  },
+  "$defs": {
+    "indicatorLevel": {
+      "type": "string",
+      "enum": ["LOW", "MODERATE", "HIGH", "VERY_HIGH", "UNKNOWN"]
+    }
+  },
+  "additionalProperties": false
+}

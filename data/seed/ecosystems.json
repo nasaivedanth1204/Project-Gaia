@@ -1,0 +1,410 @@
+[
+  {
+    "ecosystem_id": "ECO-001",
+    "biome_id": "BIOM-001",
+    "terrain_id": "TER-001",
+    "biosphere_id": "BIOS-001",
+    "name": "Tropical Rainforest Ecosystem",
+    "description": "Evergreen closed-canopy forest system with high endemism.",
+    "ecosystem_type": "Terrestrial",
+    "climate": "Tropical humid",
+    "typical_conditions": {
+      "moisture": "Soil-moisture limited",
+      "light": "Canopy dependent"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-002",
+    "biome_id": "BIOM-002",
+    "terrain_id": "TER-002",
+    "biosphere_id": "BIOS-001",
+    "name": "Temperate Forest Ecosystem",
+    "description": "Seasonal forest system with deciduous leaf turnover.",
+    "ecosystem_type": "Terrestrial",
+    "climate": "Temperate",
+    "typical_conditions": {
+      "moisture": "Soil-moisture limited",
+      "light": "Canopy dependent"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-003",
+    "biome_id": "BIOM-003",
+    "terrain_id": "TER-011",
+    "biosphere_id": "BIOS-001",
+    "name": "Grassland Ecosystem",
+    "description": "Grazing-adapted herbaceous system.",
+    "ecosystem_type": "Terrestrial",
+    "climate": "Semi-arid to temperate",
+    "typical_conditions": {
+      "moisture": "Soil-moisture limited",
+      "light": "Canopy dependent"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-004",
+    "biome_id": "BIOM-004",
+    "terrain_id": "TER-012",
+    "biosphere_id": "BIOS-001",
+    "name": "Savanna Ecosystem",
+    "description": "Fire- and grazing-maintained wooded grassland.",
+    "ecosystem_type": "Terrestrial",
+    "climate": "Tropical wet-dry",
+    "typical_conditions": {
+      "moisture": "Soil-moisture limited",
+      "light": "Canopy dependent"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-005",
+    "biome_id": "BIOM-005",
+    "terrain_id": "TER-013",
+    "biosphere_id": "BIOS-001",
+    "name": "Desert Ecosystem",
+    "description": "Water-limited system with drought-adapted biota.",
+    "ecosystem_type": "Terrestrial",
+    "climate": "Arid",
+    "typical_conditions": {
+      "moisture": "Soil-moisture limited",
+      "light": "Canopy dependent"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-006",
+    "biome_id": "BIOM-007",
+    "terrain_id": "TER-015",
+    "biosphere_id": "BIOS-001",
+    "name": "Montane Forest Ecosystem",
+    "description": "Mid-altitude forest system on steep relief.",
+    "ecosystem_type": "Terrestrial",
+    "climate": "Montane",
+    "typical_conditions": {
+      "moisture": "Soil-moisture limited",
+      "light": "Canopy dependent"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-007",
+    "biome_id": "BIOM-007",
+    "terrain_id": "TER-016",
+    "biosphere_id": "BIOS-001",
+    "name": "Alpine Meadow Ecosystem",
+    "description": "Short-season high-altitude herbaceous system.",
+    "ecosystem_type": "Terrestrial",
+    "climate": "Alpine",
+    "typical_conditions": {
+      "moisture": "Soil-moisture limited",
+      "light": "Canopy dependent"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-008",
+    "biome_id": "BIOM-013",
+    "terrain_id": "TER-008",
+    "biosphere_id": "BIOS-002",
+    "name": "River Ecosystem",
+    "description": "Flowing freshwater system with longitudinal zonation.",
+    "ecosystem_type": "Freshwater",
+    "climate": "Variable",
+    "typical_conditions": {
+      "flow": "Variable",
+      "oxygen": "Generally well oxygenated"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-009",
+    "biome_id": "BIOM-012",
+    "terrain_id": "TER-009",
+    "biosphere_id": "BIOS-002",
+    "name": "Lake Ecosystem",
+    "description": "Standing freshwater system with stratification.",
+    "ecosystem_type": "Freshwater",
+    "climate": "Variable",
+    "typical_conditions": {
+      "flow": "Variable",
+      "oxygen": "Generally well oxygenated"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-010",
+    "biome_id": "BIOM-013",
+    "terrain_id": "TER-008",
+    "biosphere_id": "BIOS-002",
+    "name": "Headwater Stream Ecosystem",
+    "description": "Cool, well-oxygenated first-order stream system.",
+    "ecosystem_type": "Freshwater",
+    "climate": "Montane",
+    "typical_conditions": {
+      "flow": "Variable",
+      "oxygen": "Generally well oxygenated"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-011",
+    "biome_id": "BIOM-014",
+    "terrain_id": "TER-010",
+    "biosphere_id": "BIOS-002",
+    "name": "Wetland Ecosystem",
+    "description": "Seasonally inundated system with emergent macrophytes.",
+    "ecosystem_type": "Freshwater",
+    "climate": "Variable",
+    "typical_conditions": {
+      "flow": "Variable",
+      "oxygen": "Generally well oxygenated"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-012",
+    "biome_id": "BIOM-012",
+    "terrain_id": "TER-009",
+    "biosphere_id": "BIOS-005",
+    "name": "Reservoir Ecosystem",
+    "description": "Impounded freshwater system under managed flow.",
+    "ecosystem_type": "Anthropogenic",
+    "climate": "Managed",
+    "typical_conditions": {
+      "disturbance": "Frequent",
+      "nutrients": "Often elevated"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-013",
+    "biome_id": "BIOM-010",
+    "terrain_id": "TER-006",
+    "biosphere_id": "BIOS-003",
+    "name": "Open Ocean Ecosystem",
+    "description": "Pelagic system dominated by plankton production.",
+    "ecosystem_type": "Marine",
+    "climate": "Oceanic",
+    "typical_conditions": {
+      "salinity": "Stable marine",
+      "pressure": "Depth dependent"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-014",
+    "biome_id": "BIOM-009",
+    "terrain_id": "TER-005",
+    "biosphere_id": "BIOS-003",
+    "name": "Coral Reef Ecosystem",
+    "description": "High-diversity reef system built on scleractinian corals.",
+    "ecosystem_type": "Marine",
+    "climate": "Tropical marine",
+    "typical_conditions": {
+      "salinity": "Stable marine",
+      "pressure": "Depth dependent"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-015",
+    "biome_id": "BIOM-011",
+    "terrain_id": "TER-020",
+    "biosphere_id": "BIOS-003",
+    "name": "Deep Sea Ecosystem",
+    "description": "Aphotic system reliant on detrital and chemosynthetic input.",
+    "ecosystem_type": "Marine",
+    "climate": "Deep oceanic",
+    "typical_conditions": {
+      "salinity": "Stable marine",
+      "pressure": "Depth dependent"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-016",
+    "biome_id": "BIOM-015",
+    "terrain_id": "TER-004",
+    "biosphere_id": "BIOS-009",
+    "name": "Coastal Waters Ecosystem",
+    "description": "Productive nearshore shelf system.",
+    "ecosystem_type": "Marine",
+    "climate": "Coastal",
+    "typical_conditions": {
+      "salinity": "Stable marine",
+      "pressure": "Depth dependent"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-017",
+    "biome_id": "BIOM-016",
+    "terrain_id": "TER-007",
+    "biosphere_id": "BIOS-004",
+    "name": "Estuarine Ecosystem",
+    "description": "Salinity-gradient system with high nutrient turnover.",
+    "ecosystem_type": "Transitional",
+    "climate": "Coastal",
+    "typical_conditions": {
+      "salinity": "Strongly variable",
+      "tidal": "Tidally driven"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-018",
+    "biome_id": "BIOM-008",
+    "terrain_id": "TER-003",
+    "biosphere_id": "BIOS-004",
+    "name": "Mangrove Ecosystem",
+    "description": "Intertidal forest system acting as nursery habitat.",
+    "ecosystem_type": "Transitional",
+    "climate": "Tropical coastal",
+    "typical_conditions": {
+      "salinity": "Strongly variable",
+      "tidal": "Tidally driven"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-019",
+    "biome_id": "BIOM-016",
+    "terrain_id": "TER-007",
+    "biosphere_id": "BIOS-004",
+    "name": "Lagoon Ecosystem",
+    "description": "Shallow semi-enclosed brackish system.",
+    "ecosystem_type": "Transitional",
+    "climate": "Coastal",
+    "typical_conditions": {
+      "salinity": "Strongly variable",
+      "tidal": "Tidally driven"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-020",
+    "biome_id": "BIOM-008",
+    "terrain_id": "TER-003",
+    "biosphere_id": "BIOS-004",
+    "name": "Salt Marsh Ecosystem",
+    "description": "Halophyte-dominated intertidal system.",
+    "ecosystem_type": "Transitional",
+    "climate": "Coastal",
+    "typical_conditions": {
+      "salinity": "Strongly variable",
+      "tidal": "Tidally driven"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-021",
+    "biome_id": "BIOM-017",
+    "terrain_id": "TER-018",
+    "biosphere_id": "BIOS-005",
+    "name": "Agricultural Ecosystem",
+    "description": "Managed cropping system with periodic disturbance.",
+    "ecosystem_type": "Anthropogenic",
+    "climate": "Managed",
+    "typical_conditions": {
+      "disturbance": "Frequent",
+      "nutrients": "Often elevated"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-022",
+    "biome_id": "BIOM-017",
+    "terrain_id": "TER-019",
+    "biosphere_id": "BIOS-005",
+    "name": "Urban Freshwater Ecosystem",
+    "description": "Channelised urban drainage and pond system.",
+    "ecosystem_type": "Anthropogenic",
+    "climate": "Managed",
+    "typical_conditions": {
+      "disturbance": "Frequent",
+      "nutrients": "Often elevated"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-023",
+    "biome_id": "BIOM-015",
+    "terrain_id": "TER-004",
+    "biosphere_id": "BIOS-005",
+    "name": "Industrial Coastal Ecosystem",
+    "description": "Nearshore system under industrial effluent pressure.",
+    "ecosystem_type": "Anthropogenic",
+    "climate": "Coastal",
+    "typical_conditions": {
+      "disturbance": "Frequent",
+      "nutrients": "Often elevated"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "ecosystem_id": "ECO-024",
+    "biome_id": "BIOM-001",
+    "terrain_id": "TER-001",
+    "biosphere_id": "BIOS-005",
+    "name": "Restored Forest Ecosystem",
+    "description": "Actively restored secondary forest system.",
+    "ecosystem_type": "Anthropogenic",
+    "climate": "Tropical humid",
+    "typical_conditions": {
+      "disturbance": "Frequent",
+      "nutrients": "Often elevated"
+    },
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  }
+]

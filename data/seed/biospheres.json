@@ -1,0 +1,92 @@
+[
+  {
+    "biosphere_id": "BIOS-001",
+    "name": "Terrestrial",
+    "description": "Land-based environments including forests, grasslands and deserts.",
+    "environment_type": "Terrestrial",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biosphere_id": "BIOS-002",
+    "name": "Freshwater",
+    "description": "Freshwater environments including rivers, lakes and wetlands.",
+    "environment_type": "Aquatic",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biosphere_id": "BIOS-003",
+    "name": "Marine",
+    "description": "Saltwater environments from coastal shelves to the open and deep ocean.",
+    "environment_type": "Aquatic",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biosphere_id": "BIOS-004",
+    "name": "Transitional",
+    "description": "Land-water interfaces such as estuaries, mangroves and salt marshes.",
+    "environment_type": "Transitional",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biosphere_id": "BIOS-005",
+    "name": "Anthropogenic",
+    "description": "Human-modified environments including agricultural, urban and industrial systems.",
+    "environment_type": "Anthropogenic",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biosphere_id": "BIOS-006",
+    "name": "Subterranean",
+    "description": "Below-ground environments including caves, karst systems and groundwater.",
+    "environment_type": "Subterranean",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biosphere_id": "BIOS-007",
+    "name": "Cryospheric",
+    "description": "Permanently or seasonally frozen environments such as glaciers and permafrost.",
+    "environment_type": "Cryospheric",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biosphere_id": "BIOS-008",
+    "name": "Atmospheric",
+    "description": "Airborne environments sampled for suspended biological material.",
+    "environment_type": "Aerial",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biosphere_id": "BIOS-009",
+    "name": "Coastal",
+    "description": "Nearshore environments influenced by both marine and terrestrial processes.",
+    "environment_type": "Transitional",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biosphere_id": "BIOS-010",
+    "name": "Extreme",
+    "description": "Environments with extreme chemistry or temperature, including hydrothermal and hypersaline systems.",
+    "environment_type": "Extreme",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-gaia.example/schemas/organism.schema.json",
+  "title": "Organism",
+  "description": "A taxon Gaia has characterised for demonstration purposes. See data/README.md — the scientific name is real, the association with any location or observation is synthetic.",
+  "type": "object",
+  "required": [
+    "organism_id", "taxonomy_id", "scientific_name", "common_name", "kingdom",
+    "habitat_type", "preferred_ecosystem", "trophic_level", "functional_group",
+    "native_status", "environmental_sensitivity", "conservation_status_reference",
+    "is_synthetic", "source", "source_type"
+  ],
+  "properties": {
+    "organism_id": { "type": "string", "pattern": "^ORG-[0-9]{3}$" },
+    "taxonomy_id": { "type": "string", "pattern": "^TAX-[0-9]{3}$" },
+    "scientific_name": { "type": "string" },
+    "common_name": { "type": "string" },
+    "kingdom": {
+      "type": "string",
+      "enum": ["Animalia", "Plantae", "Fungi", "Bacteria", "Archaea", "Protista"]
+    },
+    "habitat_type": {
+      "type": "string",
+      "enum": ["Terrestrial", "Freshwater", "Marine", "Transitional", "Extreme"]
+    },
+    "preferred_ecosystem": { "type": "string", "pattern": "^ECO-[0-9]{3}$" },
+    "trophic_level": {
+      "type": "string",
+      "enum": [
+        "Producer", "Primary Consumer", "Secondary Consumer", "Tertiary Consumer",
+        "Apex Predator", "Decomposer", "Detritivore", "Filter Feeder", "Parasite",
+        "Microbial Decomposer"
+      ]
+    },
+    "functional_group": {
+      "type": "string",
+      "enum": [
+        "Producer", "Herbivore", "Carnivore", "Omnivore", "Pollinator", "Predator",
+        "Decomposer", "Detritivore", "Filter Feeder", "Parasite", "Microbial Decomposer"
+      ]
+    },
+    "native_status": { "type": "string", "enum": ["Native", "Introduced", "Unknown"] },
+    "environmental_sensitivity": {
+      "type": "string",
+      "enum": ["Low", "Moderate", "High", "Very High"]
+    },
+    "conservation_status_reference": {
+      "type": "string",
+      "description": "Deliberately not an official category — see conservation_status collection.",
+      "const": "Unknown"
+    },
+    "is_synthetic": { "const": true },
+    "source": { "type": "string" },
+    "source_type": { "const": "Synthetic" }
+  },
+  "additionalProperties": false
+}

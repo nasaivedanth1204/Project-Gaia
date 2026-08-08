@@ -1,0 +1,518 @@
+[
+  {
+    "terrain_id": "TER-001",
+    "name": "Tropical Forest",
+    "description": "Dense multi-layered forest on humid lowland terrain.",
+    "environment_type": "Terrestrial",
+    "climate_type": "Tropical humid",
+    "typical_temperature_range_c": [
+      22,
+      32
+    ],
+    "typical_humidity_range_pct": [
+      70,
+      95
+    ],
+    "typical_altitude_range_m": [
+      0,
+      1200
+    ],
+    "typical_salinity_range_psu": null,
+    "parent_biome_id": "BIOM-001",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-002",
+    "name": "Temperate Forest",
+    "description": "Seasonal broadleaf and mixed forest terrain.",
+    "environment_type": "Terrestrial",
+    "climate_type": "Temperate",
+    "typical_temperature_range_c": [
+      5,
+      25
+    ],
+    "typical_humidity_range_pct": [
+      55,
+      85
+    ],
+    "typical_altitude_range_m": [
+      100,
+      2000
+    ],
+    "typical_salinity_range_psu": null,
+    "parent_biome_id": "BIOM-002",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-003",
+    "name": "Mangrove",
+    "description": "Tidal mudflat terrain colonised by aerial-rooted trees.",
+    "environment_type": "Transitional",
+    "climate_type": "Tropical coastal",
+    "typical_temperature_range_c": [
+      22,
+      34
+    ],
+    "typical_humidity_range_pct": [
+      75,
+      95
+    ],
+    "typical_altitude_range_m": [
+      0,
+      5
+    ],
+    "typical_salinity_range_psu": [
+      5,
+      25
+    ],
+    "parent_biome_id": "BIOM-008",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-004",
+    "name": "Coastal",
+    "description": "Beach, dune and rocky-shore terrain along the shoreline.",
+    "environment_type": "Transitional",
+    "climate_type": "Coastal",
+    "typical_temperature_range_c": [
+      18,
+      33
+    ],
+    "typical_humidity_range_pct": [
+      60,
+      90
+    ],
+    "typical_altitude_range_m": [
+      0,
+      50
+    ],
+    "typical_salinity_range_psu": [
+      28,
+      35
+    ],
+    "parent_biome_id": "BIOM-015",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-005",
+    "name": "Coral Reef",
+    "description": "Shallow calcium-carbonate reef structure.",
+    "environment_type": "Marine",
+    "climate_type": "Tropical marine",
+    "typical_temperature_range_c": [
+      24,
+      30
+    ],
+    "typical_humidity_range_pct": null,
+    "typical_altitude_range_m": [
+      -40,
+      0
+    ],
+    "typical_salinity_range_psu": [
+      32,
+      36
+    ],
+    "parent_biome_id": "BIOM-009",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-006",
+    "name": "Open Ocean",
+    "description": "Unbounded pelagic water column.",
+    "environment_type": "Marine",
+    "climate_type": "Oceanic",
+    "typical_temperature_range_c": [
+      4,
+      29
+    ],
+    "typical_humidity_range_pct": null,
+    "typical_altitude_range_m": [
+      -2000,
+      0
+    ],
+    "typical_salinity_range_psu": [
+      33,
+      37
+    ],
+    "parent_biome_id": "BIOM-010",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-007",
+    "name": "Estuary",
+    "description": "Tidal river mouth with strong salinity gradient.",
+    "environment_type": "Transitional",
+    "climate_type": "Coastal",
+    "typical_temperature_range_c": [
+      15,
+      32
+    ],
+    "typical_humidity_range_pct": [
+      70,
+      95
+    ],
+    "typical_altitude_range_m": [
+      0,
+      10
+    ],
+    "typical_salinity_range_psu": [
+      0.5,
+      30
+    ],
+    "parent_biome_id": "BIOM-016",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-008",
+    "name": "River",
+    "description": "Channelised flowing freshwater terrain.",
+    "environment_type": "Freshwater",
+    "climate_type": "Variable",
+    "typical_temperature_range_c": [
+      2,
+      30
+    ],
+    "typical_humidity_range_pct": null,
+    "typical_altitude_range_m": [
+      0,
+      3500
+    ],
+    "typical_salinity_range_psu": [
+      0,
+      0.5
+    ],
+    "parent_biome_id": "BIOM-013",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-009",
+    "name": "Lake",
+    "description": "Enclosed standing freshwater basin.",
+    "environment_type": "Freshwater",
+    "climate_type": "Variable",
+    "typical_temperature_range_c": [
+      4,
+      30
+    ],
+    "typical_humidity_range_pct": null,
+    "typical_altitude_range_m": [
+      0,
+      4500
+    ],
+    "typical_salinity_range_psu": [
+      0,
+      0.5
+    ],
+    "parent_biome_id": "BIOM-012",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-010",
+    "name": "Wetland",
+    "description": "Waterlogged terrain with emergent vegetation.",
+    "environment_type": "Freshwater",
+    "climate_type": "Variable",
+    "typical_temperature_range_c": [
+      10,
+      32
+    ],
+    "typical_humidity_range_pct": [
+      80,
+      100
+    ],
+    "typical_altitude_range_m": [
+      0,
+      1000
+    ],
+    "typical_salinity_range_psu": [
+      0,
+      2
+    ],
+    "parent_biome_id": "BIOM-014",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-011",
+    "name": "Grassland",
+    "description": "Open herbaceous terrain with deep soils.",
+    "environment_type": "Terrestrial",
+    "climate_type": "Semi-arid to temperate",
+    "typical_temperature_range_c": [
+      10,
+      30
+    ],
+    "typical_humidity_range_pct": [
+      40,
+      70
+    ],
+    "typical_altitude_range_m": [
+      100,
+      1500
+    ],
+    "typical_salinity_range_psu": null,
+    "parent_biome_id": "BIOM-003",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-012",
+    "name": "Savanna",
+    "description": "Open woodland-grassland mosaic.",
+    "environment_type": "Terrestrial",
+    "climate_type": "Tropical wet-dry",
+    "typical_temperature_range_c": [
+      20,
+      35
+    ],
+    "typical_humidity_range_pct": [
+      35,
+      70
+    ],
+    "typical_altitude_range_m": [
+      100,
+      1200
+    ],
+    "typical_salinity_range_psu": null,
+    "parent_biome_id": "BIOM-004",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-013",
+    "name": "Desert",
+    "description": "Sand or rock terrain with minimal vegetation cover.",
+    "environment_type": "Terrestrial",
+    "climate_type": "Arid",
+    "typical_temperature_range_c": [
+      5,
+      45
+    ],
+    "typical_humidity_range_pct": [
+      10,
+      35
+    ],
+    "typical_altitude_range_m": [
+      0,
+      1000
+    ],
+    "typical_salinity_range_psu": null,
+    "parent_biome_id": "BIOM-005",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-014",
+    "name": "Semi-Arid",
+    "description": "Transitional scrub terrain between grassland and desert.",
+    "environment_type": "Terrestrial",
+    "climate_type": "Semi-arid",
+    "typical_temperature_range_c": [
+      10,
+      42
+    ],
+    "typical_humidity_range_pct": [
+      20,
+      50
+    ],
+    "typical_altitude_range_m": [
+      50,
+      1200
+    ],
+    "typical_salinity_range_psu": null,
+    "parent_biome_id": "BIOM-005",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-015",
+    "name": "Mountain",
+    "description": "Steep high-relief terrain below the tree line.",
+    "environment_type": "Terrestrial",
+    "climate_type": "Montane",
+    "typical_temperature_range_c": [
+      -5,
+      22
+    ],
+    "typical_humidity_range_pct": [
+      45,
+      85
+    ],
+    "typical_altitude_range_m": [
+      1000,
+      3500
+    ],
+    "typical_salinity_range_psu": null,
+    "parent_biome_id": "BIOM-007",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-016",
+    "name": "Alpine",
+    "description": "High-altitude terrain above the tree line.",
+    "environment_type": "Terrestrial",
+    "climate_type": "Alpine",
+    "typical_temperature_range_c": [
+      -15,
+      15
+    ],
+    "typical_humidity_range_pct": [
+      40,
+      80
+    ],
+    "typical_altitude_range_m": [
+      3000,
+      5500
+    ],
+    "typical_salinity_range_psu": null,
+    "parent_biome_id": "BIOM-007",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-017",
+    "name": "Tundra",
+    "description": "Frozen or seasonally thawed treeless terrain.",
+    "environment_type": "Terrestrial",
+    "climate_type": "Polar / alpine",
+    "typical_temperature_range_c": [
+      -25,
+      12
+    ],
+    "typical_humidity_range_pct": [
+      50,
+      90
+    ],
+    "typical_altitude_range_m": [
+      0,
+      4000
+    ],
+    "typical_salinity_range_psu": null,
+    "parent_biome_id": "BIOM-006",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-018",
+    "name": "Agricultural",
+    "description": "Managed cropland and irrigation terrain.",
+    "environment_type": "Anthropogenic",
+    "climate_type": "Managed",
+    "typical_temperature_range_c": [
+      10,
+      38
+    ],
+    "typical_humidity_range_pct": [
+      40,
+      85
+    ],
+    "typical_altitude_range_m": [
+      0,
+      2000
+    ],
+    "typical_salinity_range_psu": null,
+    "parent_biome_id": "BIOM-017",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-019",
+    "name": "Urban",
+    "description": "Built terrain with impervious surfaces and drainage networks.",
+    "environment_type": "Anthropogenic",
+    "climate_type": "Managed",
+    "typical_temperature_range_c": [
+      12,
+      40
+    ],
+    "typical_humidity_range_pct": [
+      35,
+      80
+    ],
+    "typical_altitude_range_m": [
+      0,
+      1500
+    ],
+    "typical_salinity_range_psu": null,
+    "parent_biome_id": "BIOM-017",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-020",
+    "name": "Deep Marine",
+    "description": "Abyssal sediment and deep water-column terrain.",
+    "environment_type": "Marine",
+    "climate_type": "Deep oceanic",
+    "typical_temperature_range_c": [
+      1,
+      6
+    ],
+    "typical_humidity_range_pct": null,
+    "typical_altitude_range_m": [
+      -4000,
+      -200
+    ],
+    "typical_salinity_range_psu": [
+      34,
+      35
+    ],
+    "parent_biome_id": "BIOM-011",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "terrain_id": "TER-021",
+    "name": "Freshwater",
+    "description": "Generic inland freshwater terrain.",
+    "environment_type": "Freshwater",
+    "climate_type": "Variable",
+    "typical_temperature_range_c": [
+      4,
+      30
+    ],
+    "typical_humidity_range_pct": null,
+    "typical_altitude_range_m": [
+      0,
+      4000
+    ],
+    "typical_salinity_range_psu": [
+      0,
+      0.5
+    ],
+    "parent_biome_id": "BIOM-012",
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  }
+]

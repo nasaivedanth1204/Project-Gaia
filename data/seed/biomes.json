@@ -1,0 +1,287 @@
+[
+  {
+    "biome_id": "BIOM-001",
+    "biosphere_id": "BIOS-001",
+    "name": "Tropical Rainforest",
+    "description": "Closed-canopy evergreen forest with high year-round rainfall.",
+    "climate_type": "Tropical humid",
+    "typical_temperature_range_c": [
+      22,
+      32
+    ],
+    "typical_precipitation_range_mm": [
+      2000,
+      4000
+    ],
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-002",
+    "biosphere_id": "BIOS-001",
+    "name": "Temperate Forest",
+    "description": "Deciduous and mixed forest with pronounced seasonality.",
+    "climate_type": "Temperate",
+    "typical_temperature_range_c": [
+      5,
+      25
+    ],
+    "typical_precipitation_range_mm": [
+      750,
+      1500
+    ],
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-003",
+    "biosphere_id": "BIOS-001",
+    "name": "Grassland",
+    "description": "Herbaceous vegetation with limited tree cover.",
+    "climate_type": "Semi-arid to temperate",
+    "typical_temperature_range_c": [
+      10,
+      30
+    ],
+    "typical_precipitation_range_mm": [
+      400,
+      900
+    ],
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-004",
+    "biosphere_id": "BIOS-001",
+    "name": "Savanna",
+    "description": "Grassland with scattered drought-tolerant trees.",
+    "climate_type": "Tropical wet-dry",
+    "typical_temperature_range_c": [
+      20,
+      35
+    ],
+    "typical_precipitation_range_mm": [
+      500,
+      1200
+    ],
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-005",
+    "biosphere_id": "BIOS-001",
+    "name": "Desert",
+    "description": "Arid environment with sparse vegetation and high diurnal range.",
+    "climate_type": "Arid",
+    "typical_temperature_range_c": [
+      5,
+      45
+    ],
+    "typical_precipitation_range_mm": [
+      50,
+      250
+    ],
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-006",
+    "biosphere_id": "BIOS-007",
+    "name": "Tundra",
+    "description": "Treeless environment underlain by seasonally frozen ground.",
+    "climate_type": "Polar / alpine",
+    "typical_temperature_range_c": [
+      -25,
+      12
+    ],
+    "typical_precipitation_range_mm": [
+      150,
+      400
+    ],
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-007",
+    "biosphere_id": "BIOS-001",
+    "name": "Alpine",
+    "description": "High-altitude environment above the tree line.",
+    "climate_type": "Alpine",
+    "typical_temperature_range_c": [
+      -15,
+      15
+    ],
+    "typical_precipitation_range_mm": [
+      700,
+      1800
+    ],
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-008",
+    "biosphere_id": "BIOS-004",
+    "name": "Mangrove",
+    "description": "Intertidal forest of salt-tolerant trees.",
+    "climate_type": "Tropical coastal",
+    "typical_temperature_range_c": [
+      22,
+      34
+    ],
+    "typical_precipitation_range_mm": [
+      1500,
+      3000
+    ],
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-009",
+    "biosphere_id": "BIOS-003",
+    "name": "Coral Reef",
+    "description": "Shallow marine ecosystem built by reef-forming corals.",
+    "climate_type": "Tropical marine",
+    "typical_temperature_range_c": [
+      24,
+      30
+    ],
+    "typical_precipitation_range_mm": null,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-010",
+    "biosphere_id": "BIOS-003",
+    "name": "Open Ocean",
+    "description": "Pelagic waters beyond the continental shelf.",
+    "climate_type": "Oceanic",
+    "typical_temperature_range_c": [
+      4,
+      29
+    ],
+    "typical_precipitation_range_mm": null,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-011",
+    "biosphere_id": "BIOS-003",
+    "name": "Deep Sea",
+    "description": "Aphotic waters and sediments below 200 m.",
+    "climate_type": "Deep oceanic",
+    "typical_temperature_range_c": [
+      1,
+      6
+    ],
+    "typical_precipitation_range_mm": null,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-012",
+    "biosphere_id": "BIOS-002",
+    "name": "Freshwater Lentic",
+    "description": "Standing freshwater such as lakes and reservoirs.",
+    "climate_type": "Variable",
+    "typical_temperature_range_c": [
+      4,
+      30
+    ],
+    "typical_precipitation_range_mm": null,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-013",
+    "biosphere_id": "BIOS-002",
+    "name": "Freshwater Lotic",
+    "description": "Flowing freshwater such as rivers and streams.",
+    "climate_type": "Variable",
+    "typical_temperature_range_c": [
+      2,
+      30
+    ],
+    "typical_precipitation_range_mm": null,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-014",
+    "biosphere_id": "BIOS-002",
+    "name": "Wetland",
+    "description": "Seasonally or permanently waterlogged land.",
+    "climate_type": "Variable",
+    "typical_temperature_range_c": [
+      10,
+      32
+    ],
+    "typical_precipitation_range_mm": [
+      800,
+      2500
+    ],
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-015",
+    "biosphere_id": "BIOS-009",
+    "name": "Coastal",
+    "description": "Nearshore shelf waters, beaches and rocky shores.",
+    "climate_type": "Coastal",
+    "typical_temperature_range_c": [
+      18,
+      31
+    ],
+    "typical_precipitation_range_mm": null,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-016",
+    "biosphere_id": "BIOS-004",
+    "name": "Estuarine",
+    "description": "Semi-enclosed water bodies where rivers meet the sea.",
+    "climate_type": "Coastal",
+    "typical_temperature_range_c": [
+      15,
+      32
+    ],
+    "typical_precipitation_range_mm": null,
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  },
+  {
+    "biome_id": "BIOM-017",
+    "biosphere_id": "BIOS-005",
+    "name": "Agricultural",
+    "description": "Cultivated land under managed cropping regimes.",
+    "climate_type": "Managed",
+    "typical_temperature_range_c": [
+      10,
+      38
+    ],
+    "typical_precipitation_range_mm": [
+      400,
+      2000
+    ],
+    "is_synthetic": true,
+    "source": "Synthetic demonstration data",
+    "source_type": "Synthetic"
+  }
+]

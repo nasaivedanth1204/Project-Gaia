@@ -1,0 +1,674 @@
+[
+  {
+    "biodiversity_metric_id": "BDM-001",
+    "sample_id": "SMP-002",
+    "site_id": "SITE-002",
+    "species_richness": 2,
+    "observed_species_count": 2,
+    "shannon_index": 0.6931,
+    "simpson_index": 0.5,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Termitomyces heimii",
+      "Elephas maximus"
+    ],
+    "rare_species_count": 2,
+    "unique_species_count": 2,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Fungi"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 2,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-002",
+    "sample_id": "SMP-003",
+    "site_id": "SITE-003",
+    "species_richness": 3,
+    "observed_species_count": 3,
+    "shannon_index": 1.0397,
+    "simpson_index": 0.625,
+    "pielou_evenness": 0.9464,
+    "dominant_species": [
+      "Nitrososphaera viennensis",
+      "Aspergillus niger",
+      "Bacillus subtilis"
+    ],
+    "rare_species_count": 2,
+    "unique_species_count": 3,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Archaea",
+        "Bacteria",
+        "Fungi"
+      ],
+      "kingdom_count": 3
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 4,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-003",
+    "sample_id": "SMP-004",
+    "site_id": "SITE-004",
+    "species_richness": 2,
+    "observed_species_count": 2,
+    "shannon_index": 0.6931,
+    "simpson_index": 0.5,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Shorea robusta",
+      "Panthera tigris"
+    ],
+    "rare_species_count": 2,
+    "unique_species_count": 2,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Plantae"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 2,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-004",
+    "sample_id": "SMP-007",
+    "site_id": "SITE-007",
+    "species_richness": 4,
+    "observed_species_count": 4,
+    "shannon_index": 1.3863,
+    "simpson_index": 0.75,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Methanobrevibacter smithii",
+      "Bacillus subtilis",
+      "Prionailurus viverrinus"
+    ],
+    "rare_species_count": 4,
+    "unique_species_count": 4,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Archaea",
+        "Bacteria",
+        "Fungi"
+      ],
+      "kingdom_count": 4
+    },
+    "biodiversity_category": "Moderate",
+    "total_identifications": 4,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-005",
+    "sample_id": "SMP-009",
+    "site_id": "SITE-009",
+    "species_richness": 3,
+    "observed_species_count": 3,
+    "shannon_index": 1.0986,
+    "simpson_index": 0.6667,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Acropora cervicornis",
+      "Platanista gangetica",
+      "Nitrosomonas europaea"
+    ],
+    "rare_species_count": 3,
+    "unique_species_count": 3,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Bacteria"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 3,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-006",
+    "sample_id": "SMP-011",
+    "site_id": "SITE-011",
+    "species_richness": 3,
+    "observed_species_count": 3,
+    "shannon_index": 1.0986,
+    "simpson_index": 0.6667,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Prosopis cineraria",
+      "Elephas maximus",
+      "Panthera tigris"
+    ],
+    "rare_species_count": 3,
+    "unique_species_count": 3,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Plantae"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 3,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-007",
+    "sample_id": "SMP-013",
+    "site_id": "SITE-013",
+    "species_richness": 2,
+    "observed_species_count": 2,
+    "shannon_index": 0.6931,
+    "simpson_index": 0.5,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Pontederia crassipes",
+      "Anguilla bengalensis"
+    ],
+    "rare_species_count": 2,
+    "unique_species_count": 2,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Plantae"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 2,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-008",
+    "sample_id": "SMP-014",
+    "site_id": "SITE-014",
+    "species_richness": 3,
+    "observed_species_count": 3,
+    "shannon_index": 1.0986,
+    "simpson_index": 0.6667,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Nitrosomonas europaea",
+      "Tor putitora",
+      "Platanista gangetica"
+    ],
+    "rare_species_count": 3,
+    "unique_species_count": 3,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Bacteria"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 3,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-009",
+    "sample_id": "SMP-015",
+    "site_id": "SITE-015",
+    "species_richness": 2,
+    "observed_species_count": 2,
+    "shannon_index": 0.5623,
+    "simpson_index": 0.375,
+    "pielou_evenness": 0.8113,
+    "dominant_species": [
+      "Anguilla bengalensis",
+      "Paramecium caudatum"
+    ],
+    "rare_species_count": 1,
+    "unique_species_count": 2,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Protista"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 4,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-010",
+    "sample_id": "SMP-017",
+    "site_id": "SITE-017",
+    "species_richness": 4,
+    "observed_species_count": 4,
+    "shannon_index": 1.3863,
+    "simpson_index": 0.75,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Acropora cervicornis",
+      "Dugong dugon",
+      "Vibrio harveyi"
+    ],
+    "rare_species_count": 4,
+    "unique_species_count": 4,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Bacteria",
+        "Plantae"
+      ],
+      "kingdom_count": 3
+    },
+    "biodiversity_category": "Moderate",
+    "total_identifications": 4,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-011",
+    "sample_id": "SMP-018",
+    "site_id": "SITE-018",
+    "species_richness": 1,
+    "observed_species_count": 1,
+    "shannon_index": -0.0,
+    "simpson_index": 0.0,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Halobacterium salinarum"
+    ],
+    "rare_species_count": 0,
+    "unique_species_count": 1,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Archaea"
+      ],
+      "kingdom_count": 1
+    },
+    "biodiversity_category": "Very Low",
+    "total_identifications": 2,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-012",
+    "sample_id": "SMP-019",
+    "site_id": "SITE-019",
+    "species_richness": 4,
+    "observed_species_count": 4,
+    "shannon_index": 1.3863,
+    "simpson_index": 0.75,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Lutrogale perspicillata",
+      "Gavialis gangeticus",
+      "Methanobrevibacter smithii"
+    ],
+    "rare_species_count": 4,
+    "unique_species_count": 4,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Archaea",
+        "Protista"
+      ],
+      "kingdom_count": 3
+    },
+    "biodiversity_category": "Moderate",
+    "total_identifications": 4,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-013",
+    "sample_id": "SMP-020",
+    "site_id": "SITE-020",
+    "species_richness": 3,
+    "observed_species_count": 3,
+    "shannon_index": 1.0397,
+    "simpson_index": 0.625,
+    "pielou_evenness": 0.9464,
+    "dominant_species": [
+      "Perionyx excavatus",
+      "Aspergillus niger",
+      "Trichoderma harzianum"
+    ],
+    "rare_species_count": 2,
+    "unique_species_count": 3,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Fungi"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 4,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-014",
+    "sample_id": "SMP-021",
+    "site_id": "SITE-021",
+    "species_richness": 2,
+    "observed_species_count": 2,
+    "shannon_index": 0.6365,
+    "simpson_index": 0.4444,
+    "pielou_evenness": 0.9183,
+    "dominant_species": [
+      "Methanobrevibacter smithii",
+      "Halobacterium salinarum"
+    ],
+    "rare_species_count": 1,
+    "unique_species_count": 2,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Archaea"
+      ],
+      "kingdom_count": 1
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 3,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-015",
+    "sample_id": "SMP-022",
+    "site_id": "SITE-022",
+    "species_richness": 2,
+    "observed_species_count": 2,
+    "shannon_index": 0.6931,
+    "simpson_index": 0.5,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Noctiluca scintillans",
+      "Perna viridis"
+    ],
+    "rare_species_count": 2,
+    "unique_species_count": 2,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Protista"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 2,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-016",
+    "sample_id": "SMP-023",
+    "site_id": "SITE-001",
+    "species_richness": 4,
+    "observed_species_count": 4,
+    "shannon_index": 1.3863,
+    "simpson_index": 0.75,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Nepenthes khasiana",
+      "Halophila ovalis",
+      "Perna viridis"
+    ],
+    "rare_species_count": 4,
+    "unique_species_count": 4,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Plantae"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Moderate",
+    "total_identifications": 4,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-017",
+    "sample_id": "SMP-024",
+    "site_id": "SITE-007",
+    "species_richness": 2,
+    "observed_species_count": 2,
+    "shannon_index": 0.6931,
+    "simpson_index": 0.5,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Trichoderma harzianum",
+      "Avicennia marina"
+    ],
+    "rare_species_count": 2,
+    "unique_species_count": 2,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Fungi",
+        "Plantae"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 2,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-018",
+    "sample_id": "SMP-025",
+    "site_id": "SITE-009",
+    "species_richness": 2,
+    "observed_species_count": 2,
+    "shannon_index": 0.6931,
+    "simpson_index": 0.5,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Acropora cervicornis",
+      "Macaca silenus"
+    ],
+    "rare_species_count": 2,
+    "unique_species_count": 2,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia"
+      ],
+      "kingdom_count": 1
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 2,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-019",
+    "sample_id": "SMP-026",
+    "site_id": "SITE-013",
+    "species_richness": 2,
+    "observed_species_count": 2,
+    "shannon_index": 0.6931,
+    "simpson_index": 0.5,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Platanista gangetica",
+      "Pontederia crassipes"
+    ],
+    "rare_species_count": 2,
+    "unique_species_count": 2,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Plantae"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 2,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-020",
+    "sample_id": "SMP-027",
+    "site_id": "SITE-014",
+    "species_richness": 3,
+    "observed_species_count": 3,
+    "shannon_index": 1.0397,
+    "simpson_index": 0.625,
+    "pielou_evenness": 0.9464,
+    "dominant_species": [
+      "Nitrosomonas europaea",
+      "Rhinoceros unicornis",
+      "Paramecium caudatum"
+    ],
+    "rare_species_count": 2,
+    "unique_species_count": 3,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Bacteria",
+        "Protista"
+      ],
+      "kingdom_count": 3
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 4,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-021",
+    "sample_id": "SMP-031",
+    "site_id": "SITE-008",
+    "species_richness": 2,
+    "observed_species_count": 2,
+    "shannon_index": 0.6931,
+    "simpson_index": 0.5,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Noctiluca scintillans",
+      "Methanobrevibacter smithii"
+    ],
+    "rare_species_count": 2,
+    "unique_species_count": 2,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Archaea",
+        "Protista"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 2,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  },
+  {
+    "biodiversity_metric_id": "BDM-022",
+    "sample_id": "SMP-033",
+    "site_id": "SITE-004",
+    "species_richness": 2,
+    "observed_species_count": 2,
+    "shannon_index": 0.6931,
+    "simpson_index": 0.5,
+    "pielou_evenness": 1.0,
+    "dominant_species": [
+      "Termitomyces heimii",
+      "Panthera tigris"
+    ],
+    "rare_species_count": 2,
+    "unique_species_count": 2,
+    "taxonomic_diversity": {
+      "kingdoms_represented": [
+        "Animalia",
+        "Fungi"
+      ],
+      "kingdom_count": 2
+    },
+    "biodiversity_category": "Low",
+    "total_identifications": 2,
+    "abundance_interpretation": "Relative molecular signal",
+    "abundance_caveat": "Counts are sequence-derived detections, not organism counts. eDNA read abundance is not calibrated to population abundance.",
+    "is_synthetic": true,
+    "source": "Computed from synthetic identification records in this seed set.",
+    "source_type": "Calculated"
+  }
+]
