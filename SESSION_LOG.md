@@ -40,3 +40,22 @@ entry is appended at the end of a session that made changes — see
   every version forever, so large files bloat the repo permanently even
   after deletion. Recommended downloading data directly to disk (e.g.
   `gdown`) and pointing the backend at the local path instead.
+
+## 2026-08-08
+
+- Added a prototype frontend at `frontend/index.html` — a single
+  self-contained page (inline CSS/JS, no build step, no CDN assets) that
+  drives the existing API: upload, live per-stage pipeline tracker,
+  biodiversity metric tiles, ecological assessment cards, and a combined
+  taxonomy / category / confidence table. Includes a built-in demo
+  dataset button so the pipeline can be run without supplying a file.
+- The stage tracker calls the real modular endpoints in sequence
+  (`/preprocess` -> `/identify` -> `/classify` -> `/assess` -> `/analyze`)
+  rather than faking progress, so the UI reflects the actual pipeline.
+- Mounted the UI at `/ui` via `StaticFiles` in `backend/app.py` and added
+  permissive CORS (flagged with a TODO to restrict before any real
+  deployment) so the page also works when opened straight from disk.
+- Verified in a headless browser: all 6 stages complete, tables/metrics/
+  assessments populate, backend validation errors surface correctly and
+  flag the failing stage, no JS errors, no horizontal overflow at mobile
+  width.

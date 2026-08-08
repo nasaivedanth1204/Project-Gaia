@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Gaia — eDNA Biodiversity Analysis</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>%F0%9F%A7%AC</text></svg>">
+<style>
+  :root {
+    --bg: #0b1220;
+    --panel: #121c2e;
+    --panel-2: #16223a;
+    --border: #24334f;
+    --text: #e6edf7;
+    --muted: #93a4c0;
+    --accent: #35d6a5;
+    --accent-dim: #1d8f6f;
+    --info: #46a8ff;
+    --warning: #f0b23a;
+    --critical: #ff6b6b;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  header {
+    padding: 26px 24px 18px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #101a2c, var(--bg));
+  }
+  header h1 { margin: 0; font-size: 22px; letter-spacing: .2px; }
+  header h1 span { color: var(--accent); }
+  header p { margin: 6px 0 0; color: var(--muted); font-size: 13.5px; }
+  main { max-width: 1120px; margin: 0 auto; padding: 22px 20px 60px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .card h2 {
+    margin: 0 0 14px; font-size: 14px; text-transform: uppercase;
+    letter-spacing: .09em; color: var(--muted); font-weight: 600;
+  }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  button {
+    background: var(--accent); color: #04231a; border: 0; font-weight: 650;
+    padding: 10px 16px; border-radius: 8px; cursor: pointer; font-size: 14px;
+  }
+  button:hover:not(:disabled) { background: #4ee7b7; }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  button.ghost {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border); font-weight: 500;
+  }
+  button.ghost:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+  input[type=file] {
+    padding: 9px; background: var(--panel-2); color: var(--muted);
+    border: 1px dashed var(--border); border-radius: 8px; font-size: 13.5px;
+    max-width: 100%;
+  }
+  /* Pipeline stage tracker */
+  .stages { display: flex; flex-wrap: wrap; gap: 8px; }
+  .stage {
+    flex: 1 1 150px; padding: 10px 12px; border-radius: 8px;
+    background: var(--panel-2); border: 1px solid var(--border);
+    font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px;
+  }
+  .stage .dot {
+    width: 9px; height: 9px; border-radius: 50%; background: #3a4a68; flex: none;
+  }
+  .stage.active { border-color: var(--accent); color: var(--text); }
+  .stage.active .dot { background: var(--accent); animation: pulse 1s infinite; }
+  .stage.done { color: var(--text); border-color: var(--accent-dim); }
+  .stage.done .dot { background: var(--accent); }
+  .stage.error { border-color: var(--critical); color: var(--critical); }
+  .stage.error .dot { background: var(--critical); }
+  @keyframes pulse { 50% { opacity: .3; } }
+  /* Metric tiles */
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+  .metric { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 13px; }
+  .metric .label { font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  .metric .value { font-size: 25px; font-weight: 650; margin-top: 3px; color: var(--accent); }
+  .metric .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  /* Assessment cards */
+  .assessment { border-left: 3px solid var(--info); background: var(--panel-2); padding: 12px 14px; border-radius: 0 8px 8px 0; margin-bottom: 9px; }
+  .assessment.warning { border-left-color: var(--warning); }
+  .assessment.critical { border-left-color: var(--critical); }
+  .assessment .t { font-weight: 640; margin-bottom: 3px; }
+  .assessment .d { font-size: 13.5px; color: var(--muted); }
+  .sev {
+    font-size: 10.5px; text-transform: uppercase; letter-spacing: .07em;
+    padding: 2px 7px; border-radius: 20px; margin-left: 8px; vertical-align: 1.5px;
+    background: rgba(70,168,255,.15); color: var(--info);
+  }
+  .assessment.warning .sev { background: rgba(240,178,58,.15); color: var(--warning); }
+  .assessment.critical .sev { background: rgba(255,107,107,.15); color: var(--critical); }
+  /* Table */
+  .scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 760px; }
+  th, td { text-align: left; padding: 8px 7px; border-bottom: 1px solid var(--border); }
+  /* Lineage names can be long; let them wrap so the category and confidence
+     columns stay on screen instead of being pushed into horizontal scroll. */
+  td.rank { word-break: break-word; }
+  th:last-child, td:last-child { white-space: nowrap; }
+  /* Keep the payoff columns (category, confidence) on screen: sequence IDs
+     are long and uninformative, so truncate them and expose the full id
+     via the native tooltip. */
+  td.seqid { max-width: 118px; overflow: hidden; text-overflow: ellipsis; color: var(--muted); }
+  th { color: var(--muted); font-weight: 600; font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; }
+  td.sci { font-style: italic; }
+  tbody tr:hover { background: var(--panel-2); }
+  .pill { padding: 2px 9px; border-radius: 20px; font-size: 11.5px; background: rgba(53,214,165,.13); color: var(--accent); }
+  .pill.unknown { background: rgba(147,164,192,.13); color: var(--muted); }
+  .conf-vh, .conf-h { color: var(--accent); }
+  .conf-m { color: var(--warning); }
+  .conf-l, .conf-u { color: var(--critical); }
+  .error-box { background: rgba(255,107,107,.09); border: 1px solid var(--critical); color: #ffc2c2; padding: 12px 14px; border-radius: 8px; font-size: 13.5px; }
+  .hidden { display: none; }
+  .muted { color: var(--muted); font-size: 13px; }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 0 20px 30px; }
+  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Project <span>Gaia</span></h1>
+  <p>Taxonomy identification &amp; biodiversity assessment from eDNA datasets</p>
+</header>
+
+<main>
+  <section class="card">
+    <h2>1 · Dataset Input</h2>
+    <div class="row">
+      <input type="file" id="fileInput" accept=".fasta,.fa,.fna,.csv,.txt">
+      <button id="runBtn">Run Analysis</button>
+      <button id="demoBtn" class="ghost">Use Demo Dataset</button>
+      <button id="resetBtn" class="ghost">Reset</button>
+    </div>
+    <p class="muted" style="margin:11px 0 0">
+      Accepts FASTA (<code>.fasta .fa .fna</code>), CSV with a <code>sequence</code> column, or TXT (one sequence per line).
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>2 · Processing Pipeline</h2>
+    <div class="stages" id="stages"></div>
+    <div id="errorBox" class="error-box hidden" style="margin-top:14px"></div>
+  </section>
+
+  <div id="results" class="hidden">
+    <section class="card">
+      <h2>3 · Biodiversity Metrics</h2>
+      <div class="metrics" id="metrics"></div>
+      <div style="margin-top:14px" id="speciesLists"></div>
+    </section>
+
+    <section class="card">
+      <h2>4 · Ecological Assessment</h2>
+      <div id="assessments"></div>
+    </section>
+
+    <section class="card">
+      <h2>5 · Taxonomy, Classification &amp; Confidence</h2>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Sequence</th><th>Kingdom</th><th>Phylum</th><th>Class</th>
+              <th>Order</th><th>Family</th><th>Genus</th><th>Species</th>
+              <th>Category</th><th>Confidence</th>
+            </tr>
+          </thead>
+          <tbody id="taxaBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  Prototype UI — scientific engines are placeholders pending ML model integration.
+</footer>
+
+<script>
+// If opened directly from disk, fall back to a locally running backend.
+const API = location.protocol.startsWith("http") ? "" : "http://127.0.0.1:8000";
+
+const STAGES = [
+  { key: "upload",     label: "Upload & Validate" },
+  { key: "preprocess", label: "Preprocess" },
+  { key: "identify",   label: "Identify Taxonomy" },
+  { key: "classify",   label: "Classify" },
+  { key: "assess",     label: "Assess Biodiversity" },
+  { key: "analyze",    label: "Aggregate Results" },
+];
+
+const $ = (id) => document.getElementById(id);
+const stagesEl = $("stages");
+
+function renderStages(state = {}) {
+  stagesEl.innerHTML = STAGES.map(s =>
+    `<div class="stage ${state[s.key] || ""}"><span class="dot"></span>${s.label}</div>`
+  ).join("");
+}
+renderStages();
+
+function setError(msg) {
+  const box = $("errorBox");
+  if (!msg) { box.classList.add("hidden"); return; }
+  box.textContent = msg;
+  box.classList.remove("hidden");
+}
+
+async function postJSON(path, body) {
+  const res = await fetch(API + path, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(extractError(data, res.status));
+  return data;
+}
+
+function extractError(data, status) {
+  const d = data && data.detail;
+  if (typeof d === "string") return d;
+  if (d && d.message) return d.message + (d.errors ? " — " + d.errors.join("; ") : "");
+  return `Request failed (HTTP ${status})`;
+}
+
+const DEMO_FASTA = `>gaia_demo_read_1
+AGAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACG
+>gaia_demo_read_2
+TACCTGGTTGATCCTGCCAGTAGTCATATGCTTGTCTCAAAGATTAAGCCATGCATGTCTA
+>gaia_demo_read_3
+TTTCTACAAATCATAAAGATATTGGAACTTTATATTTTATTTTTGGGGCTTGAGCAGGAAT
+>gaia_demo_read_4
+ACGTACGTACGTNNNNNACGTACGTACGTAGCTAGCTAGCTAGCTAGGGGCCCATATATAT
+>gaia_demo_read_5
+GGATCCTGGTTGATCCTGCCAGTAGTCATATGCTTGTCTCAAAGATTAAGCCATGCATGTC
+>gaia_demo_read_6
+CCTACGGGAGGCAGCAGTGGGGAATATTGCACAATGGGCGCAAGCCTGATGCAGCAACGCC
+`;
+
+async function runPipeline(file) {
+  setError("");
+  $("results").classList.add("hidden");
+  $("runBtn").disabled = true;
+  $("demoBtn").disabled = true;
+
+  const state = {};
+  const mark = (k, v) => { state[k] = v; renderStages(state); };
+
+  try {
+    // Stage 1 — upload (multipart, so not via postJSON)
+    mark("upload", "active");
+    const fd = new FormData();
+    fd.append("file", file);
+    const upRes = await fetch(API + "/upload", { method: "POST", body: fd });
+    const upData = await upRes.json().catch(() => ({}));
+    if (!upRes.ok) throw new Error(extractError(upData, upRes.status));
+    mark("upload", "done");
+
+    const id = upData.sample_id;
+    const body = { sample_id: id };
+
+    // Stages 2-5 run sequentially against the real modular endpoints,
+    // so the UI reflects the actual backend pipeline rather than a fake bar.
+    for (const key of ["preprocess", "identify", "classify", "assess"]) {
+      mark(key, "active");
+      await postJSON("/" + key, body);
+      mark(key, "done");
+    }
+
+    // Stage 6 — aggregate (adds per-sequence confidence scoring)
+    mark("analyze", "active");
+    const final = await postJSON("/analyze", body);
+    mark("analyze", "done");
+
+    render(final, upData);
+  } catch (err) {
+    const pending = STAGES.find(s => state[s.key] === "active");
+    if (pending) mark(pending.key, "error");
+    setError(err.message || String(err));
+  } finally {
+    $("runBtn").disabled = false;
+    $("demoBtn").disabled = false;
+  }
+}
+
+function confClass(level) {
+  return { "Very High": "conf-vh", "High": "conf-h", "Medium": "conf-m",
+           "Low": "conf-l", "Unknown": "conf-u" }[level] || "conf-u";
+}
+
+function render(data, upData) {
+  const m = data.metrics || {};
+
+  const avgConf = data.results.length
+    ? data.results.reduce((s, r) => s + (r.confidence?.confidence || 0), 0) / data.results.length
+    : 0;
+
+  $("metrics").innerHTML = `
+    ${tile("Sequences", upData.sequence_count, upData.file_type.toUpperCase() + " input")}
+    ${tile("Species Richness", m.species_richness, "distinct taxa")}
+    ${tile("Shannon Index", m.shannon_index, "diversity (H′)")}
+    ${tile("Simpson Index", m.simpson_index, "diversity (1−D)")}
+    ${tile("Evenness", m.evenness, "distribution")}
+    ${tile("Mean Confidence", (avgConf * 100).toFixed(1) + "%", "identification")}
+  `;
+
+  $("speciesLists").innerHTML = `
+    <div class="muted"><strong>Dominant:</strong> ${(m.dominant_species || []).join(", ") || "—"}</div>
+    <div class="muted" style="margin-top:4px"><strong>Rare:</strong> ${(m.rare_species || []).join(", ") || "—"}</div>
+  `;
+
+  $("assessments").innerHTML = (data.assessment || []).map(a => `
+    <div class="assessment ${a.severity}">
+      <div class="t">${esc(a.title)}<span class="sev">${esc(a.severity)}</span></div>
+      <div class="d">${esc(a.description)}</div>
+    </div>`).join("") || `<div class="muted">No assessments generated.</div>`;
+
+  $("taxaBody").innerHTML = data.results.map(r => {
+    const t = r.taxonomy || {}, c = r.classification || {}, cf = r.confidence || {};
+    const unknown = (c.category || "Unknown") === "Unknown";
+    return `<tr>
+      <td class="seqid" title="${esc(r.sequence_id)}">${esc(r.sequence_id)}</td>
+      <td class="rank">${esc(t.kingdom)}</td><td class="rank">${esc(t.phylum)}</td>
+      <td class="rank">${esc(t["class"])}</td><td class="rank">${esc(t.order)}</td>
+      <td class="rank">${esc(t.family)}</td>
+      <td class="rank sci">${esc(t.genus)}</td><td class="rank sci">${esc(t.species)}</td>
+      <td><span class="pill ${unknown ? "unknown" : ""}">${esc(c.category)}</span></td>
+      <td class="${confClass(cf.confidence_level)}">
+        ${((cf.confidence || 0) * 100).toFixed(1)}% · ${esc(cf.confidence_level)}
+      </td>
+    </tr>`;
+  }).join("");
+
+  $("results").classList.remove("hidden");
+}
+
+const tile = (label, value, sub) => `
+  <div class="metric">
+    <div class="label">${label}</div>
+    <div class="value">${value ?? "—"}</div>
+    <div class="sub">${sub}</div>
+  </div>`;
+
+function esc(s) {
+  return String(s ?? "—").replace(/[&<>"']/g,
+    c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+$("runBtn").onclick = () => {
+  const f = $("fileInput").files[0];
+  if (!f) { setError("Select a dataset file first, or click “Use Demo Dataset”."); return; }
+  runPipeline(f);
+};
+
+$("demoBtn").onclick = () =>
+  runPipeline(new File([DEMO_FASTA], "gaia_demo.fasta", { type: "text/plain" }));
+
+$("resetBtn").onclick = () => {
+  $("fileInput").value = "";
+  $("results").classList.add("hidden");
+  setError("");
+  renderStages();
+};
+</script>
+</body>
+</html>
