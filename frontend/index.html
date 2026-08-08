@@ -47,6 +47,9 @@
     margin: 0 0 14px; font-size: 14px; text-transform: uppercase;
     letter-spacing: .09em; color: var(--muted); font-weight: 600;
   }
+  /* Scientific names use italics by convention, not caps. */
+  #speciesDetailTitle { text-transform: none; letter-spacing: normal; font-size: 18px; }
+  #speciesDetailTitle .sci-name { font-style: italic; color: var(--text); }
   .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
   button {
     background: var(--accent); color: #04231a; border: 0; font-weight: 650;
@@ -125,6 +128,67 @@
   .muted { color: var(--muted); font-size: 13px; }
   footer { text-align: center; color: var(--muted); font-size: 12px; padding: 0 20px 30px; }
   code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+
+  /* Tab navigation */
+  nav.tabs {
+    max-width: 1120px; margin: 0 auto; padding: 0 20px;
+    display: flex; gap: 4px; border-bottom: 1px solid var(--border);
+  }
+  nav.tabs button {
+    background: transparent; color: var(--muted); border: 0; border-bottom: 2px solid transparent;
+    border-radius: 0; padding: 12px 6px; margin-right: 18px; font-size: 14px; font-weight: 600;
+  }
+  nav.tabs button:hover:not(:disabled) { background: transparent; color: var(--text); }
+  nav.tabs button.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .view.hidden { display: none; }
+
+  /* Dashboard: distribution bars */
+  .dist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .dist-panel h3 {
+    margin: 0 0 10px; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted);
+  }
+  .dist-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 12.5px; }
+  .dist-label { flex: 0 0 108px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .dist-bar-track { flex: 1; background: var(--panel-2); border-radius: 4px; height: 8px; overflow: hidden; }
+  .dist-bar-fill { height: 100%; border-radius: 4px; background: var(--accent); }
+  .dist-bar-fill.risk-Critical, .dist-bar-fill.risk-VeryHigh { background: var(--critical); }
+  .dist-bar-fill.risk-High, .dist-bar-fill.risk-Moderate { background: var(--warning); }
+  .dist-count { flex: 0 0 30px; text-align: right; color: var(--text); font-weight: 600; }
+
+  /* Species explorer */
+  .filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+  select, input[type=search] {
+    background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 10px; font-size: 13px;
+  }
+  tr.species-row { cursor: pointer; }
+  tr.species-row.selected { background: rgba(53,214,165,.08); }
+  .risk-pill { padding: 2px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .risk-pill.critical { background: rgba(255,107,107,.18); color: var(--critical); }
+  .risk-pill.high { background: rgba(255,107,107,.12); color: #ff9c9c; }
+  .risk-pill.moderate { background: rgba(240,178,58,.15); color: var(--warning); }
+  .risk-pill.low, .risk-pill.minimal { background: rgba(53,214,165,.13); color: var(--accent); }
+  .risk-pill.insufficient { background: rgba(147,164,192,.13); color: var(--muted); }
+
+  /* Species detail panel */
+  .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px; }
+  .detail-block { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 13px; }
+  .detail-block h4 {
+    margin: 0 0 8px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+  }
+  .detail-block dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 13px; }
+  .detail-block dt { color: var(--muted); }
+  .detail-block dd { margin: 0; text-align: right; }
+  .threat-tag {
+    display: inline-block; background: rgba(255,107,107,.1); color: #ffb8b8;
+    border-radius: 20px; padding: 2px 9px; font-size: 11.5px; margin: 2px 3px 0 0;
+  }
+  .explanation-list { margin: 10px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
+  .explanation-list li { margin-bottom: 4px; }
+  .disclaimer-box {
+    background: rgba(240,178,58,.08); border: 1px solid var(--warning); color: #f4d9a8;
+    padding: 10px 13px; border-radius: 8px; font-size: 12.5px; margin-top: 14px;
+  }
 </style>
 </head>
 <body>
@@ -133,7 +197,62 @@
   <p>Taxonomy identification &amp; biodiversity assessment from eDNA datasets</p>
 </header>
 
-<main>
+<nav class="tabs">
+  <button id="tabDashboardBtn" class="active">Biodiversity Dashboard</button>
+  <button id="tabPipelineBtn">Live Pipeline</button>
+</nav>
+
+<main id="viewDashboard" class="view">
+  <section class="card">
+    <h2>Overview</h2>
+    <div class="metrics" id="dashTiles"></div>
+  </section>
+
+  <section class="card">
+    <h2>Distributions</h2>
+    <div class="dist-grid" id="dashDistributions"></div>
+  </section>
+
+  <section class="card">
+    <h2>Species Explorer</h2>
+    <div class="filters">
+      <input type="search" id="speciesSearch" placeholder="Search scientific or common name…">
+      <select id="kingdomFilter"><option value="">All kingdoms</option></select>
+      <select id="riskFilter">
+        <option value="">All risk levels</option>
+        <option>Critical Risk</option><option>Very High Risk</option><option>High Risk</option>
+        <option>Moderate Risk</option><option>Low Risk</option><option>Minimal Risk</option>
+        <option>Insufficient Data</option>
+      </select>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Scientific name</th><th>Common name</th><th>Kingdom</th>
+            <th>Conservation</th><th>Gaia Risk Score</th><th>Risk Level</th>
+          </tr>
+        </thead>
+        <tbody id="speciesBody"></tbody>
+      </table>
+    </div>
+    <p class="muted" id="speciesCount" style="margin-top:10px"></p>
+  </section>
+
+  <section class="card hidden" id="speciesDetailCard">
+    <h2 id="speciesDetailTitle">Species Detail</h2>
+    <div id="speciesDetailBody"></div>
+  </section>
+
+  <div class="disclaimer-box">
+    All figures on this dashboard summarize a <strong>synthetic demonstration dataset</strong>
+    (see <code>data/README.md</code>). No record here represents a real field observation,
+    a real population estimate, or an official conservation assessment. The Gaia Risk Score
+    is a prototype heuristic, not an IUCN category.
+  </div>
+</main>
+
+<main id="viewPipeline" class="view hidden">
   <section class="card">
     <h2>1 · Dataset Input</h2>
     <div class="row">
@@ -373,6 +492,231 @@ $("resetBtn").onclick = () => {
   setError("");
   renderStages();
 };
+
+// ===========================================================================
+// Tab navigation
+// ===========================================================================
+
+function showTab(tab) {
+  $("viewDashboard").classList.toggle("hidden", tab !== "dashboard");
+  $("viewPipeline").classList.toggle("hidden", tab !== "pipeline");
+  $("tabDashboardBtn").classList.toggle("active", tab === "dashboard");
+  $("tabPipelineBtn").classList.toggle("active", tab === "pipeline");
+  if (tab === "dashboard" && !dashboardLoaded) loadDashboard();
+}
+$("tabDashboardBtn").onclick = () => showTab("dashboard");
+$("tabPipelineBtn").onclick = () => showTab("pipeline");
+
+// ===========================================================================
+// Biodiversity Dashboard
+// ===========================================================================
+
+let dashboardLoaded = false;
+let allOrganisms = [];
+let riskByOrganism = {};
+let conservationByOrganism = {};
+
+async function getJSON(path) {
+  const res = await fetch(API + path);
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(extractError(data, res.status));
+  return data;
+}
+
+const RISK_PILL_CLASS = {
+  "Critical Risk": "critical", "Very High Risk": "high", "High Risk": "high",
+  "Moderate Risk": "moderate", "Low Risk": "low", "Minimal Risk": "minimal",
+  "Insufficient Data": "insufficient",
+};
+
+async function loadDashboard() {
+  dashboardLoaded = true;
+  try {
+    const [summary, organisms, risks, conservation] = await Promise.all([
+      getJSON("/dashboard/summary"),
+      getJSON("/organisms"),
+      getJSON("/risk"),
+      getJSON("/conservation"),
+    ]);
+
+    allOrganisms = organisms;
+    riskByOrganism = Object.fromEntries(risks.map(r => [r.organism_id, r]));
+    conservationByOrganism = Object.fromEntries(conservation.map(c => [c.organism_id, c]));
+
+    renderDashTiles(summary);
+    renderDistributions(summary);
+    populateKingdomFilter(summary.kingdom_distribution);
+    renderSpeciesTable();
+  } catch (err) {
+    $("dashTiles").innerHTML = `<div class="error-box">${esc(err.message || String(err))}</div>`;
+  }
+}
+
+function renderDashTiles(summary) {
+  const highRisk = (summary.risk_level_distribution["Critical Risk"] || 0)
+    + (summary.risk_level_distribution["Very High Risk"] || 0);
+  $("dashTiles").innerHTML = [
+    tile("Organisms", summary.totals.organisms, "characterised taxa"),
+    tile("Samples", summary.totals.samples, "synthetic eDNA samples"),
+    tile("Sampling Sites", summary.totals.sampling_sites, "across India"),
+    tile("Threat Records", summary.totals.threat_assessments, "environmental pressures"),
+    tile("High Risk Species", highRisk, "Critical + Very High"),
+    tile("Data Deficient", summary.conservation_status_distribution["Data Deficient"] || 0, "conservation status"),
+  ].join("");
+}
+
+function distPanel(title, dist, riskColored) {
+  const entries = Object.entries(dist).sort((a, b) => b[1] - a[1]);
+  const max = Math.max(...entries.map(e => e[1]), 1);
+  const rows = entries.map(([label, count]) => {
+    const cls = riskColored ? "risk-" + label.replace(/[^A-Za-z]/g, "").replace("Risk", "") : "";
+    return `<div class="dist-row">
+      <div class="dist-label" title="${esc(label)}">${esc(label)}</div>
+      <div class="dist-bar-track"><div class="dist-bar-fill ${cls}" style="width:${(count / max * 100).toFixed(0)}%"></div></div>
+      <div class="dist-count">${count}</div>
+    </div>`;
+  }).join("");
+  return `<div class="dist-panel"><h3>${esc(title)}</h3>${rows}</div>`;
+}
+
+function renderDistributions(summary) {
+  $("dashDistributions").innerHTML = [
+    distPanel("Risk level", summary.risk_level_distribution, true),
+    distPanel("Biodiversity category", summary.biodiversity_category_distribution),
+    distPanel("Kingdom", summary.kingdom_distribution),
+    distPanel("Conservation status", summary.conservation_status_distribution),
+  ].join("");
+}
+
+function populateKingdomFilter(kingdoms) {
+  const select = $("kingdomFilter");
+  select.innerHTML = '<option value="">All kingdoms</option>' +
+    Object.keys(kingdoms).sort().map(k => `<option>${esc(k)}</option>`).join("");
+}
+
+function renderSpeciesTable() {
+  const search = $("speciesSearch").value.trim().toLowerCase();
+  const kingdom = $("kingdomFilter").value;
+  const riskLevel = $("riskFilter").value;
+
+  let rows = allOrganisms.map(o => ({
+    organism: o,
+    risk: riskByOrganism[o.organism_id],
+    conservation: conservationByOrganism[o.organism_id],
+  }));
+
+  if (search) {
+    rows = rows.filter(r =>
+      r.organism.scientific_name.toLowerCase().includes(search) ||
+      r.organism.common_name.toLowerCase().includes(search));
+  }
+  if (kingdom) rows = rows.filter(r => r.organism.kingdom === kingdom);
+  if (riskLevel) rows = rows.filter(r => r.risk && r.risk.risk_level === riskLevel);
+
+  rows.sort((a, b) => (b.risk?.gaia_risk_score ?? -1) - (a.risk?.gaia_risk_score ?? -1));
+
+  $("speciesBody").innerHTML = rows.map(({ organism, risk, conservation }) => {
+    const pillClass = RISK_PILL_CLASS[risk?.risk_level] || "insufficient";
+    return `<tr class="species-row" data-id="${organism.organism_id}">
+      <td class="sci">${esc(organism.scientific_name)}</td>
+      <td>${esc(organism.common_name)}</td>
+      <td>${esc(organism.kingdom)}</td>
+      <td>${esc(conservation?.external_conservation_status)}</td>
+      <td>${risk?.gaia_risk_score ?? "—"}</td>
+      <td><span class="risk-pill ${pillClass}">${esc(risk?.risk_level || "Unknown")}</span></td>
+    </tr>`;
+  }).join("");
+
+  $("speciesCount").textContent = `${rows.length} of ${allOrganisms.length} species`;
+
+  document.querySelectorAll(".species-row").forEach(row => {
+    row.onclick = () => showSpeciesDetail(row.dataset.id);
+  });
+}
+
+$("speciesSearch").oninput = renderSpeciesTable;
+$("kingdomFilter").onchange = renderSpeciesTable;
+$("riskFilter").onchange = renderSpeciesTable;
+
+async function showSpeciesDetail(organismId) {
+  document.querySelectorAll(".species-row").forEach(r =>
+    r.classList.toggle("selected", r.dataset.id === organismId));
+
+  const card = $("speciesDetailCard");
+  card.classList.remove("hidden");
+  $("speciesDetailBody").innerHTML = `<p class="muted">Loading…</p>`;
+  card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+  try {
+    const profile = await getJSON(`/species/${organismId}`);
+    renderSpeciesDetail(profile);
+  } catch (err) {
+    $("speciesDetailBody").innerHTML = `<div class="error-box">${esc(err.message || String(err))}</div>`;
+  }
+}
+
+function renderSpeciesDetail(profile) {
+  const { organism, population, habitat, threats, conservation, risk } = profile;
+  $("speciesDetailTitle").innerHTML =
+    `<span class="sci-name">${esc(organism.scientific_name)}</span> ` +
+    `<span class="muted" style="font-weight:400">— ${esc(organism.common_name)}</span>`;
+
+  const threatTags = threats.length
+    ? threats.map(t => `<span class="threat-tag">${esc(t.threat_name)} (${esc(t.severity)})</span>`).join("")
+    : '<span class="muted">None recorded</span>';
+
+  const explanation = (risk.explanation || []).map(line => `<li>${esc(line)}</li>`).join("");
+
+  $("speciesDetailBody").innerHTML = `
+    <div class="detail-grid">
+      <div class="detail-block">
+        <h4>Population</h4>
+        <dl>
+          <dt>Trend</dt><dd>${esc(population.population_trend)}</dd>
+          <dt>Decline</dt><dd>${population.population_decline_percent ?? "—"}%</dd>
+          <dt>Mature individuals</dt><dd>${population.estimated_mature_individuals ?? "—"}</dd>
+          <dt>Confidence</dt><dd>${population.population_confidence ?? "—"}</dd>
+        </dl>
+      </div>
+      <div class="detail-block">
+        <h4>Habitat</h4>
+        ${habitat ? `<dl>
+          <dt>Loss</dt><dd>${habitat.habitat_loss_percent}%</dd>
+          <dt>Trend</dt><dd>${esc(habitat.habitat_trend)}</dd>
+          <dt>Fragmentation</dt><dd>${esc(habitat.fragmentation)}</dd>
+          <dt>Quality</dt><dd>${esc(habitat.habitat_quality)}</dd>
+        </dl>` : '<p class="muted">Not assessed (e.g. bacterial/archaeal taxa).</p>'}
+      </div>
+      <div class="detail-block">
+        <h4>Conservation status</h4>
+        <dl>
+          <dt>Status</dt><dd>${esc(conservation?.status?.external_conservation_status)}</dd>
+          <dt>Verified</dt><dd>${conservation?.status?.is_verified ? "Yes" : "No"}</dd>
+        </dl>
+        <p class="muted" style="margin-top:8px;font-size:12px">
+          ${esc(conservation?.status?.note)}
+        </p>
+      </div>
+      <div class="detail-block">
+        <h4>Gaia Prototype Risk Score</h4>
+        <dl>
+          <dt>Score</dt><dd>${risk.gaia_risk_score ?? "—"} / 100</dd>
+          <dt>Level</dt><dd>${esc(risk.risk_level)}</dd>
+          <dt>Confidence</dt><dd>${risk.risk_confidence}</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="detail-block" style="margin-top:14px">
+      <h4>Threats</h4>
+      ${threatTags}
+    </div>
+    <ul class="explanation-list">${explanation}</ul>
+  `;
+}
+
+// Dashboard is the default visible tab, so load it immediately rather
+// than waiting for a tab click that may never come.
+loadDashboard();
 </script>
 </body>
 </html>

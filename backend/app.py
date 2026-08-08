@@ -8,6 +8,7 @@ from routes import (
     analyze_routes,
     assess_routes,
     classify_routes,
+    explore_routes,
     identify_routes,
     preprocess_routes,
     status_routes,
@@ -42,6 +43,7 @@ app.include_router(classify_routes.router)
 app.include_router(assess_routes.router)
 app.include_router(analyze_routes.router)
 app.include_router(status_routes.router)
+app.include_router(explore_routes.router)
 
 
 @app.get("/", tags=["Root"])

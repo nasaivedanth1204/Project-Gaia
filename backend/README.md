@@ -6,8 +6,12 @@ complete workflow from an uploaded eDNA dataset to a biodiversity assessment,
 using placeholder scientific logic wherever a real algorithm/model/database
 would normally be required.
 
-There is intentionally **no frontend, no auth, no persistent database, and
-no deployment tooling** in this codebase — see "Explicit non-goals" below.
+There is intentionally **no auth, no persistent database, and no
+deployment tooling** in this codebase — see "Explicit non-goals" below. A
+prototype UI does exist (`../frontend/`, served at `/ui`) with two views:
+a **Live Pipeline** runner for the upload-through-analyze flow below, and
+a **Biodiversity Dashboard** over the synthetic Gaia dataset described
+next.
 
 ## Quick start
 
@@ -23,17 +27,43 @@ See [`../docs/API.md`](../docs/API.md) for endpoint documentation and
 example requests/responses, and [`../frontend/`](../frontend/) for the UI
 this backend serves at `/ui`.
 
-## Workflow
+## Two parallel demonstrations
 
-```
-Upload -> Validation -> Sequence Extraction -> Cleaning -> Preprocessing
-       -> Taxonomic Identification -> Classification -> Biodiversity Assessment
-       -> Confidence Calculation -> JSON Response
-```
+This backend runs **two separate things off the same repository**, not
+one pipeline pretending to be two:
 
-Each arrow is a pipeline stage with its own module, service, and (where
-useful) interface, so any single stage can be swapped out without touching
-the others.
+1. **Live pipeline** (`/upload` ... `/analyze`) — processes one uploaded
+   sample end-to-end through the placeholder engines below. Nothing here
+   changed when the Gaia data model was added.
+
+   ```
+   Upload -> Validation -> Sequence Extraction -> Cleaning -> Preprocessing
+          -> Taxonomic Identification -> Classification -> Biodiversity Assessment
+          -> Confidence Calculation -> JSON Response
+   ```
+
+2. **Explore API** (`/organisms`, `/dashboard/summary`, ...) — read-only
+   access to the synthetic Gaia dataset (`data/seed/*.json`, ~1,178
+   records), loaded into the repository at startup. This is the fuller
+   workflow the problem statement describes:
+
+   ```
+   eDNA Sample -> Sample Metadata -> Sequence Validation -> Preprocessing
+       -> Organism Identification -> Taxonomic Classification
+       -> Terrain / Ecosystem / Biosphere
+       -> Biodiversity Assessment -> Population Assessment
+       -> Habitat Assessment -> Threat Assessment -> Conservation Analysis
+       -> Extinction Risk -> Gaia Risk Score -> Final Analysis -> Dashboard
+   ```
+
+Both share one `IDataRepository` instance (see `dependencies.py::get_repository`)
+so an uploaded sample and the seeded dataset coexist without collision —
+uploaded-sample storage and seed-collection storage use disjoint internal
+keys. `/status` reports counts from both.
+
+Each pipeline stage / explore endpoint has its own module, service, and
+(where useful) interface, so any single one can be swapped out without
+touching the others.
 
 ## Directory structure
 
@@ -55,6 +85,12 @@ backend/
     confidence/             Module 7: confidence scoring + levels
     aggregation/            Module 8: combines per-stage output into the final response
     utils/                  Validators, parsers, id generation, logging, exceptions
+
+    services/explore_service.py      Read-side queries + aggregation over the Gaia data model
+    controllers/explore_controller.py  Thin HTTP layer for the Explore API
+    routes/explore_routes.py         /biospheres ... /dashboard/summary (see docs/API.md)
+    assessment/risk_engine.py        Gaia Prototype Risk Score (re-exports scripts/gaia_seed/risk.py)
+    storage/seed_loader.py           Loads data/seed/*.json into any IDataRepository
 ```
 
 ## Why the architecture looks like this
@@ -104,19 +140,23 @@ and implemented with a clearly-labeled placeholder in the meantime:
    `IClassificationEngine` in new classes, wire them in `dependencies.py`.
    The rest of the pipeline (services, routes, response shape) is
    unaffected because it only depends on the interfaces.
-3. **Frontend** — none of this repo assumes a particular client. Every
-   endpoint returns plain JSON; consume it from whatever UI is built later.
+3. **Frontend** — this repo now ships a prototype UI (`../frontend/`,
+   served at `/ui`), but nothing about the API assumes that particular
+   client. Every endpoint returns plain JSON; a different UI can consume
+   the same routes unchanged.
 4. **Auth** — none exists. If added later, put it in FastAPI middleware /
    route dependencies without touching the service layer.
 
 ## Explicit non-goals (per hackathon prototype scope)
 
-No authentication, login, users, permissions, dashboards, report
-generation, notifications, Docker, or cloud deployment. No frontend pages
-or styling. The focus is exclusively the scientific processing pipeline
-and a clean, swappable backend architecture around it.
+No authentication, login, users, permissions, report generation,
+notifications, Docker, or cloud deployment. The focus is the scientific
+processing pipeline, the Gaia data model, and a clean, swappable backend
+architecture around both — not production styling or infrastructure.
 
 ## API summary
+
+**Live pipeline** (operates on an uploaded sample):
 
 | Method | Path | Purpose |
 |---|---|---|
@@ -126,8 +166,26 @@ and a clean, swappable backend architecture around it.
 | POST | `/classify` | Placeholder ecological category classification |
 | POST | `/assess` | Biodiversity metrics + ecological assessment |
 | POST | `/analyze` | Runs the entire pipeline end-to-end, returns the aggregated result |
-| GET | `/status` | Engine-level status (sample/prediction counts) |
+| GET | `/status` | Engine status — sample/prediction counts *and* seed dataset counts |
 | GET | `/status/{sample_id}` | Pipeline status for one sample |
 | GET | `/history` | All aggregated predictions produced so far |
+
+**Explore API** (read-only, over the synthetic Gaia dataset in `data/seed/`):
+
+| Method | Path | Purpose |
+|---|---|---|
+| GET | `/biospheres` `/biomes` `/terrains` `/ecosystems` `/locations` `/sampling-sites` | Environment hierarchy |
+| GET | `/organisms` `/organisms/{id}` | List/filter or fetch one organism (`?kingdom=` `?habitat_type=` `?native_status=`) |
+| GET | `/taxonomy` | Taxonomic records (`?kingdom=`) |
+| GET | `/samples` `/samples/{id}` `/identifications` | Seed-side samples and identifications |
+| GET | `/biodiversity/metrics` `/biodiversity/assessments` | Diversity indices and ecological findings (`?sample_id=`) |
+| GET | `/population/{organism_id}` `/population/{organism_id}/timeseries` | Population assessment + 2020-2026 timeseries |
+| GET | `/habitat/{organism_id}` | Habitat loss/quality/fragmentation |
+| GET | `/threats` `/threats?organism_id=` `/threats?ecosystem_id=` | Threat records |
+| GET | `/conservation` `/conservation/{organism_id}` | Conservation status (deliberately Unknown/Data Deficient — see `data/README.md`) |
+| GET | `/risk` `/risk/{organism_id}` | Gaia Prototype Risk Score — `/risk/{id}` recomputes **live** via `GaiaRiskEngine`, not just echoed from the seed |
+| GET | `/species/{organism_id}` | Full risk profile: organism + taxonomy + population + habitat + threats + conservation + risk, in one call |
+| GET | `/analysis` `/analysis/{id}` | Seed-side aggregated analysis records |
+| GET | `/dashboard/summary` | Totals, risk/biodiversity/kingdom/conservation distributions, top 10 highest-risk species |
 
 Full request/response examples: [`../docs/API.md`](../docs/API.md).

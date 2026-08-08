@@ -9,10 +9,19 @@ class StatusService:
         self._repository = repository
 
     def get_engine_status(self) -> Dict[str, Any]:
+        collections = self._repository.list_collections()
         return {
             "status": "operational",
             "total_samples": len(self._repository.list_samples()),
             "total_predictions": len(self._repository.get_history()),
+            "seed_dataset": {
+                "loaded": bool(collections),
+                "collection_count": len(collections),
+                "record_count": sum(self._repository.count_records(c) for c in collections),
+                "collections": {
+                    c: self._repository.count_records(c) for c in collections
+                },
+            },
         }
 
     def get_sample_status(self, sample_id: str) -> Dict[str, Any]:

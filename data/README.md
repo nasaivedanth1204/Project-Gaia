@@ -342,15 +342,22 @@ never inflates the score.
 | (new) Conservation Analysis | `conservation_status`, `conservation_assessments` |
 | (new) Extinction-Risk Analysis | `extinction_risk_assessments` |
 | Result Aggregator | `analysis_results` |
+| Dashboard | `GET /dashboard/summary` (see `backend/services/explore_service.py`) |
 
 The live `backend/` pipeline (upload → preprocess → identify → classify →
-assess → analyze) and this seed database are currently two parallel
-demonstrations of the same shape: the live pipeline processes an uploaded
-FASTA end-to-end with placeholder engines; the seed database pre-populates
-a much richer, interconnected dataset — including the population /
-habitat / threat / conservation / risk layers the live pipeline doesn't
-compute yet. Wiring the live pipeline's results into these same
-collections (via `IDataRepository`) is the natural next step.
+assess → analyze) and this seed database share **one repository
+instance** (`dependencies.py::get_repository`), loaded from `data/seed/`
+at startup — they are not separate systems. The live pipeline processes
+an uploaded FASTA end-to-end with placeholder engines and writes into its
+own sample/prediction storage; the seed database pre-populates the richer
+collections the live pipeline doesn't compute yet (population / habitat /
+threat / conservation / risk). The **Explore API**
+(`backend/routes/explore_routes.py`) reads the seed collections directly —
+`/organisms`, `/risk/{id}`, `/species/{id}`, `/dashboard/summary`, etc. —
+and is what the frontend's Biodiversity Dashboard calls. Extending the
+live pipeline to write its own results into these same collections (so an
+uploaded sample gets a population/habitat/threat/risk assessment too,
+not just biodiversity metrics) remains the natural next step.
 
 ## 8. Replacing synthetic data with real data
 

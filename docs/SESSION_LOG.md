@@ -129,3 +129,56 @@ entry is appended at the end of a session that made changes — see
   not duplicating all 23 as static schema files when
   `scripts/gaia_seed/validate.py` already encodes the real constraints
   exhaustively).
+
+## 2026-08-08 (rework: connect the Gaia data model to the running app)
+
+- Audited the existing app before changing anything: the seed database
+  from the previous session (23 collections, ~1,178 records) validated
+  and existed on disk, but the running FastAPI app never loaded it —
+  `dependencies.py::get_repository()` returned a fresh, unseeded
+  repository, so there was zero API surface for organisms, ecosystems,
+  population, threats, conservation, or the Gaia Risk Score. The
+  frontend had no UI for any of it either. That gap was the actual work.
+- Wired `get_repository()` to seed itself from `data/seed/` on creation
+  (graceful no-op if seed files are absent). The live upload pipeline and
+  the Gaia dataset now share one repository instance — uploaded-sample
+  storage and seed-collection storage use disjoint internal keys, so
+  neither can collide with the other. Verified both together via
+  `/status` (reports sample/prediction counts and seed collection counts)
+  and by running the old upload->analyze flow unchanged after the wiring.
+- Added a read-only **Explore API** on top of the existing layered
+  pattern (`services/explore_service.py` -> `explore_controller.py` ->
+  `explore_routes.py`, wired into the existing `dependencies.py`/`app.py`):
+  environment hierarchy, organisms/taxonomy (filterable), samples/
+  identifications, biodiversity metrics/assessments, population (+
+  timeseries), habitat, threats, conservation, and two composite
+  endpoints — `/species/{id}` (full risk profile in one call) and
+  `/dashboard/summary` (totals + distributions + top-10 highest-risk
+  species). `/risk/{id}` and `/species/{id}` recompute the Gaia Prototype
+  Risk Score **live** via `GaiaRiskEngine` rather than only echoing the
+  seed value, proving the engine is a real callable component.
+- Extended `frontend/index.html` (not rebuilt) with tab navigation:
+  **Biodiversity Dashboard** (new, now the default view — summary tiles,
+  CSS distribution bars for risk/biodiversity/kingdom/conservation,
+  a filterable/searchable 49-species table, click-through detail panel
+  with population/habitat/threats/conservation/risk explanation) and
+  **Live Pipeline** (the existing upload flow, unchanged).
+- Caught and fixed a real display bug during review: the species detail
+  title inherited the site's uppercase heading style, which reads badly
+  for scientific names (should be italic, not caps) — fixed with a
+  targeted override.
+- Verified end-to-end in a headless browser: dashboard loads by default
+  and matches the API exactly (top risk species Ardeotis nigriceps score
+  85 "Critical Risk", 49/49 species, 4 distribution panels); kingdom and
+  risk-level filters and free-text search all work; species detail loads
+  live data including the microbial edge case (`habitat: null` renders
+  "Not assessed" instead of crashing); tab switching works both ways and
+  the old Live Pipeline demo still completes with zero regressions; zero
+  JS errors; no horizontal overflow at mobile width (390px).
+- Updated `backend/README.md` (fixed stale "no frontend"/"no dashboards"
+  claims, added the Explore API to the module map and API summary),
+  `docs/API.md` (new Explore API section with live-captured examples),
+  `data/README.md` (fixed a stale claim that the live pipeline and seed
+  dataset were "two parallel demonstrations" — they now share one
+  repository), and the root `README.md` (updated workflow diagram and
+  repository layout description).
