@@ -182,3 +182,84 @@ entry is appended at the end of a session that made changes — see
   dataset were "two parallel demonstrations" — they now share one
   repository), and the root `README.md` (updated workflow diagram and
   repository layout description).
+
+## 2026-08-08 (frontend reorganization: scientific IA + visual system)
+
+- Reworked `frontend/index.html` from a 2-tab dashboard into a full
+  application shell per the requested information architecture: sidebar
+  navigation across 8 pages (Dashboard, Samples, Analysis, Taxonomy,
+  Biodiversity, Conservation, Risk Assessment, History), each with a
+  single clear purpose and progressive disclosure (primary info visible,
+  secondary info one click away) rather than dumping every field at once.
+- Replaced the dark neon theme with a restrained scientific palette:
+  deep forest green sidebar, off-white content, slate text; color used
+  only to carry meaning (positive/warning/critical/neutral/info), never
+  decoration. No gradients, no glassmorphism, no giant marketing headings.
+- Reused rather than rebuilt: the upload/6-stage-pipeline flow now lives
+  inside the Analysis page (restyled, logic untouched); the species
+  detail/risk-explanation rendering patterns from the previous dashboard
+  became the basis for the new speciesMiniCard/risk-breakdown components.
+- Added two small backend endpoints (`GET /population`, `GET /habitat`,
+  bulk list) mirroring the existing `/risk` and `/conservation` bulk-list
+  pattern — needed so the Conservation table can join client-side without
+  49 individual requests.
+- Built genuinely reusable component functions (not files, since this is
+  still a single-file app by design): metricCard, statusBadge,
+  confidenceBadge, riskBadge, conservationBadge, trendBadge,
+  severityBadge, sectionHeader classes, emptyState/loadingState/errorBox,
+  distributionList, speciesMiniCard, a collapsible taxonomyTree (kingdom
+  through species via native `<details>`), and a unified
+  renderAnalysisDetail() that handles both the seed analysis_results
+  shape and the live /analyze pipeline shape in one function.
+- Every "unknown" case renders honestly (`Unknown` / `Not assessed` /
+  `Insufficient data`), never a fabricated number — verified directly:
+  the Conservation table shows real "Not assessed" habitat cells for
+  bacteria/archaea with no habitat_assessments record, and the Risk page
+  shows "Insufficient data" per-factor (not a zero-length bar, which
+  would misleadingly look like "no risk") when a component has no
+  supporting evidence.
+- Caught and fixed three real bugs during review, each verified against
+  actual rendered output rather than just re-reading the code:
+  1. `/risk/{id}` and `/species/{id}` never included `score_weights` in
+     their response (only the seed-generation code added that field), so
+     every risk-factor bar silently showed "Insufficient data" even with
+     full evidence. Fixed at the shared source
+     (`scripts/gaia_seed/risk.py::compute_gaia_risk`) so the seed
+     generator and the live backend cannot drift apart again; regenerated
+     and re-validated the seed data (still 0 errors/0 warnings).
+  2. Risk factor bars were invisible: `.tone-critical` etc. were defined
+     once for badges (pale tint background) and reused verbatim as a
+     bar-fill class, so bars rendered in a near-invisible tint instead of
+     a solid color. Added dedicated `.risk-bar-fill.tone-*` rules.
+  3. The "Use Demo Dataset" button's text became invisible on hover: the
+     generic `.btn:hover` rule set a dark background while
+     `.btn.secondary:hover` only overrode text color to the same dark
+     shade, making text and background match. Also found a mobile-only
+     layout bug the same session: the sidebar's `flex: 0 0 210px` sizing
+     stopped applying once `position: fixed` took over at narrow widths,
+     so it computed to ~385px wide instead of 210px — "off-canvas" at
+     `left: -210px` still left most of it covering the page and
+     intercepting clicks on the menu toggle. Fixed both with explicit
+     values instead of relying on cross-context inheritance.
+  4. Also fixed two taxonomic-convention slips: a species name inherited
+     a section heading's uppercase styling in the Risk detail panel, and
+     a `.sci-name` italic rule was accidentally scoped to `td.sci-name`
+     only, so the same species names in the Biodiversity page's
+     "Frequently Dominant Species" list rendered upright instead of
+     italic.
+  5. The unified analysis-detail renderer assumes the seed and live
+     pipeline shapes share field names for biodiversity metrics; verified
+     the live shape (from `/analyze`) actually shares `species_richness`/
+     `shannon_index`/`simpson_index` but lacks `biodiversity_category`/
+     `pielou_evenness` — confirmed this degrades to an honest "—" rather
+     than crashing or fabricating a value.
+- Verified end-to-end in a headless browser after every fix: all 8 pages
+  load with real data (49 organisms, 34 samples, 22 analyses, 117
+  threats); every drill-down works (sample -> identifications ->
+  biodiversity -> conservation -> risk; taxonomy tree -> species panel;
+  conservation row -> population/habitat/threats; risk row -> score
+  breakdown with bars and evidence-citing explanation); the live upload
+  flow still completes and appears in History; keyboard Tab+Enter
+  navigates the sidebar; zero JS errors throughout; zero horizontal
+  overflow at 390px mobile width; mobile sidebar toggle confirmed
+  actually functional after the width fix.

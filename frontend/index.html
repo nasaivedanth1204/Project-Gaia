@@ -3,357 +3,1143 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Project Gaia — eDNA Biodiversity Analysis</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>%F0%9F%A7%AC</text></svg>">
+<title>Gaia — Biodiversity Analysis Platform</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>%F0%9F%8C%B1</text></svg>">
 <style>
-  :root {
-    --bg: #0b1220;
-    --panel: #121c2e;
-    --panel-2: #16223a;
-    --border: #24334f;
-    --text: #e6edf7;
-    --muted: #93a4c0;
-    --accent: #35d6a5;
-    --accent-dim: #1d8f6f;
-    --info: #46a8ff;
-    --warning: #f0b23a;
-    --critical: #ff6b6b;
-    --radius: 10px;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  }
-  header {
-    padding: 26px 24px 18px;
-    border-bottom: 1px solid var(--border);
-    background: linear-gradient(180deg, #101a2c, var(--bg));
-  }
-  header h1 { margin: 0; font-size: 22px; letter-spacing: .2px; }
-  header h1 span { color: var(--accent); }
-  header p { margin: 6px 0 0; color: var(--muted); font-size: 13.5px; }
-  main { max-width: 1120px; margin: 0 auto; padding: 22px 20px 60px; }
-  .card {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 18px;
-    margin-bottom: 18px;
-  }
-  .card h2 {
-    margin: 0 0 14px; font-size: 14px; text-transform: uppercase;
-    letter-spacing: .09em; color: var(--muted); font-weight: 600;
-  }
-  /* Scientific names use italics by convention, not caps. */
-  #speciesDetailTitle { text-transform: none; letter-spacing: normal; font-size: 18px; }
-  #speciesDetailTitle .sci-name { font-style: italic; color: var(--text); }
-  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-  button {
-    background: var(--accent); color: #04231a; border: 0; font-weight: 650;
-    padding: 10px 16px; border-radius: 8px; cursor: pointer; font-size: 14px;
-  }
-  button:hover:not(:disabled) { background: #4ee7b7; }
-  button:disabled { opacity: .45; cursor: not-allowed; }
-  button.ghost {
-    background: transparent; color: var(--text);
-    border: 1px solid var(--border); font-weight: 500;
-  }
-  button.ghost:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
-  input[type=file] {
-    padding: 9px; background: var(--panel-2); color: var(--muted);
-    border: 1px dashed var(--border); border-radius: 8px; font-size: 13.5px;
-    max-width: 100%;
-  }
-  /* Pipeline stage tracker */
-  .stages { display: flex; flex-wrap: wrap; gap: 8px; }
-  .stage {
-    flex: 1 1 150px; padding: 10px 12px; border-radius: 8px;
-    background: var(--panel-2); border: 1px solid var(--border);
-    font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px;
-  }
-  .stage .dot {
-    width: 9px; height: 9px; border-radius: 50%; background: #3a4a68; flex: none;
-  }
-  .stage.active { border-color: var(--accent); color: var(--text); }
-  .stage.active .dot { background: var(--accent); animation: pulse 1s infinite; }
-  .stage.done { color: var(--text); border-color: var(--accent-dim); }
-  .stage.done .dot { background: var(--accent); }
-  .stage.error { border-color: var(--critical); color: var(--critical); }
-  .stage.error .dot { background: var(--critical); }
-  @keyframes pulse { 50% { opacity: .3; } }
-  /* Metric tiles */
-  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
-  .metric { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 13px; }
-  .metric .label { font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
-  .metric .value { font-size: 25px; font-weight: 650; margin-top: 3px; color: var(--accent); }
-  .metric .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
-  /* Assessment cards */
-  .assessment { border-left: 3px solid var(--info); background: var(--panel-2); padding: 12px 14px; border-radius: 0 8px 8px 0; margin-bottom: 9px; }
-  .assessment.warning { border-left-color: var(--warning); }
-  .assessment.critical { border-left-color: var(--critical); }
-  .assessment .t { font-weight: 640; margin-bottom: 3px; }
-  .assessment .d { font-size: 13.5px; color: var(--muted); }
-  .sev {
-    font-size: 10.5px; text-transform: uppercase; letter-spacing: .07em;
-    padding: 2px 7px; border-radius: 20px; margin-left: 8px; vertical-align: 1.5px;
-    background: rgba(70,168,255,.15); color: var(--info);
-  }
-  .assessment.warning .sev { background: rgba(240,178,58,.15); color: var(--warning); }
-  .assessment.critical .sev { background: rgba(255,107,107,.15); color: var(--critical); }
-  /* Table */
-  .scroll { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 760px; }
-  th, td { text-align: left; padding: 8px 7px; border-bottom: 1px solid var(--border); }
-  /* Lineage names can be long; let them wrap so the category and confidence
-     columns stay on screen instead of being pushed into horizontal scroll. */
-  td.rank { word-break: break-word; }
-  th:last-child, td:last-child { white-space: nowrap; }
-  /* Keep the payoff columns (category, confidence) on screen: sequence IDs
-     are long and uninformative, so truncate them and expose the full id
-     via the native tooltip. */
-  td.seqid { max-width: 118px; overflow: hidden; text-overflow: ellipsis; color: var(--muted); }
-  th { color: var(--muted); font-weight: 600; font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; }
-  td.sci { font-style: italic; }
-  tbody tr:hover { background: var(--panel-2); }
-  .pill { padding: 2px 9px; border-radius: 20px; font-size: 11.5px; background: rgba(53,214,165,.13); color: var(--accent); }
-  .pill.unknown { background: rgba(147,164,192,.13); color: var(--muted); }
-  .conf-vh, .conf-h { color: var(--accent); }
-  .conf-m { color: var(--warning); }
-  .conf-l, .conf-u { color: var(--critical); }
-  .error-box { background: rgba(255,107,107,.09); border: 1px solid var(--critical); color: #ffc2c2; padding: 12px 14px; border-radius: 8px; font-size: 13.5px; }
-  .hidden { display: none; }
-  .muted { color: var(--muted); font-size: 13px; }
-  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 0 20px 30px; }
-  code { background: var(--panel-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+/* =========================================================================
+   Design tokens — restrained scientific palette. Deep forest green for
+   structure/navigation, warm off-white for content, slate for text.
+   Color carries meaning (positive/warning/critical/neutral), not decoration.
+   ========================================================================= */
+:root {
+  --bg: #f5f6f3;
+  --surface: #ffffff;
+  --surface-2: #eef1ec;
+  --border: #dde2dc;
+  --border-strong: #c7ceC5;
+  --text: #1c2521;
+  --text-muted: #5c6a62;
+  --text-faint: #8a958d;
 
-  /* Tab navigation */
-  nav.tabs {
-    max-width: 1120px; margin: 0 auto; padding: 0 20px;
-    display: flex; gap: 4px; border-bottom: 1px solid var(--border);
-  }
-  nav.tabs button {
-    background: transparent; color: var(--muted); border: 0; border-bottom: 2px solid transparent;
-    border-radius: 0; padding: 12px 6px; margin-right: 18px; font-size: 14px; font-weight: 600;
-  }
-  nav.tabs button:hover:not(:disabled) { background: transparent; color: var(--text); }
-  nav.tabs button.active { color: var(--accent); border-bottom-color: var(--accent); }
-  .view.hidden { display: none; }
+  --sidebar-bg: #123326;
+  --sidebar-text: #c8d9cd;
+  --sidebar-text-dim: #83a091;
+  --sidebar-active-bg: #1e4b37;
+  --sidebar-active-text: #ffffff;
+  --sidebar-border: #1c4433;
 
-  /* Dashboard: distribution bars */
-  .dist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-  .dist-panel h3 {
-    margin: 0 0 10px; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted);
-  }
-  .dist-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 12.5px; }
-  .dist-label { flex: 0 0 108px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .dist-bar-track { flex: 1; background: var(--panel-2); border-radius: 4px; height: 8px; overflow: hidden; }
-  .dist-bar-fill { height: 100%; border-radius: 4px; background: var(--accent); }
-  .dist-bar-fill.risk-Critical, .dist-bar-fill.risk-VeryHigh { background: var(--critical); }
-  .dist-bar-fill.risk-High, .dist-bar-fill.risk-Moderate { background: var(--warning); }
-  .dist-count { flex: 0 0 30px; text-align: right; color: var(--text); font-weight: 600; }
+  --accent: #1f6f4f;
+  --accent-strong: #175a40;
+  --accent-tint: #e6f0ea;
 
-  /* Species explorer */
-  .filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
-  select, input[type=search] {
-    background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
-    border-radius: 8px; padding: 8px 10px; font-size: 13px;
-  }
-  tr.species-row { cursor: pointer; }
-  tr.species-row.selected { background: rgba(53,214,165,.08); }
-  .risk-pill { padding: 2px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; }
-  .risk-pill.critical { background: rgba(255,107,107,.18); color: var(--critical); }
-  .risk-pill.high { background: rgba(255,107,107,.12); color: #ff9c9c; }
-  .risk-pill.moderate { background: rgba(240,178,58,.15); color: var(--warning); }
-  .risk-pill.low, .risk-pill.minimal { background: rgba(53,214,165,.13); color: var(--accent); }
-  .risk-pill.insufficient { background: rgba(147,164,192,.13); color: var(--muted); }
+  --positive: #2f7d55;
+  --positive-tint: #e5f2ea;
+  --warning: #9a6b1f;
+  --warning-tint: #fbf0dd;
+  --critical: #a2413a;
+  --critical-tint: #f8e9e7;
+  --neutral: #6b756f;
+  --neutral-tint: #ecefec;
+  --info: #2f5f7d;
+  --info-tint: #e6eef2;
 
-  /* Species detail panel */
-  .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px; }
-  .detail-block { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 13px; }
-  .detail-block h4 {
-    margin: 0 0 8px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
-  }
-  .detail-block dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 13px; }
-  .detail-block dt { color: var(--muted); }
-  .detail-block dd { margin: 0; text-align: right; }
-  .threat-tag {
-    display: inline-block; background: rgba(255,107,107,.1); color: #ffb8b8;
-    border-radius: 20px; padding: 2px 9px; font-size: 11.5px; margin: 2px 3px 0 0;
-  }
-  .explanation-list { margin: 10px 0 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
-  .explanation-list li { margin-bottom: 4px; }
-  .disclaimer-box {
-    background: rgba(240,178,58,.08); border: 1px solid var(--warning); color: #f4d9a8;
-    padding: 10px 13px; border-radius: 8px; font-size: 12.5px; margin-top: 14px;
-  }
+  --radius: 8px;
+  --radius-sm: 6px;
+  --shadow-sm: 0 1px 2px rgba(20,30,25,.06);
+  --shadow-md: 0 2px 10px rgba(20,30,25,.08);
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-7: 32px; --space-8: 40px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.55 -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent-strong); }
+button { font-family: inherit; }
+:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px;
+}
+
+/* -- Typography hierarchy --------------------------------------------- */
+.page-title { font-size: 20px; font-weight: 650; margin: 0; letter-spacing: -.01em; }
+.page-subtitle { font-size: 13.5px; color: var(--text-muted); margin: 4px 0 0; }
+.section-heading {
+  font-size: 12.5px; font-weight: 650; text-transform: uppercase;
+  letter-spacing: .05em; color: var(--text-muted); margin: 0 0 var(--space-3);
+}
+.subheading { font-size: 14.5px; font-weight: 600; margin: 0 0 var(--space-2); color: var(--text); }
+/* Scientific names use italics by taxonomic convention, never caps. */
+.species-name-heading { font-size: 16px; font-weight: 700; font-style: italic; margin: 0; color: var(--text); }
+.body-text { font-size: 13.5px; color: var(--text); }
+.meta-text { font-size: 12px; color: var(--text-faint); }
+
+/* -- App shell ---------------------------------------------------------- */
+.app-shell { display: flex; min-height: 100vh; }
+
+.sidebar {
+  flex: 0 0 210px; background: var(--sidebar-bg); color: var(--sidebar-text);
+  display: flex; flex-direction: column; padding: var(--space-5) 0;
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+}
+.sidebar .brand {
+  display: flex; align-items: center; gap: 9px; padding: 0 var(--space-5) var(--space-5);
+  border-bottom: 1px solid var(--sidebar-border); margin-bottom: var(--space-4);
+}
+.sidebar .brand .mark {
+  width: 26px; height: 26px; border-radius: 6px; background: var(--accent);
+  display: flex; align-items: center; justify-content: center; font-size: 14px; flex: none;
+}
+.sidebar .brand .name { font-size: 16px; font-weight: 700; color: #fff; letter-spacing: .01em; }
+.sidebar .brand .tag {
+  font-size: 10px; color: var(--sidebar-text-dim); text-transform: uppercase; letter-spacing: .06em;
+}
+nav.nav-list { display: flex; flex-direction: column; gap: 1px; padding: 0 var(--space-3); }
+nav.nav-list button {
+  display: flex; align-items: center; gap: 10px; background: transparent; color: var(--sidebar-text);
+  border: 0; text-align: left; padding: 9px 12px; border-radius: var(--radius-sm);
+  font-size: 13.5px; font-weight: 500; cursor: pointer; width: 100%;
+}
+nav.nav-list button .ic { font-size: 14px; width: 18px; text-align: center; flex: none; opacity: .85; }
+nav.nav-list button:hover { background: rgba(255,255,255,.06); color: #fff; }
+nav.nav-list button.active { background: var(--sidebar-active-bg); color: var(--sidebar-active-text); font-weight: 600; }
+.sidebar .sidebar-footer {
+  margin-top: auto; padding: var(--space-4) var(--space-5) 0; border-top: 1px solid var(--sidebar-border);
+  font-size: 11px; color: var(--sidebar-text-dim); line-height: 1.5;
+}
+
+.main-col { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+
+.topbar {
+  height: 56px; flex: none; background: var(--surface); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; padding: 0 var(--space-6);
+  position: sticky; top: 0; z-index: 5;
+}
+.topbar .crumbs { font-size: 13px; color: var(--text-muted); }
+.topbar .right { display: flex; align-items: center; gap: 10px; }
+.badge-pill {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 600;
+  padding: 4px 10px; border-radius: 20px; border: 1px solid var(--border-strong);
+  color: var(--text-muted); background: var(--surface-2);
+}
+.badge-pill.status-ok { color: var(--positive); border-color: var(--positive); background: var(--positive-tint); }
+.badge-pill.status-ok .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--positive); }
+
+.view-content { padding: var(--space-6); max-width: 1280px; width: 100%; margin: 0 auto; }
+.view { display: none; }
+.view.active { display: block; }
+.page-head { margin-bottom: var(--space-6); }
+
+/* -- Cards / sections ----------------------------------------------------*/
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: var(--space-5); margin-bottom: var(--space-5); box-shadow: var(--shadow-sm);
+}
+.card + .card { margin-top: 0; }
+.card-row { display: flex; gap: var(--space-5); align-items: flex-start; flex-wrap: wrap; }
+
+/* -- Metric cards --------------------------------------------------------*/
+.metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--space-4); }
+.metric-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5); box-shadow: var(--shadow-sm);
+}
+.metric-card .m-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+.metric-card .m-value { font-size: 28px; font-weight: 700; margin-top: 6px; color: var(--text); letter-spacing: -.01em; }
+.metric-card .m-sub { font-size: 12px; color: var(--text-faint); margin-top: 3px; }
+.metric-card.tone-critical .m-value { color: var(--critical); }
+.metric-card.tone-warning .m-value { color: var(--warning); }
+
+/* -- Buttons / inputs -----------------------------------------------------*/
+.btn {
+  background: var(--accent); color: #fff; border: 0; font-weight: 600; font-size: 13.5px;
+  padding: 9px 16px; border-radius: var(--radius-sm); cursor: pointer;
+}
+.btn:hover:not(:disabled) { background: var(--accent-strong); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border-strong); }
+.btn.secondary:hover:not(:disabled) { background: var(--accent-tint); border-color: var(--accent); color: var(--accent-strong); }
+.field-row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
+input[type=search], input[type=file], select {
+  font-family: inherit; font-size: 13px; background: var(--surface); color: var(--text);
+  border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 8px 10px;
+}
+input[type=search] { min-width: 220px; }
+label.field-label { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-right: 4px; }
+
+/* -- Badges (semantic) ---------------------------------------------------*/
+.tone-badge {
+  display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 650;
+  padding: 3px 9px; border-radius: 20px; white-space: nowrap;
+}
+.tone-positive { background: var(--positive-tint); color: var(--positive); }
+.tone-warning  { background: var(--warning-tint); color: var(--warning); }
+.tone-critical { background: var(--critical-tint); color: var(--critical); }
+.tone-neutral  { background: var(--neutral-tint); color: var(--neutral); }
+.tone-info     { background: var(--info-tint); color: var(--info); }
+
+/* -- Tables ----------------------------------------------------------- */
+.table-scroll { overflow-x: auto; }
+table.data-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 640px; }
+table.data-table th {
+  text-align: left; font-size: 11px; font-weight: 650; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--text-muted); padding: 8px 12px; border-bottom: 1px solid var(--border-strong);
+  cursor: pointer; user-select: none; white-space: nowrap;
+}
+table.data-table th.sortable:hover { color: var(--text); }
+table.data-table th .arrow { font-size: 10px; margin-left: 3px; opacity: .6; }
+table.data-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+table.data-table tbody tr { cursor: pointer; }
+table.data-table tbody tr:hover { background: var(--surface-2); }
+table.data-table tbody tr.selected { background: var(--accent-tint); }
+.sci-name { font-style: italic; }
+td.mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12.5px; color: var(--text-muted); }
+td.num { text-align: right; }
+th.num { text-align: right; }
+
+/* -- Distribution bars ---------------------------------------------------*/
+.dist-list { display: flex; flex-direction: column; gap: 8px; }
+.dist-row { display: grid; grid-template-columns: 132px 1fr 34px; align-items: center; gap: 10px; font-size: 12.5px; }
+.dist-label { color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dist-track { background: var(--surface-2); border-radius: 4px; height: 8px; overflow: hidden; }
+.dist-fill { height: 100%; border-radius: 4px; background: var(--accent); }
+.dist-fill.tone-positive { background: var(--positive); }
+.dist-fill.tone-warning { background: var(--warning); }
+.dist-fill.tone-critical { background: var(--critical); }
+.dist-fill.tone-neutral { background: var(--neutral); }
+.dist-count { text-align: right; font-weight: 650; color: var(--text); }
+
+/* -- Section / detail blocks ----------------------------------------------*/
+.detail-section { margin-bottom: var(--space-6); }
+.detail-section:last-child { margin-bottom: 0; }
+.kv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-4); }
+.kv { }
+.kv .k { font-size: 11.5px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .03em; }
+.kv .v { font-size: 14.5px; font-weight: 600; margin-top: 2px; }
+.kv .v.unknown { color: var(--text-faint); font-weight: 500; font-style: italic; }
+
+/* -- Species mini card (Section 11) ---------------------------------------*/
+.species-card {
+  border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-4);
+  background: var(--surface-2); max-width: 420px;
+}
+.species-card .sp-name { font-size: 15.5px; font-weight: 700; font-style: italic; }
+.species-card .sp-common { font-size: 13px; color: var(--text-muted); margin-top: 1px; }
+.species-card .sp-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; margin-top: var(--space-3); font-size: 12.5px;
+}
+.species-card .sp-grid .k { color: var(--text-muted); }
+.species-card .sp-grid .v { font-weight: 600; }
+.species-card .sp-foot { display: flex; gap: 8px; margin-top: var(--space-3); flex-wrap: wrap; }
+
+/* -- Taxonomy tree ---------------------------------------------------------*/
+.tax-tree details { margin-left: 4px; }
+.tax-tree summary {
+  cursor: pointer; padding: 5px 6px; border-radius: 5px; font-size: 13px; list-style: none;
+}
+.tax-tree summary::-webkit-details-marker { display: none; }
+.tax-tree summary::before { content: "▸ "; color: var(--text-faint); font-size: 10px; }
+.tax-tree details[open] > summary::before { content: "▾ "; }
+.tax-tree summary:hover { background: var(--surface-2); }
+.tax-tree .rank-tag { font-size: 10.5px; color: var(--text-faint); margin-left: 6px; text-transform: uppercase; }
+.tax-tree .leaf {
+  display: flex; align-items: center; gap: 8px; padding: 5px 6px 5px 22px; font-size: 13px;
+  border-radius: 5px; cursor: pointer;
+}
+.tax-tree .leaf:hover { background: var(--accent-tint); }
+.tax-tree .leaf .leaf-sci { font-style: italic; }
+.tax-tree .leaf .leaf-common { color: var(--text-muted); font-size: 12px; }
+.tax-tree .leaf.unlinked { cursor: default; color: var(--text-faint); }
+.tax-tree .leaf.unlinked:hover { background: transparent; }
+.tax-tree .branch-children { padding-left: 16px; border-left: 1px solid var(--border); margin-left: 6px; }
+
+/* -- Risk breakdown --------------------------------------------------------*/
+.risk-score-hero { display: flex; align-items: baseline; gap: var(--space-4); flex-wrap: wrap; }
+.risk-score-hero .score-num { font-size: 40px; font-weight: 750; letter-spacing: -.02em; }
+.risk-score-hero .score-max { font-size: 15px; color: var(--text-faint); }
+.risk-bar-row { margin-bottom: var(--space-3); }
+.risk-bar-row .rb-head { display: flex; justify-content: space-between; font-size: 12.5px; margin-bottom: 4px; }
+.risk-bar-row .rb-label { color: var(--text-muted); font-weight: 600; }
+.risk-bar-row .rb-value { font-weight: 650; }
+.risk-bar-track { background: var(--surface-2); border-radius: 4px; height: 9px; overflow: hidden; }
+.risk-bar-fill { height: 100%; border-radius: 4px; background: var(--accent); }
+.risk-bar-fill.tone-positive { background: var(--positive); }
+.risk-bar-fill.tone-warning { background: var(--warning); }
+.risk-bar-fill.tone-critical { background: var(--critical); }
+.risk-bar-fill.tone-neutral { background: var(--neutral); }
+.explanation-list { margin: var(--space-2) 0 0; padding-left: 20px; font-size: 13.5px; }
+.explanation-list li { margin-bottom: 6px; color: var(--text); }
+
+/* -- Empty / loading / error states -----------------------------------------*/
+.state-box {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: var(--space-8) var(--space-5); color: var(--text-muted);
+}
+.state-box .state-icon { font-size: 26px; margin-bottom: var(--space-2); opacity: .6; }
+.state-box .state-title { font-size: 14px; font-weight: 600; color: var(--text); }
+.state-box .state-sub { font-size: 12.5px; margin-top: 4px; max-width: 380px; }
+.error-box {
+  background: var(--critical-tint); border: 1px solid var(--critical); color: var(--critical);
+  padding: 12px 14px; border-radius: var(--radius-sm); font-size: 13px;
+}
+
+/* -- Provenance / synthetic data --------------------------------------------*/
+.provenance-strip {
+  display: flex; gap: var(--space-5); flex-wrap: wrap; font-size: 12px; color: var(--text-faint);
+  border-top: 1px solid var(--border); margin-top: var(--space-4); padding-top: var(--space-3);
+}
+.provenance-strip b { color: var(--text-muted); font-weight: 600; }
+
+/* -- Upload / pipeline -------------------------------------------------------*/
+.dropzone {
+  border: 1.5px dashed var(--border-strong); border-radius: var(--radius); padding: var(--space-7);
+  text-align: center; background: var(--surface-2);
+}
+.dropzone .dz-icon { font-size: 24px; opacity: .55; }
+.dropzone .dz-text { font-size: 13.5px; color: var(--text-muted); margin: var(--space-2) 0 var(--space-3); }
+.stage-track { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--space-4); }
+.stage-chip {
+  flex: 1 1 140px; padding: 8px 11px; border-radius: var(--radius-sm); font-size: 12.5px;
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--text-muted);
+  display: flex; align-items: center; gap: 7px;
+}
+.stage-chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border-strong); flex: none; }
+.stage-chip.active { border-color: var(--accent); color: var(--text); }
+.stage-chip.active .dot { background: var(--accent); animation: pulse 1s infinite; }
+.stage-chip.done { color: var(--text); border-color: var(--positive); }
+.stage-chip.done .dot { background: var(--positive); }
+.stage-chip.error { border-color: var(--critical); color: var(--critical); }
+.stage-chip.error .dot { background: var(--critical); }
+@keyframes pulse { 50% { opacity: .35; } }
+
+.hidden { display: none !important; }
+code { background: var(--surface-2); padding: 1px 6px; border-radius: 4px; font-size: 12.5px; }
+
+/* -- Responsiveness ---------------------------------------------------------*/
+@media (max-width: 900px) {
+  .sidebar { position: fixed; width: 210px; left: -210px; z-index: 30; transition: left .15s; box-shadow: var(--shadow-md); }
+  .sidebar.open { left: 0; }
+  .menu-toggle { display: inline-flex !important; }
+  .view-content { padding: var(--space-4); }
+}
+.menu-toggle {
+  display: none; align-items: center; justify-content: center; width: 34px; height: 34px;
+  border-radius: var(--radius-sm); border: 1px solid var(--border-strong); background: var(--surface);
+  font-size: 15px; cursor: pointer;
+}
+@media (max-width: 640px) {
+  .metric-grid { grid-template-columns: repeat(2, 1fr); }
+  .dist-row { grid-template-columns: 90px 1fr 30px; }
+  .kv-grid { grid-template-columns: repeat(2, 1fr); }
+}
 </style>
 </head>
 <body>
-<header>
-  <h1>Project <span>Gaia</span></h1>
-  <p>Taxonomy identification &amp; biodiversity assessment from eDNA datasets</p>
-</header>
 
-<nav class="tabs">
-  <button id="tabDashboardBtn" class="active">Biodiversity Dashboard</button>
-  <button id="tabPipelineBtn">Live Pipeline</button>
-</nav>
-
-<main id="viewDashboard" class="view">
-  <section class="card">
-    <h2>Overview</h2>
-    <div class="metrics" id="dashTiles"></div>
-  </section>
-
-  <section class="card">
-    <h2>Distributions</h2>
-    <div class="dist-grid" id="dashDistributions"></div>
-  </section>
-
-  <section class="card">
-    <h2>Species Explorer</h2>
-    <div class="filters">
-      <input type="search" id="speciesSearch" placeholder="Search scientific or common name…">
-      <select id="kingdomFilter"><option value="">All kingdoms</option></select>
-      <select id="riskFilter">
-        <option value="">All risk levels</option>
-        <option>Critical Risk</option><option>Very High Risk</option><option>High Risk</option>
-        <option>Moderate Risk</option><option>Low Risk</option><option>Minimal Risk</option>
-        <option>Insufficient Data</option>
-      </select>
-    </div>
-    <div class="scroll">
-      <table>
-        <thead>
-          <tr>
-            <th>Scientific name</th><th>Common name</th><th>Kingdom</th>
-            <th>Conservation</th><th>Gaia Risk Score</th><th>Risk Level</th>
-          </tr>
-        </thead>
-        <tbody id="speciesBody"></tbody>
-      </table>
-    </div>
-    <p class="muted" id="speciesCount" style="margin-top:10px"></p>
-  </section>
-
-  <section class="card hidden" id="speciesDetailCard">
-    <h2 id="speciesDetailTitle">Species Detail</h2>
-    <div id="speciesDetailBody"></div>
-  </section>
-
-  <div class="disclaimer-box">
-    All figures on this dashboard summarize a <strong>synthetic demonstration dataset</strong>
-    (see <code>data/README.md</code>). No record here represents a real field observation,
-    a real population estimate, or an official conservation assessment. The Gaia Risk Score
-    is a prototype heuristic, not an IUCN category.
-  </div>
-</main>
-
-<main id="viewPipeline" class="view hidden">
-  <section class="card">
-    <h2>1 · Dataset Input</h2>
-    <div class="row">
-      <input type="file" id="fileInput" accept=".fasta,.fa,.fna,.csv,.txt">
-      <button id="runBtn">Run Analysis</button>
-      <button id="demoBtn" class="ghost">Use Demo Dataset</button>
-      <button id="resetBtn" class="ghost">Reset</button>
-    </div>
-    <p class="muted" style="margin:11px 0 0">
-      Accepts FASTA (<code>.fasta .fa .fna</code>), CSV with a <code>sequence</code> column, or TXT (one sequence per line).
-    </p>
-  </section>
-
-  <section class="card">
-    <h2>2 · Processing Pipeline</h2>
-    <div class="stages" id="stages"></div>
-    <div id="errorBox" class="error-box hidden" style="margin-top:14px"></div>
-  </section>
-
-  <div id="results" class="hidden">
-    <section class="card">
-      <h2>3 · Biodiversity Metrics</h2>
-      <div class="metrics" id="metrics"></div>
-      <div style="margin-top:14px" id="speciesLists"></div>
-    </section>
-
-    <section class="card">
-      <h2>4 · Ecological Assessment</h2>
-      <div id="assessments"></div>
-    </section>
-
-    <section class="card">
-      <h2>5 · Taxonomy, Classification &amp; Confidence</h2>
-      <div class="scroll">
-        <table>
-          <thead>
-            <tr>
-              <th>Sequence</th><th>Kingdom</th><th>Phylum</th><th>Class</th>
-              <th>Order</th><th>Family</th><th>Genus</th><th>Species</th>
-              <th>Category</th><th>Confidence</th>
-            </tr>
-          </thead>
-          <tbody id="taxaBody"></tbody>
-        </table>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="mark">🌱</span>
+      <div>
+        <div class="name">GAIA</div>
+        <div class="tag">Biodiversity Platform</div>
       </div>
-    </section>
-  </div>
-</main>
+    </div>
+    <nav class="nav-list" id="navList">
+      <button data-view="dashboard"><span class="ic">▦</span>Dashboard</button>
+      <button data-view="samples"><span class="ic">◎</span>Samples</button>
+      <button data-view="analysis"><span class="ic">⌁</span>Analysis</button>
+      <button data-view="taxonomy"><span class="ic">⌂</span>Taxonomy</button>
+      <button data-view="biodiversity"><span class="ic">✻</span>Biodiversity</button>
+      <button data-view="conservation"><span class="ic">◈</span>Conservation</button>
+      <button data-view="risk"><span class="ic">△</span>Risk Assessment</button>
+      <button data-view="history"><span class="ic">◷</span>History</button>
+    </nav>
+    <div class="sidebar-footer">
+      Prototype pipeline &amp; synthetic demonstration dataset.<br>
+      Scientific engines are placeholders pending model integration.
+    </div>
+  </aside>
 
-<footer>
-  Prototype UI — scientific engines are placeholders pending ML model integration.
-</footer>
+  <div class="main-col">
+    <div class="topbar">
+      <div style="display:flex;align-items:center;gap:10px">
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <span class="crumbs" id="crumbs">Dashboard</span>
+      </div>
+      <div class="right">
+        <span class="badge-pill" title="No record in this app represents a real field observation.">Prototype Dataset · Synthetic</span>
+        <span class="badge-pill status-ok" id="statusPill"><span class="dot"></span>Checking…</span>
+      </div>
+    </div>
+
+    <div class="view-content">
+
+      <!-- ============================ DASHBOARD ============================ -->
+      <section class="view active" data-view="dashboard">
+        <div class="page-head">
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Current state of the biodiversity dataset.</p>
+        </div>
+        <div id="dashMetrics" class="metric-grid" style="margin-bottom:var(--space-5)"></div>
+
+        <div class="card-row">
+          <div class="card" style="flex:1 1 280px">
+            <h2 class="section-heading">Biodiversity Overview</h2>
+            <div id="dashBiodiversity"></div>
+          </div>
+          <div class="card" style="flex:1 1 280px">
+            <h2 class="section-heading">Environmental Distribution</h2>
+            <div id="dashEnvironment"></div>
+          </div>
+          <div class="card" style="flex:1 1 280px">
+            <h2 class="section-heading">Risk Overview</h2>
+            <div id="dashRisk"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="section-heading">Recent Analyses</h2>
+          <div id="dashRecent"></div>
+        </div>
+      </section>
+
+      <!-- ============================ SAMPLES ============================ -->
+      <section class="view" data-view="samples">
+        <div class="page-head">
+          <h1 class="page-title">Samples</h1>
+          <p class="page-subtitle">Environmental DNA samples collected across synthetic sampling sites.</p>
+        </div>
+        <div class="card">
+          <div class="field-row" style="margin-bottom:var(--space-4)">
+            <input type="search" id="sampleSearch" placeholder="Search sample ID or location…">
+            <select id="sampleEcoFilter"><option value="">All ecosystem types</option></select>
+            <select id="sampleStatusFilter"><option value="">All statuses</option></select>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table" id="samplesTable">
+              <thead><tr>
+                <th class="sortable" data-sort="sample_id">Sample <span class="arrow"></span></th>
+                <th class="sortable" data-sort="region">Location <span class="arrow"></span></th>
+                <th class="sortable" data-sort="ecosystem">Ecosystem <span class="arrow"></span></th>
+                <th class="sortable" data-sort="collection_date">Collected <span class="arrow"></span></th>
+                <th class="sortable" data-sort="marker_region">Marker <span class="arrow"></span></th>
+                <th class="sortable" data-sort="status">Status <span class="arrow"></span></th>
+              </tr></thead>
+              <tbody id="samplesBody"></tbody>
+            </table>
+          </div>
+          <p class="meta-text" id="samplesCount" style="margin-top:10px"></p>
+        </div>
+        <div class="card hidden" id="sampleDetailCard"></div>
+      </section>
+
+      <!-- ============================ ANALYSIS ============================ -->
+      <section class="view" data-view="analysis">
+        <div class="page-head">
+          <h1 class="page-title">Analysis</h1>
+          <p class="page-subtitle">What Gaia found — from a sample through to a risk assessment.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="section-heading">Analyze New eDNA Sample</h2>
+          <div class="field-row">
+            <input type="file" id="fileInput" accept=".fasta,.fa,.fna,.csv,.txt">
+            <button class="btn" id="runBtn">Analyze</button>
+            <button class="btn secondary" id="demoBtn">Use Demo Dataset</button>
+          </div>
+          <div id="stageTrack" class="stage-track hidden"></div>
+          <div id="uploadError" class="error-box hidden" style="margin-top:var(--space-3)"></div>
+        </div>
+
+        <div class="card hidden" id="liveAnalysisCard"></div>
+
+        <div class="card">
+          <h2 class="section-heading">Analyzed Samples</h2>
+          <div class="table-scroll">
+            <table class="data-table" id="analysisTable">
+              <thead><tr>
+                <th>Sample</th><th>Ecosystem</th><th class="num">Species Richness</th>
+                <th>Biodiversity</th><th class="num">Mean Confidence</th>
+              </tr></thead>
+              <tbody id="analysisBody"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card hidden" id="analysisDetailCard"></div>
+      </section>
+
+      <!-- ============================ TAXONOMY ============================ -->
+      <section class="view" data-view="taxonomy">
+        <div class="page-head">
+          <h1 class="page-title">Taxonomy</h1>
+          <p class="page-subtitle">Hierarchical classification of taxa referenced in this dataset.</p>
+        </div>
+        <div class="card-row">
+          <div class="card" style="flex: 1 1 380px">
+            <h2 class="section-heading">Hierarchy</h2>
+            <div id="taxTree" class="tax-tree"></div>
+          </div>
+          <div class="card" style="flex: 1 1 320px" id="taxSpeciesPanel">
+            <h2 class="section-heading">Species</h2>
+            <div class="state-box">
+              <div class="state-icon">⌂</div>
+              <div class="state-title">Select a species</div>
+              <div class="state-sub">Choose a taxon from the hierarchy to see its summary.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ BIODIVERSITY ============================ -->
+      <section class="view" data-view="biodiversity">
+        <div class="page-head">
+          <h1 class="page-title">Biodiversity</h1>
+          <p class="page-subtitle">Diversity indices computed across analyzed samples.</p>
+        </div>
+        <div id="bioMetrics" class="metric-grid" style="margin-bottom:var(--space-5)"></div>
+        <div class="card-row">
+          <div class="card" style="flex:1 1 320px">
+            <h2 class="section-heading">Biodiversity Category Distribution</h2>
+            <div id="bioCategoryDist"></div>
+          </div>
+          <div class="card" style="flex:1 1 320px">
+            <h2 class="section-heading">Species Richness by Ecosystem</h2>
+            <div id="bioByEcosystem"></div>
+          </div>
+        </div>
+        <div class="card">
+          <h2 class="section-heading">Frequently Dominant Species</h2>
+          <div id="bioDominant"></div>
+        </div>
+      </section>
+
+      <!-- ============================ CONSERVATION ============================ -->
+      <section class="view" data-view="conservation">
+        <div class="page-head">
+          <h1 class="page-title">Conservation</h1>
+          <p class="page-subtitle">Which organisms may require attention, and why.</p>
+        </div>
+        <div class="card">
+          <div class="field-row" style="margin-bottom:var(--space-4)">
+            <input type="search" id="consSearch" placeholder="Search species…">
+            <select id="consKingdomFilter"><option value="">All kingdoms</option></select>
+            <select id="consStatusFilter"><option value="">All conservation statuses</option></select>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table" id="consTable">
+              <thead><tr>
+                <th class="sortable" data-sort="scientific_name">Species <span class="arrow"></span></th>
+                <th class="sortable" data-sort="trend">Population Trend <span class="arrow"></span></th>
+                <th class="sortable num" data-sort="decline">Population Change <span class="arrow"></span></th>
+                <th class="sortable num" data-sort="habitat_loss">Habitat Loss <span class="arrow"></span></th>
+                <th class="sortable" data-sort="threat_level">Threat Level <span class="arrow"></span></th>
+                <th>Conservation Status</th>
+                <th class="sortable num" data-sort="risk_score">Gaia Risk <span class="arrow"></span></th>
+              </tr></thead>
+              <tbody id="consBody"></tbody>
+            </table>
+          </div>
+          <p class="meta-text" id="consCount" style="margin-top:10px"></p>
+        </div>
+        <div class="card hidden" id="consDetailCard"></div>
+      </section>
+
+      <!-- ============================ RISK ASSESSMENT ============================ -->
+      <section class="view" data-view="risk">
+        <div class="page-head">
+          <h1 class="page-title">Risk Assessment</h1>
+          <p class="page-subtitle">Gaia Prototype Risk Score — explainable, not alarmist.</p>
+        </div>
+        <div class="card-row">
+          <div class="card" style="flex: 1 1 360px">
+            <h2 class="section-heading">Species by Risk</h2>
+            <div class="table-scroll">
+              <table class="data-table" id="riskTable">
+                <thead><tr><th>Species</th><th class="num">Score</th><th>Level</th></tr></thead>
+                <tbody id="riskBody"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card" style="flex: 1 1 420px" id="riskDetailPanel">
+            <div class="state-box">
+              <div class="state-icon">△</div>
+              <div class="state-title">Select a species</div>
+              <div class="state-sub">Choose a species from the list to see its risk breakdown.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ HISTORY ============================ -->
+      <section class="view" data-view="history">
+        <div class="page-head">
+          <h1 class="page-title">History</h1>
+          <p class="page-subtitle">Samples analyzed by you during this session (Analysis tab uploads).</p>
+        </div>
+        <div class="card">
+          <div id="historyList"></div>
+        </div>
+        <div class="card hidden" id="historyDetailCard"></div>
+      </section>
+
+    </div>
+  </div>
+</div>
 
 <script>
-// If opened directly from disk, fall back to a locally running backend.
+"use strict";
 const API = location.protocol.startsWith("http") ? "" : "http://127.0.0.1:8000";
-
-const STAGES = [
-  { key: "upload",     label: "Upload & Validate" },
-  { key: "preprocess", label: "Preprocess" },
-  { key: "identify",   label: "Identify Taxonomy" },
-  { key: "classify",   label: "Classify" },
-  { key: "assess",     label: "Assess Biodiversity" },
-  { key: "analyze",    label: "Aggregate Results" },
-];
-
 const $ = (id) => document.getElementById(id);
-const stagesEl = $("stages");
+const qs = (sel, root) => (root || document).querySelector(sel);
+const qsa = (sel, root) => Array.from((root || document).querySelectorAll(sel));
 
-function renderStages(state = {}) {
-  stagesEl.innerHTML = STAGES.map(s =>
-    `<div class="stage ${state[s.key] || ""}"><span class="dot"></span>${s.label}</div>`
-  ).join("");
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
 }
-renderStages();
-
-function setError(msg) {
-  const box = $("errorBox");
-  if (!msg) { box.classList.add("hidden"); return; }
-  box.textContent = msg;
-  box.classList.remove("hidden");
+function dash(v, unit) { return (v === null || v === undefined || v === "") ? "—" : (esc(v) + (unit || "")); }
+function unknownSpan(v, unit) {
+  if (v === null || v === undefined || v === "") return '<span class="v unknown">Unknown</span>';
+  return `<span class="v">${esc(v)}${unit || ""}</span>`;
 }
 
-async function postJSON(path, body) {
-  const res = await fetch(API + path, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
+async function getJSON(path) {
+  const res = await fetch(API + path);
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error(extractError(data, res.status));
   return data;
 }
-
+async function postJSON(path, body) {
+  const res = await fetch(API + path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(extractError(data, res.status));
+  return data;
+}
 function extractError(data, status) {
   const d = data && data.detail;
   if (typeof d === "string") return d;
   if (d && d.message) return d.message + (d.errors ? " — " + d.errors.join("; ") : "");
   return `Request failed (HTTP ${status})`;
 }
+function indexBy(list, field) { return Object.fromEntries((list || []).map(x => [x[field], x])); }
+function groupBy(list, field) {
+  const m = {};
+  (list || []).forEach(x => { (m[x[field]] = m[x[field]] || []).push(x); });
+  return m;
+}
 
+/* ===========================================================================
+   Shared component renderers
+   =========================================================================== */
+
+function metricCard(label, value, sub, tone) {
+  return `<div class="metric-card ${tone ? "tone-" + tone : ""}">
+    <div class="m-label">${esc(label)}</div>
+    <div class="m-value">${value ?? "—"}</div>
+    <div class="m-sub">${esc(sub || "")}</div>
+  </div>`;
+}
+
+const CONF_TONE = { "Very High": "positive", "High": "positive", "Medium": "warning", "Low": "critical", "Unknown": "neutral" };
+function confidenceBadge(score, level) {
+  const tone = CONF_TONE[level] || "neutral";
+  const pct = (score === null || score === undefined) ? "—" : Math.round(score * 100) + "%";
+  return `<span class="tone-badge tone-${tone}">${pct} · ${esc(level || "Unknown")}</span>`;
+}
+
+const RISK_TONE = {
+  "Critical Risk": "critical", "Very High Risk": "critical", "High Risk": "warning",
+  "Moderate Risk": "warning", "Low Risk": "positive", "Minimal Risk": "positive",
+  "Insufficient Data": "neutral",
+};
+function riskBadge(level, score) {
+  const tone = RISK_TONE[level] || "neutral";
+  const s = (score === null || score === undefined) ? "" : score + " · ";
+  return `<span class="tone-badge tone-${tone}">${s}${esc(level || "Unknown")}</span>`;
+}
+
+const STATUS_TONE = {
+  Collected: "neutral", Processing: "info", Processed: "info",
+  Analyzed: "positive", "Low Quality": "warning", "Insufficient Data": "neutral",
+};
+function statusBadge(status) {
+  return `<span class="tone-badge tone-${STATUS_TONE[status] || "neutral"}">${esc(status || "Unknown")}</span>`;
+}
+
+const TREND_TONE = {
+  Increasing: "positive", Stable: "positive", Fluctuating: "neutral",
+  Declining: "warning", "Rapidly Declining": "critical", Unknown: "neutral",
+  Improving: "positive",
+};
+function trendBadge(trend) {
+  return `<span class="tone-badge tone-${TREND_TONE[trend] || "neutral"}">${esc(trend || "Unknown")}</span>`;
+}
+
+const CONSERVATION_TONE = {
+  "Least Concern": "positive", "Near Threatened": "warning", "Vulnerable": "warning",
+  "Endangered": "critical", "Critically Endangered": "critical", "Extinct in the Wild": "critical",
+  "Extinct": "critical", "Data Deficient": "neutral", "Not Evaluated": "neutral", "Unknown": "neutral",
+};
+function conservationBadge(status) {
+  return `<span class="tone-badge tone-${CONSERVATION_TONE[status] || "neutral"}">${esc(status || "Unknown")}</span>`;
+}
+
+const SEVERITY_TONE = { Critical: "critical", High: "warning", Moderate: "warning", Low: "neutral" };
+function severityBadge(sev) {
+  return `<span class="tone-badge tone-${SEVERITY_TONE[sev] || "neutral"}">${esc(sev || "Unknown")}</span>`;
+}
+
+function emptyState(icon, title, sub) {
+  return `<div class="state-box"><div class="state-icon">${icon}</div>
+    <div class="state-title">${esc(title)}</div>
+    <div class="state-sub">${esc(sub || "")}</div></div>`;
+}
+function loadingState(msg) {
+  return `<div class="state-box"><div class="state-title">${esc(msg || "Loading…")}</div></div>`;
+}
+function errorBox(msg) { return `<div class="error-box">${esc(msg)}</div>`; }
+
+function distributionList(dist, toneFn) {
+  const entries = Object.entries(dist || {}).sort((a, b) => b[1] - a[1]);
+  if (!entries.length) return emptyState("○", "No data", "");
+  const max = Math.max(...entries.map(e => e[1]), 1);
+  return `<div class="dist-list">` + entries.map(([label, count]) => `
+    <div class="dist-row">
+      <div class="dist-label" title="${esc(label)}">${esc(label)}</div>
+      <div class="dist-track"><div class="dist-fill ${toneFn ? "tone-" + toneFn(label) : ""}" style="width:${(count/max*100).toFixed(0)}%"></div></div>
+      <div class="dist-count">${count}</div>
+    </div>`).join("") + `</div>`;
+}
+
+function provenanceStrip(rec) {
+  if (!rec) return "";
+  return `<div class="provenance-strip">
+    <span><b>Source:</b> ${esc(rec.source || "Synthetic demonstration data")}</span>
+    <span><b>Type:</b> ${esc(rec.source_type || "Synthetic")}</span>
+    ${rec.model_version ? `<span><b>Model:</b> ${esc(rec.model_version)}</span>` : ""}
+  </div>`;
+}
+
+function speciesMiniCard(organism, risk, conservation, confidence) {
+  return `<div class="species-card">
+    <div class="sp-name">${esc(organism.scientific_name)}</div>
+    <div class="sp-common">${esc(organism.common_name)}</div>
+    <div class="sp-grid">
+      <div><span class="k">Kingdom</span><br><span class="v">${esc(organism.kingdom)}</span></div>
+      <div><span class="k">Habitat</span><br><span class="v">${esc(organism.habitat_type)}</span></div>
+      ${confidence !== undefined ? `<div><span class="k">Confidence</span><br>${confidenceBadge(confidence.score, confidence.level)}</div>` : ""}
+      <div><span class="k">Conservation</span><br>${conservationBadge(conservation)}</div>
+    </div>
+    <div class="sp-foot">${riskBadge(risk && risk.risk_level, risk && risk.gaia_risk_score)}</div>
+  </div>`;
+}
+
+/* ===========================================================================
+   Data cache — lazily fetched, shared across views
+   =========================================================================== */
+const CACHE = {};
+async function ensure(key, path) {
+  if (!CACHE[key]) CACHE[key] = await getJSON(path);
+  return CACHE[key];
+}
+async function loadCoreReference() {
+  const [organisms, taxonomy, ecosystems, sites, locations, samples] = await Promise.all([
+    ensure("organisms", "/organisms"),
+    ensure("taxonomy", "/taxonomy"),
+    ensure("ecosystems", "/ecosystems"),
+    ensure("sites", "/sampling-sites"),
+    ensure("locations", "/locations"),
+    ensure("samples", "/samples"),
+  ]);
+  return { organisms, taxonomy, ecosystems, sites, locations, samples };
+}
+async function loadRiskLayer() {
+  const [risk, conservation, population, habitat, threats] = await Promise.all([
+    ensure("risk", "/risk"), ensure("conservation", "/conservation"),
+    ensure("population", "/population"), ensure("habitat", "/habitat"),
+    ensure("threats", "/threats"),
+  ]);
+  return { risk, conservation, population, habitat, threats };
+}
+function siteContext(sampleOrSite) {
+  const site = CACHE.sites && indexBy(CACHE.sites, "site_id")[sampleOrSite.site_id];
+  if (!site) return { site: null, location: null, ecosystem: null };
+  const location = indexBy(CACHE.locations, "location_id")[site.location_id];
+  const ecosystem = indexBy(CACHE.ecosystems, "ecosystem_id")[site.ecosystem_id];
+  return { site, location, ecosystem };
+}
+
+/* ===========================================================================
+   Router
+   =========================================================================== */
+const VIEW_LABELS = {
+  dashboard: "Dashboard", samples: "Samples", analysis: "Analysis", taxonomy: "Taxonomy",
+  biodiversity: "Biodiversity", conservation: "Conservation", risk: "Risk Assessment", history: "History",
+};
+const VIEW_LOADERS = {
+  dashboard: loadDashboard, samples: loadSamples, analysis: loadAnalysis, taxonomy: loadTaxonomy,
+  biodiversity: loadBiodiversity, conservation: loadConservation, risk: loadRisk, history: loadHistory,
+};
+const loadedViews = new Set();
+
+function showView(name) {
+  qsa(".view").forEach(v => v.classList.toggle("active", v.dataset.view === name));
+  qsa("nav.nav-list button").forEach(b => b.classList.toggle("active", b.dataset.view === name));
+  $("crumbs").textContent = VIEW_LABELS[name] || name;
+  $("sidebar").classList.remove("open");
+  if (!loadedViews.has(name)) {
+    loadedViews.add(name);
+    VIEW_LOADERS[name]().catch(err => console.error(name, err));
+  }
+}
+qsa("nav.nav-list button").forEach(b => b.onclick = () => { location.hash = "#/" + b.dataset.view; });
+window.onhashchange = () => showView((location.hash.replace("#/", "") || "dashboard"));
+$("menuToggle").onclick = () => $("sidebar").classList.toggle("open");
+
+/* ===========================================================================
+   DASHBOARD
+   =========================================================================== */
+async function loadDashboard() {
+  try {
+    const summary = await getJSON("/dashboard/summary");
+    await loadCoreReference();
+
+    const highRisk = (summary.risk_level_distribution["Critical Risk"] || 0) + (summary.risk_level_distribution["Very High Risk"] || 0);
+    $("dashMetrics").innerHTML = [
+      metricCard("Samples Analyzed", summary.totals.analysis_results, `of ${summary.totals.samples} total samples`),
+      metricCard("Species Identified", summary.totals.organisms, "characterised taxa"),
+      metricCard("Ecosystems", summary.totals.ecosystems, "represented in dataset"),
+      metricCard("High-Risk Species", highRisk, "Critical + Very High risk", highRisk ? "critical" : null),
+    ].join("");
+
+    $("dashBiodiversity").innerHTML = distributionList(summary.biodiversity_category_distribution, l =>
+      ({ "Very High": "positive", High: "positive", Moderate: "warning", Low: "warning", "Very Low": "critical" }[l] || "neutral"));
+
+    $("dashRisk").innerHTML = distributionList(summary.risk_level_distribution, l => RISK_TONE[l] || "neutral");
+
+    // Environmental distribution: samples grouped by ecosystem type (real client-side join)
+    const ecoById = indexBy(CACHE.ecosystems, "ecosystem_id");
+    const siteById = indexBy(CACHE.sites, "site_id");
+    const envCounts = {};
+    CACHE.samples.forEach(s => {
+      const site = siteById[s.site_id];
+      const eco = site && ecoById[site.ecosystem_id];
+      const type = eco ? eco.ecosystem_type : "Unknown";
+      envCounts[type] = (envCounts[type] || 0) + 1;
+    });
+    $("dashEnvironment").innerHTML = distributionList(envCounts);
+
+    // Recent analyses
+    const analyses = await ensure("analyses", "/analysis");
+    const orgById = indexBy(CACHE.organisms, "organism_id");
+    const recent = analyses.slice(-5).reverse();
+    $("dashRecent").innerHTML = recent.length ? `<div class="table-scroll"><table class="data-table"><thead><tr>
+        <th>Sample</th><th>Ecosystem</th><th>Biodiversity</th><th class="num">Mean Confidence</th>
+      </tr></thead><tbody>` + recent.map(a => `
+        <tr data-analysis="${a.analysis_id}">
+          <td class="mono">${esc(a.sample_id)}</td>
+          <td>${esc(a.environment.ecosystem_name)}</td>
+          <td>${esc(a.biodiversity_metrics.biodiversity_category)}</td>
+          <td class="num">${confidenceBadge(a.confidence.mean_identification_confidence, a.confidence.confidence_level)}</td>
+        </tr>`).join("") + `</tbody></table></div>`
+      : emptyState("○", "No analyses yet", "");
+    qsa("#dashRecent tr[data-analysis]").forEach(tr => tr.onclick = () => {
+      location.hash = "#/analysis"; setTimeout(() => openAnalysisDetail(tr.dataset.analysis), 50);
+    });
+  } catch (err) {
+    $("dashMetrics").innerHTML = errorBox(err.message);
+  }
+}
+
+/* ===========================================================================
+   SAMPLES
+   =========================================================================== */
+let sampleSort = { field: "sample_id", dir: 1 };
+async function loadSamples() {
+  await loadCoreReference();
+  populateSelectOptions("sampleEcoFilter", new Set(CACHE.ecosystems.map(e => e.ecosystem_type)));
+  populateSelectOptions("sampleStatusFilter", new Set(CACHE.samples.map(s => s.status)));
+  renderSamplesTable();
+  ["sampleSearch", "sampleEcoFilter", "sampleStatusFilter"].forEach(id => {
+    $(id).addEventListener(id === "sampleSearch" ? "input" : "change", renderSamplesTable);
+  });
+  qsa("#samplesTable th.sortable").forEach(th => th.onclick = () => {
+    const f = th.dataset.sort;
+    sampleSort = { field: f, dir: sampleSort.field === f ? -sampleSort.dir : 1 };
+    renderSamplesTable();
+  });
+}
+function populateSelectOptions(id, values) {
+  const sel = $(id);
+  const first = sel.options[0].outerHTML;
+  sel.innerHTML = first + Array.from(values).sort().map(v => `<option>${esc(v)}</option>`).join("");
+}
+function renderSamplesTable() {
+  const search = $("sampleSearch").value.trim().toLowerCase();
+  const ecoFilter = $("sampleEcoFilter").value;
+  const statusFilter = $("sampleStatusFilter").value;
+
+  let rows = CACHE.samples.map(s => {
+    const { location, ecosystem } = siteContext(s);
+    return { sample: s, location, ecosystem, region: location ? location.region : "", ecosystemType: ecosystem ? ecosystem.ecosystem_type : "" };
+  });
+  if (search) rows = rows.filter(r => r.sample.sample_id.toLowerCase().includes(search) || (r.region || "").toLowerCase().includes(search));
+  if (ecoFilter) rows = rows.filter(r => r.ecosystemType === ecoFilter);
+  if (statusFilter) rows = rows.filter(r => r.sample.status === statusFilter);
+
+  rows.sort((a, b) => {
+    const f = sampleSort.field;
+    let av, bv;
+    if (f === "region") { av = a.region; bv = b.region; }
+    else if (f === "ecosystem") { av = a.ecosystem ? a.ecosystem.name : ""; bv = b.ecosystem ? b.ecosystem.name : ""; }
+    else { av = a.sample[f]; bv = b.sample[f]; }
+    return (av > bv ? 1 : av < bv ? -1 : 0) * sampleSort.dir;
+  });
+
+  $("samplesBody").innerHTML = rows.map(r => `
+    <tr data-id="${r.sample.sample_id}">
+      <td class="mono">${esc(r.sample.sample_id)}</td>
+      <td>${esc(r.location ? r.location.region : "Unknown")}</td>
+      <td>${esc(r.ecosystem ? r.ecosystem.name : "Unknown")}</td>
+      <td>${esc(r.sample.collection_date)}</td>
+      <td>${esc(r.sample.marker_region)}</td>
+      <td>${statusBadge(r.sample.status)}</td>
+    </tr>`).join("");
+  $("samplesCount").textContent = `${rows.length} of ${CACHE.samples.length} samples`;
+  qsa("#samplesBody tr").forEach(tr => tr.onclick = () => openSampleDetail(tr.dataset.id));
+}
+
+async function openSampleDetail(sampleId) {
+  qsa("#samplesBody tr").forEach(tr => tr.classList.toggle("selected", tr.dataset.id === sampleId));
+  const card = $("sampleDetailCard");
+  card.classList.remove("hidden");
+  card.innerHTML = loadingState("Loading sample detail…");
+  card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+  try {
+    const sample = indexBy(CACHE.samples, "sample_id")[sampleId] || await getJSON(`/samples/${sampleId}`);
+    const { site, location, ecosystem } = siteContext(sample);
+    const [idents, metrics, assessments] = await Promise.all([
+      getJSON(`/identifications?sample_id=${sampleId}`),
+      getJSON(`/biodiversity/metrics?sample_id=${sampleId}`),
+      getJSON(`/biodiversity/assessments?sample_id=${sampleId}`),
+    ]);
+    await loadRiskLayer();
+    const orgById = indexBy(CACHE.organisms, "organism_id");
+    const riskById = indexBy(CACHE.risk, "organism_id");
+    const consById = indexBy(CACHE.conservation, "organism_id");
+    const metric = metrics[0];
+
+    const orgRows = idents.map(i => ({ ident: i, org: orgById[i.predicted_organism_id] })).filter(r => r.org);
+
+    card.innerHTML = `
+      <h2 class="page-title" style="font-size:17px;margin-bottom:var(--space-5)">Sample ${esc(sampleId)}</h2>
+
+      <div class="detail-section">
+        <h3 class="section-heading">1 · Overview</h3>
+        <div class="kv-grid">
+          <div class="kv"><div class="k">Sample Type</div><div class="v">${dash(sample.sample_type)}</div></div>
+          <div class="kv"><div class="k">Collection Date</div><div class="v">${dash(sample.collection_date)}</div></div>
+          <div class="kv"><div class="k">Season</div><div class="v">${dash(sample.season)}</div></div>
+          <div class="kv"><div class="k">Status</div><div class="v">${statusBadge(sample.status)}</div></div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3 class="section-heading">2 · Environment</h3>
+        <div class="kv-grid">
+          <div class="kv"><div class="k">Region</div><div class="v">${dash(location && location.region)}</div></div>
+          <div class="kv"><div class="k">State / Country</div><div class="v">${dash(location && (location.state + ", " + location.country))}</div></div>
+          <div class="kv"><div class="k">Ecosystem</div><div class="v">${dash(ecosystem && ecosystem.name)}</div></div>
+          <div class="kv"><div class="k">Sample Medium</div><div class="v">${dash(site && site.sample_medium)}</div></div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3 class="section-heading">3 · Sequence Information</h3>
+        <div class="kv-grid">
+          <div class="kv"><div class="k">Marker Region</div><div class="v">${dash(sample.marker_region)}</div></div>
+          <div class="kv"><div class="k">Sequence Count</div><div class="v">${dash(sample.sequence_count)}</div></div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3 class="section-heading">4 · Identifications</h3>
+        ${orgRows.length ? orgRows.map(r => `
+          <div class="body-text" style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border)">
+            <span class="sci-name">${esc(r.org.scientific_name)}</span>
+            ${confidenceBadge(r.ident.confidence_score, r.ident.confidence_level)}
+          </div>`).join("") : emptyState("○", "No identifications", "This sample has not produced any identification records.")}
+      </div>
+
+      <div class="detail-section">
+        <h3 class="section-heading">5 · Taxonomy</h3>
+        <p class="body-text">${orgRows.length ? [...new Set(orgRows.map(r => r.org.kingdom))].join(", ") + " represented." : "Not available."}</p>
+      </div>
+
+      <div class="detail-section">
+        <h3 class="section-heading">6 · Biodiversity</h3>
+        ${metric ? `<div class="kv-grid">
+          <div class="kv"><div class="k">Species Richness</div><div class="v">${metric.species_richness}</div></div>
+          <div class="kv"><div class="k">Shannon Index</div><div class="v">${metric.shannon_index}</div></div>
+          <div class="kv"><div class="k">Simpson Index</div><div class="v">${metric.simpson_index}</div></div>
+          <div class="kv"><div class="k">Category</div><div class="v">${esc(metric.biodiversity_category)}</div></div>
+        </div>` : emptyState("○", "Biodiversity metrics unavailable", "Insufficient identifications to compute diversity indices.")}
+      </div>
+
+      <div class="detail-section">
+        <h3 class="section-heading">7 · Conservation</h3>
+        ${orgRows.length ? orgRows.map(r => `
+          <div style="display:flex;justify-content:space-between;padding:4px 0">
+            <span class="sci-name">${esc(r.org.scientific_name)}</span>
+            ${conservationBadge(consById[r.org.organism_id] && consById[r.org.organism_id].external_conservation_status)}
+          </div>`).join("") : emptyState("○", "No conservation data", "")}
+      </div>
+
+      <div class="detail-section">
+        <h3 class="section-heading">8 · Risk</h3>
+        ${orgRows.length ? orgRows.map(r => `
+          <div style="display:flex;justify-content:space-between;padding:4px 0">
+            <span class="sci-name">${esc(r.org.scientific_name)}</span>
+            ${riskBadge(riskById[r.org.organism_id] && riskById[r.org.organism_id].risk_level, riskById[r.org.organism_id] && riskById[r.org.organism_id].gaia_risk_score)}
+          </div>`).join("") : emptyState("○", "No risk data", "")}
+      </div>
+      ${provenanceStrip(sample)}
+    `;
+  } catch (err) {
+    card.innerHTML = errorBox(err.message);
+  }
+}
+
+/* ===========================================================================
+   ANALYSIS
+   =========================================================================== */
+async function loadAnalysis() {
+  await loadCoreReference();
+  const analyses = await ensure("analyses", "/analysis");
+  $("analysisBody").innerHTML = analyses.map(a => `
+    <tr data-id="${a.analysis_id}">
+      <td class="mono">${esc(a.sample_id)}</td>
+      <td>${esc(a.environment.ecosystem_name)}</td>
+      <td class="num">${a.biodiversity_metrics.species_richness}</td>
+      <td>${esc(a.biodiversity_metrics.biodiversity_category)}</td>
+      <td class="num">${confidenceBadge(a.confidence.mean_identification_confidence, a.confidence.confidence_level)}</td>
+    </tr>`).join("");
+  qsa("#analysisBody tr").forEach(tr => tr.onclick = () => openAnalysisDetail(tr.dataset.id));
+
+  setupUploadFlow();
+}
+
+async function openAnalysisDetail(analysisId) {
+  qsa("#analysisBody tr").forEach(tr => tr.classList.toggle("selected", tr.dataset.id === analysisId));
+  const card = $("analysisDetailCard");
+  card.classList.remove("hidden");
+  card.innerHTML = loadingState("Loading analysis…");
+  card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  try {
+    const analysis = await getJSON(`/analysis/${analysisId}`);
+    await loadRiskLayer();
+    card.innerHTML = renderAnalysisDetail(analysis, "seed");
+  } catch (err) {
+    card.innerHTML = errorBox(err.message);
+  }
+}
+
+/** Unified renderer: handles both the seed analysis_results shape and the
+ * live /analyze pipeline result shape, so both feed the same UI. */
+function renderAnalysisDetail(data, mode) {
+  const orgById = indexBy(CACHE.organisms, "organism_id");
+  const riskById = indexBy(CACHE.risk || [], "organism_id");
+  const consById = indexBy(CACHE.conservation || [], "organism_id");
+
+  let sampleInfo, organismRows, biodiversity;
+
+  if (mode === "seed") {
+    sampleInfo = {
+      id: data.sample_id, type: data.sample.sample_type, marker: data.sample.marker_region,
+      status: data.sample.status, ecosystem: data.environment.ecosystem_name, region: data.environment.region,
+    };
+    organismRows = data.organism_ids.map(oid => {
+      const org = orgById[oid];
+      return org ? { org, confidence: data.confidence.mean_identification_confidence, level: data.confidence.confidence_level } : null;
+    }).filter(Boolean);
+    biodiversity = data.biodiversity_metrics;
+  } else {
+    sampleInfo = { id: data.sample_id, status: data.status };
+    organismRows = data.results.map(r => ({
+      org: { scientific_name: r.taxonomy.species, common_name: "—", kingdom: r.taxonomy.kingdom, organism_id: null },
+      confidence: r.confidence.confidence, level: r.confidence.confidence_level,
+      liveTaxonomy: r.taxonomy, liveClassification: r.classification,
+    }));
+    biodiversity = data.metrics;
+  }
+
+  return `
+    <h2 class="page-title" style="font-size:17px;margin-bottom:var(--space-5)">Analysis · ${esc(sampleInfo.id)}</h2>
+
+    <div class="detail-section">
+      <h3 class="section-heading">Sample Information</h3>
+      <div class="kv-grid">
+        <div class="kv"><div class="k">Sample</div><div class="v">${esc(sampleInfo.id)}</div></div>
+        ${sampleInfo.ecosystem ? `<div class="kv"><div class="k">Ecosystem</div><div class="v">${esc(sampleInfo.ecosystem)}</div></div>` : ""}
+        ${sampleInfo.region ? `<div class="kv"><div class="k">Region</div><div class="v">${esc(sampleInfo.region)}</div></div>` : ""}
+        ${sampleInfo.marker ? `<div class="kv"><div class="k">Marker</div><div class="v">${esc(sampleInfo.marker)}</div></div>` : ""}
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3 class="section-heading">Detected Organisms &amp; Taxonomy</h3>
+      ${organismRows.length ? `<div class="table-scroll"><table class="data-table"><thead><tr>
+          <th>Species</th><th>Kingdom</th><th class="num">Confidence</th>
+          ${mode === "seed" ? "<th>Conservation</th><th>Gaia Risk</th>" : "<th>Category</th>"}
+        </tr></thead><tbody>` + organismRows.map(r => `
+          <tr ${r.org.organism_id ? `data-org="${r.org.organism_id}"` : ""}>
+            <td class="sci-name">${esc(r.org.scientific_name)}</td>
+            <td>${esc(r.org.kingdom)}</td>
+            <td class="num">${confidenceBadge(r.confidence, r.level)}</td>
+            ${mode === "seed"
+              ? `<td>${conservationBadge(r.org.organism_id && consById[r.org.organism_id] && consById[r.org.organism_id].external_conservation_status)}</td>
+                 <td>${riskBadge(r.org.organism_id && riskById[r.org.organism_id] && riskById[r.org.organism_id].risk_level, r.org.organism_id && riskById[r.org.organism_id] && riskById[r.org.organism_id].gaia_risk_score)}</td>`
+              : `<td>${esc(r.liveClassification.category)}</td>`}
+          </tr>`).join("") + `</tbody></table></div>`
+        : emptyState("○", "No organisms detected", "")}
+    </div>
+
+    <div class="detail-section">
+      <h3 class="section-heading">Biodiversity</h3>
+      <div class="kv-grid">
+        <div class="kv"><div class="k">Species Richness</div><div class="v">${dash(biodiversity.species_richness)}</div></div>
+        <div class="kv"><div class="k">Shannon Index</div><div class="v">${dash(biodiversity.shannon_index)}</div></div>
+        <div class="kv"><div class="k">Simpson Index</div><div class="v">${dash(biodiversity.simpson_index)}</div></div>
+        <div class="kv"><div class="k">Category</div><div class="v">${dash(biodiversity.biodiversity_category)}</div></div>
+      </div>
+    </div>
+
+    ${mode === "seed" ? `
+    <div class="detail-section">
+      <h3 class="section-heading">Conservation &amp; Risk</h3>
+      <p class="body-text">Click a species above, or open <a href="#/conservation">Conservation</a> /
+        <a href="#/risk">Risk Assessment</a> for the full breakdown.</p>
+    </div>` : `
+    <div class="detail-section">
+      <p class="body-text meta-text">This sample was analyzed live through the placeholder pipeline.
+        Conservation and risk data exist only for the curated demonstration organisms — see the
+        Conservation and Risk Assessment pages.</p>
+    </div>`}
+  `;
+}
+
+/* -- Reused upload / live-pipeline flow (existing functionality, restyled) */
+const STAGES = [
+  { key: "upload", label: "Upload & Validate" }, { key: "preprocess", label: "Preprocess" },
+  { key: "identify", label: "Identify" }, { key: "classify", label: "Classify" },
+  { key: "assess", label: "Assess" }, { key: "analyze", label: "Aggregate" },
+];
 const DEMO_FASTA = `>gaia_demo_read_1
 AGAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACG
 >gaia_demo_read_2
@@ -367,356 +1153,375 @@ GGATCCTGGTTGATCCTGCCAGTAGTCATATGCTTGTCTCAAAGATTAAGCCATGCATGTC
 >gaia_demo_read_6
 CCTACGGGAGGCAGCAGTGGGGAATATTGCACAATGGGCGCAAGCCTGATGCAGCAACGCC
 `;
-
-async function runPipeline(file) {
-  setError("");
-  $("results").classList.add("hidden");
-  $("runBtn").disabled = true;
-  $("demoBtn").disabled = true;
-
+function setupUploadFlow() {
+  if ($("runBtn").dataset.wired) return;
+  $("runBtn").dataset.wired = "1";
+  $("runBtn").onclick = () => {
+    const f = $("fileInput").files[0];
+    if (!f) { showUploadError("Select a dataset file first, or click “Use Demo Dataset”."); return; }
+    runLivePipeline(f);
+  };
+  $("demoBtn").onclick = () => runLivePipeline(new File([DEMO_FASTA], "gaia_demo.fasta", { type: "text/plain" }));
+}
+function showUploadError(msg) {
+  const box = $("uploadError");
+  if (!msg) { box.classList.add("hidden"); return; }
+  box.textContent = msg; box.classList.remove("hidden");
+}
+function renderStageTrack(state) {
+  $("stageTrack").classList.remove("hidden");
+  $("stageTrack").innerHTML = STAGES.map(s =>
+    `<div class="stage-chip ${state[s.key] || ""}"><span class="dot"></span>${s.label}</div>`).join("");
+}
+async function runLivePipeline(file) {
+  showUploadError("");
+  $("liveAnalysisCard").classList.add("hidden");
+  $("runBtn").disabled = true; $("demoBtn").disabled = true;
   const state = {};
-  const mark = (k, v) => { state[k] = v; renderStages(state); };
-
+  const mark = (k, v) => { state[k] = v; renderStageTrack(state); };
   try {
-    // Stage 1 — upload (multipart, so not via postJSON)
     mark("upload", "active");
-    const fd = new FormData();
-    fd.append("file", file);
+    const fd = new FormData(); fd.append("file", file);
     const upRes = await fetch(API + "/upload", { method: "POST", body: fd });
     const upData = await upRes.json().catch(() => ({}));
     if (!upRes.ok) throw new Error(extractError(upData, upRes.status));
     mark("upload", "done");
-
-    const id = upData.sample_id;
-    const body = { sample_id: id };
-
-    // Stages 2-5 run sequentially against the real modular endpoints,
-    // so the UI reflects the actual backend pipeline rather than a fake bar.
+    const body = { sample_id: upData.sample_id };
     for (const key of ["preprocess", "identify", "classify", "assess"]) {
-      mark(key, "active");
-      await postJSON("/" + key, body);
-      mark(key, "done");
+      mark(key, "active"); await postJSON("/" + key, body); mark(key, "done");
     }
-
-    // Stage 6 — aggregate (adds per-sequence confidence scoring)
     mark("analyze", "active");
     const final = await postJSON("/analyze", body);
     mark("analyze", "done");
-
-    render(final, upData);
+    const card = $("liveAnalysisCard");
+    card.classList.remove("hidden");
+    card.innerHTML = `<h2 class="section-heading">Live Analysis Result</h2>` + renderAnalysisDetail(final, "live");
   } catch (err) {
     const pending = STAGES.find(s => state[s.key] === "active");
     if (pending) mark(pending.key, "error");
-    setError(err.message || String(err));
+    showUploadError(err.message || String(err));
   } finally {
-    $("runBtn").disabled = false;
-    $("demoBtn").disabled = false;
+    $("runBtn").disabled = false; $("demoBtn").disabled = false;
   }
 }
 
-function confClass(level) {
-  return { "Very High": "conf-vh", "High": "conf-h", "Medium": "conf-m",
-           "Low": "conf-l", "Unknown": "conf-u" }[level] || "conf-u";
+/* ===========================================================================
+   TAXONOMY
+   =========================================================================== */
+async function loadTaxonomy() {
+  await loadCoreReference();
+  const orgByTaxId = indexBy(CACHE.organisms, "taxonomy_id");
+  const RANKS = ["kingdom", "phylum", "class", "order", "family", "genus"];
+
+  function buildLevel(records, depth) {
+    if (depth === RANKS.length) {
+      return records.map(t => {
+        const org = orgByTaxId[t.taxonomy_id];
+        return org
+          ? `<div class="leaf" data-org="${org.organism_id}">
+               <span class="leaf-sci">${esc(t.species)}</span>
+               <span class="leaf-common">${esc(t.common_name)}</span>
+             </div>`
+          : `<div class="leaf unlinked">
+               <span class="leaf-sci">${esc(t.species)}</span>
+               <span class="leaf-common">Not yet characterised</span>
+             </div>`;
+      }).join("");
+    }
+    const rank = RANKS[depth];
+    const groups = groupBy(records, rank);
+    return Object.keys(groups).sort().map(name => `
+      <details ${depth === 0 ? "" : ""}>
+        <summary>${esc(name)} <span class="rank-tag">${rank}</span> <span class="meta-text">(${groups[name].length})</span></summary>
+        <div class="branch-children">${buildLevel(groups[name], depth + 1)}</div>
+      </details>`).join("");
+  }
+
+  $("taxTree").innerHTML = buildLevel(CACHE.taxonomy, 0);
+  qsa(".leaf[data-org]", $("taxTree")).forEach(el => el.onclick = () => showTaxSpecies(el.dataset.org));
 }
-
-function render(data, upData) {
-  const m = data.metrics || {};
-
-  const avgConf = data.results.length
-    ? data.results.reduce((s, r) => s + (r.confidence?.confidence || 0), 0) / data.results.length
-    : 0;
-
-  $("metrics").innerHTML = `
-    ${tile("Sequences", upData.sequence_count, upData.file_type.toUpperCase() + " input")}
-    ${tile("Species Richness", m.species_richness, "distinct taxa")}
-    ${tile("Shannon Index", m.shannon_index, "diversity (H′)")}
-    ${tile("Simpson Index", m.simpson_index, "diversity (1−D)")}
-    ${tile("Evenness", m.evenness, "distribution")}
-    ${tile("Mean Confidence", (avgConf * 100).toFixed(1) + "%", "identification")}
-  `;
-
-  $("speciesLists").innerHTML = `
-    <div class="muted"><strong>Dominant:</strong> ${(m.dominant_species || []).join(", ") || "—"}</div>
-    <div class="muted" style="margin-top:4px"><strong>Rare:</strong> ${(m.rare_species || []).join(", ") || "—"}</div>
-  `;
-
-  $("assessments").innerHTML = (data.assessment || []).map(a => `
-    <div class="assessment ${a.severity}">
-      <div class="t">${esc(a.title)}<span class="sev">${esc(a.severity)}</span></div>
-      <div class="d">${esc(a.description)}</div>
-    </div>`).join("") || `<div class="muted">No assessments generated.</div>`;
-
-  $("taxaBody").innerHTML = data.results.map(r => {
-    const t = r.taxonomy || {}, c = r.classification || {}, cf = r.confidence || {};
-    const unknown = (c.category || "Unknown") === "Unknown";
-    return `<tr>
-      <td class="seqid" title="${esc(r.sequence_id)}">${esc(r.sequence_id)}</td>
-      <td class="rank">${esc(t.kingdom)}</td><td class="rank">${esc(t.phylum)}</td>
-      <td class="rank">${esc(t["class"])}</td><td class="rank">${esc(t.order)}</td>
-      <td class="rank">${esc(t.family)}</td>
-      <td class="rank sci">${esc(t.genus)}</td><td class="rank sci">${esc(t.species)}</td>
-      <td><span class="pill ${unknown ? "unknown" : ""}">${esc(c.category)}</span></td>
-      <td class="${confClass(cf.confidence_level)}">
-        ${((cf.confidence || 0) * 100).toFixed(1)}% · ${esc(cf.confidence_level)}
-      </td>
-    </tr>`;
-  }).join("");
-
-  $("results").classList.remove("hidden");
-}
-
-const tile = (label, value, sub) => `
-  <div class="metric">
-    <div class="label">${label}</div>
-    <div class="value">${value ?? "—"}</div>
-    <div class="sub">${sub}</div>
-  </div>`;
-
-function esc(s) {
-  return String(s ?? "—").replace(/[&<>"']/g,
-    c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-}
-
-$("runBtn").onclick = () => {
-  const f = $("fileInput").files[0];
-  if (!f) { setError("Select a dataset file first, or click “Use Demo Dataset”."); return; }
-  runPipeline(f);
-};
-
-$("demoBtn").onclick = () =>
-  runPipeline(new File([DEMO_FASTA], "gaia_demo.fasta", { type: "text/plain" }));
-
-$("resetBtn").onclick = () => {
-  $("fileInput").value = "";
-  $("results").classList.add("hidden");
-  setError("");
-  renderStages();
-};
-
-// ===========================================================================
-// Tab navigation
-// ===========================================================================
-
-function showTab(tab) {
-  $("viewDashboard").classList.toggle("hidden", tab !== "dashboard");
-  $("viewPipeline").classList.toggle("hidden", tab !== "pipeline");
-  $("tabDashboardBtn").classList.toggle("active", tab === "dashboard");
-  $("tabPipelineBtn").classList.toggle("active", tab === "pipeline");
-  if (tab === "dashboard" && !dashboardLoaded) loadDashboard();
-}
-$("tabDashboardBtn").onclick = () => showTab("dashboard");
-$("tabPipelineBtn").onclick = () => showTab("pipeline");
-
-// ===========================================================================
-// Biodiversity Dashboard
-// ===========================================================================
-
-let dashboardLoaded = false;
-let allOrganisms = [];
-let riskByOrganism = {};
-let conservationByOrganism = {};
-
-async function getJSON(path) {
-  const res = await fetch(API + path);
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(extractError(data, res.status));
-  return data;
-}
-
-const RISK_PILL_CLASS = {
-  "Critical Risk": "critical", "Very High Risk": "high", "High Risk": "high",
-  "Moderate Risk": "moderate", "Low Risk": "low", "Minimal Risk": "minimal",
-  "Insufficient Data": "insufficient",
-};
-
-async function loadDashboard() {
-  dashboardLoaded = true;
+async function showTaxSpecies(organismId) {
+  const panel = $("taxSpeciesPanel");
+  panel.innerHTML = `<h2 class="section-heading">Species</h2>` + loadingState("Loading…");
   try {
-    const [summary, organisms, risks, conservation] = await Promise.all([
-      getJSON("/dashboard/summary"),
-      getJSON("/organisms"),
-      getJSON("/risk"),
-      getJSON("/conservation"),
-    ]);
-
-    allOrganisms = organisms;
-    riskByOrganism = Object.fromEntries(risks.map(r => [r.organism_id, r]));
-    conservationByOrganism = Object.fromEntries(conservation.map(c => [c.organism_id, c]));
-
-    renderDashTiles(summary);
-    renderDistributions(summary);
-    populateKingdomFilter(summary.kingdom_distribution);
-    renderSpeciesTable();
+    await loadRiskLayer();
+    const organism = indexBy(CACHE.organisms, "organism_id")[organismId];
+    const risk = indexBy(CACHE.risk, "organism_id")[organismId];
+    const cons = indexBy(CACHE.conservation, "organism_id")[organismId];
+    panel.innerHTML = `<h2 class="section-heading">Species</h2>` +
+      speciesMiniCard(organism, risk, cons && cons.external_conservation_status);
   } catch (err) {
-    $("dashTiles").innerHTML = `<div class="error-box">${esc(err.message || String(err))}</div>`;
+    panel.innerHTML = `<h2 class="section-heading">Species</h2>` + errorBox(err.message);
   }
 }
 
-function renderDashTiles(summary) {
-  const highRisk = (summary.risk_level_distribution["Critical Risk"] || 0)
-    + (summary.risk_level_distribution["Very High Risk"] || 0);
-  $("dashTiles").innerHTML = [
-    tile("Organisms", summary.totals.organisms, "characterised taxa"),
-    tile("Samples", summary.totals.samples, "synthetic eDNA samples"),
-    tile("Sampling Sites", summary.totals.sampling_sites, "across India"),
-    tile("Threat Records", summary.totals.threat_assessments, "environmental pressures"),
-    tile("High Risk Species", highRisk, "Critical + Very High"),
-    tile("Data Deficient", summary.conservation_status_distribution["Data Deficient"] || 0, "conservation status"),
-  ].join("");
-}
+/* ===========================================================================
+   BIODIVERSITY
+   =========================================================================== */
+async function loadBiodiversity() {
+  await loadCoreReference();
+  try {
+    const metrics = await ensure("bioMetrics", "/biodiversity/metrics");
+    if (!metrics.length) {
+      $("bioMetrics").innerHTML = emptyState("○", "No biodiversity data", "No samples have completed biodiversity assessment yet.");
+      return;
+    }
+    const avg = (field) => metrics.reduce((s, m) => s + (m[field] || 0), 0) / metrics.length;
+    $("bioMetrics").innerHTML = [
+      metricCard("Species Richness", avg("species_richness").toFixed(1), "average per sample"),
+      metricCard("Shannon Index", avg("shannon_index").toFixed(2), "diversity (H′)"),
+      metricCard("Simpson Index", avg("simpson_index").toFixed(2), "diversity (1−D)"),
+      metricCard("Pielou Evenness", avg("pielou_evenness").toFixed(2), "distribution evenness"),
+    ].join("");
 
-function distPanel(title, dist, riskColored) {
-  const entries = Object.entries(dist).sort((a, b) => b[1] - a[1]);
-  const max = Math.max(...entries.map(e => e[1]), 1);
-  const rows = entries.map(([label, count]) => {
-    const cls = riskColored ? "risk-" + label.replace(/[^A-Za-z]/g, "").replace("Risk", "") : "";
-    return `<div class="dist-row">
-      <div class="dist-label" title="${esc(label)}">${esc(label)}</div>
-      <div class="dist-bar-track"><div class="dist-bar-fill ${cls}" style="width:${(count / max * 100).toFixed(0)}%"></div></div>
-      <div class="dist-count">${count}</div>
-    </div>`;
-  }).join("");
-  return `<div class="dist-panel"><h3>${esc(title)}</h3>${rows}</div>`;
-}
+    const catDist = {};
+    metrics.forEach(m => catDist[m.biodiversity_category] = (catDist[m.biodiversity_category] || 0) + 1);
+    $("bioCategoryDist").innerHTML = distributionList(catDist, l =>
+      ({ "Very High": "positive", High: "positive", Moderate: "warning", Low: "warning", "Very Low": "critical" }[l] || "neutral"));
 
-function renderDistributions(summary) {
-  $("dashDistributions").innerHTML = [
-    distPanel("Risk level", summary.risk_level_distribution, true),
-    distPanel("Biodiversity category", summary.biodiversity_category_distribution),
-    distPanel("Kingdom", summary.kingdom_distribution),
-    distPanel("Conservation status", summary.conservation_status_distribution),
-  ].join("");
-}
+    // Species richness by ecosystem
+    const siteById = indexBy(CACHE.sites, "site_id");
+    const ecoById = indexBy(CACHE.ecosystems, "ecosystem_id");
+    const sampleById = indexBy(CACHE.samples, "sample_id");
+    const byEco = {};
+    metrics.forEach(m => {
+      const sample = sampleById[m.sample_id];
+      const site = sample && siteById[sample.site_id];
+      const eco = site && ecoById[site.ecosystem_id];
+      const name = eco ? eco.name : "Unknown";
+      (byEco[name] = byEco[name] || []).push(m.species_richness);
+    });
+    const ecoAvg = Object.fromEntries(Object.entries(byEco).map(([k, v]) => [k, Math.round(v.reduce((a, b) => a + b, 0) / v.length * 10) / 10]));
+    $("bioByEcosystem").innerHTML = distributionList(ecoAvg);
 
-function populateKingdomFilter(kingdoms) {
-  const select = $("kingdomFilter");
-  select.innerHTML = '<option value="">All kingdoms</option>' +
-    Object.keys(kingdoms).sort().map(k => `<option>${esc(k)}</option>`).join("");
-}
-
-function renderSpeciesTable() {
-  const search = $("speciesSearch").value.trim().toLowerCase();
-  const kingdom = $("kingdomFilter").value;
-  const riskLevel = $("riskFilter").value;
-
-  let rows = allOrganisms.map(o => ({
-    organism: o,
-    risk: riskByOrganism[o.organism_id],
-    conservation: conservationByOrganism[o.organism_id],
-  }));
-
-  if (search) {
-    rows = rows.filter(r =>
-      r.organism.scientific_name.toLowerCase().includes(search) ||
-      r.organism.common_name.toLowerCase().includes(search));
+    // Dominant species frequency
+    const freq = {};
+    metrics.forEach(m => (m.dominant_species || []).forEach(name => freq[name] = (freq[name] || 0) + 1));
+    const top = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 8);
+    $("bioDominant").innerHTML = top.length
+      ? `<div class="dist-list">` + top.map(([name, count]) => `
+          <div class="dist-row"><div class="dist-label sci-name" title="${esc(name)}">${esc(name)}</div>
+          <div class="dist-track"><div class="dist-fill" style="width:${(count/top[0][1]*100).toFixed(0)}%"></div></div>
+          <div class="dist-count">${count}</div></div>`).join("") + `</div>`
+      : emptyState("○", "No data", "");
+  } catch (err) {
+    $("bioMetrics").innerHTML = errorBox(err.message);
   }
-  if (kingdom) rows = rows.filter(r => r.organism.kingdom === kingdom);
-  if (riskLevel) rows = rows.filter(r => r.risk && r.risk.risk_level === riskLevel);
+}
 
-  rows.sort((a, b) => (b.risk?.gaia_risk_score ?? -1) - (a.risk?.gaia_risk_score ?? -1));
-
-  $("speciesBody").innerHTML = rows.map(({ organism, risk, conservation }) => {
-    const pillClass = RISK_PILL_CLASS[risk?.risk_level] || "insufficient";
-    return `<tr class="species-row" data-id="${organism.organism_id}">
-      <td class="sci">${esc(organism.scientific_name)}</td>
-      <td>${esc(organism.common_name)}</td>
-      <td>${esc(organism.kingdom)}</td>
-      <td>${esc(conservation?.external_conservation_status)}</td>
-      <td>${risk?.gaia_risk_score ?? "—"}</td>
-      <td><span class="risk-pill ${pillClass}">${esc(risk?.risk_level || "Unknown")}</span></td>
-    </tr>`;
-  }).join("");
-
-  $("speciesCount").textContent = `${rows.length} of ${allOrganisms.length} species`;
-
-  document.querySelectorAll(".species-row").forEach(row => {
-    row.onclick = () => showSpeciesDetail(row.dataset.id);
+/* ===========================================================================
+   CONSERVATION
+   =========================================================================== */
+let consSort = { field: "risk_score", dir: -1 };
+async function loadConservation() {
+  await loadCoreReference();
+  await loadRiskLayer();
+  populateSelectOptions("consKingdomFilter", new Set(CACHE.organisms.map(o => o.kingdom)));
+  populateSelectOptions("consStatusFilter", new Set(CACHE.conservation.map(c => c.external_conservation_status)));
+  renderConsTable();
+  ["consSearch", "consKingdomFilter", "consStatusFilter"].forEach(id =>
+    $(id).addEventListener(id === "consSearch" ? "input" : "change", renderConsTable));
+  qsa("#consTable th.sortable").forEach(th => th.onclick = () => {
+    const f = th.dataset.sort;
+    consSort = { field: f, dir: consSort.field === f ? -consSort.dir : 1 };
+    renderConsTable();
   });
 }
+function buildConsRows() {
+  const popById = indexBy(CACHE.population, "organism_id");
+  const habById = indexBy(CACHE.habitat, "organism_id");
+  const riskById = indexBy(CACHE.risk, "organism_id");
+  const consByOrg = indexBy(CACHE.conservation, "organism_id");
+  const threatsByOrg = groupBy(CACHE.threats, "organism_id");
+  return CACHE.organisms.map(org => {
+    const pop = popById[org.organism_id], hab = habById[org.organism_id];
+    const risk = riskById[org.organism_id], cons = consByOrg[org.organism_id];
+    const threats = threatsByOrg[org.organism_id] || [];
+    const topThreat = threats.slice().sort((a, b) => ({ Critical: 4, High: 3, Moderate: 2, Low: 1 }[b.severity] - { Critical: 4, High: 3, Moderate: 2, Low: 1 }[a.severity]))[0];
+    return { org, pop, hab, risk, cons, threats, topThreat };
+  });
+}
+function renderConsTable() {
+  const search = $("consSearch").value.trim().toLowerCase();
+  const kingdom = $("consKingdomFilter").value;
+  const status = $("consStatusFilter").value;
+  let rows = buildConsRows();
+  if (search) rows = rows.filter(r => r.org.scientific_name.toLowerCase().includes(search) || r.org.common_name.toLowerCase().includes(search));
+  if (kingdom) rows = rows.filter(r => r.org.kingdom === kingdom);
+  if (status) rows = rows.filter(r => r.cons && r.cons.external_conservation_status === status);
 
-$("speciesSearch").oninput = renderSpeciesTable;
-$("kingdomFilter").onchange = renderSpeciesTable;
-$("riskFilter").onchange = renderSpeciesTable;
+  rows.sort((a, b) => {
+    const f = consSort.field;
+    let av, bv;
+    if (f === "scientific_name") { av = a.org.scientific_name; bv = b.org.scientific_name; }
+    else if (f === "trend") { av = a.pop ? a.pop.population_trend : ""; bv = b.pop ? b.pop.population_trend : ""; }
+    else if (f === "decline") { av = a.pop ? (a.pop.population_decline_percent ?? -1) : -1; bv = b.pop ? (b.pop.population_decline_percent ?? -1) : -1; }
+    else if (f === "habitat_loss") { av = a.hab ? a.hab.habitat_loss_percent : -1; bv = b.hab ? b.hab.habitat_loss_percent : -1; }
+    else if (f === "threat_level") { av = a.topThreat ? a.topThreat.severity : ""; bv = b.topThreat ? b.topThreat.severity : ""; }
+    else { av = a.risk ? (a.risk.gaia_risk_score ?? -1) : -1; bv = b.risk ? (b.risk.gaia_risk_score ?? -1) : -1; }
+    return (av > bv ? 1 : av < bv ? -1 : 0) * consSort.dir;
+  });
 
-async function showSpeciesDetail(organismId) {
-  document.querySelectorAll(".species-row").forEach(r =>
-    r.classList.toggle("selected", r.dataset.id === organismId));
-
-  const card = $("speciesDetailCard");
+  $("consBody").innerHTML = rows.map(r => `
+    <tr data-id="${r.org.organism_id}">
+      <td class="sci-name">${esc(r.org.scientific_name)}</td>
+      <td>${r.pop ? trendBadge(r.pop.population_trend) : '<span class="tone-badge tone-neutral">Unknown</span>'}</td>
+      <td class="num">${r.pop && r.pop.population_decline_percent != null ? "−" + r.pop.population_decline_percent + "%" : "Unknown"}</td>
+      <td class="num">${r.hab ? r.hab.habitat_loss_percent + "%" : "Not assessed"}</td>
+      <td>${r.topThreat ? severityBadge(r.topThreat.severity) : '<span class="tone-badge tone-neutral">None recorded</span>'}</td>
+      <td>${conservationBadge(r.cons && r.cons.external_conservation_status)}</td>
+      <td class="num">${riskBadge(r.risk && r.risk.risk_level, r.risk && r.risk.gaia_risk_score)}</td>
+    </tr>`).join("");
+  $("consCount").textContent = `${rows.length} of ${CACHE.organisms.length} species`;
+  qsa("#consBody tr").forEach(tr => tr.onclick = () => openConservationDetail(tr.dataset.id));
+}
+async function openConservationDetail(organismId) {
+  qsa("#consBody tr").forEach(tr => tr.classList.toggle("selected", tr.dataset.id === organismId));
+  const card = $("consDetailCard");
   card.classList.remove("hidden");
-  $("speciesDetailBody").innerHTML = `<p class="muted">Loading…</p>`;
+  card.innerHTML = loadingState("Loading…");
   card.scrollIntoView({ behavior: "smooth", block: "nearest" });
-
   try {
     const profile = await getJSON(`/species/${organismId}`);
-    renderSpeciesDetail(profile);
+    const threatTags = profile.threats.length
+      ? profile.threats.map(t => `<span class="tone-badge tone-${SEVERITY_TONE[t.severity] || "neutral"}" style="margin:2px">${esc(t.threat_name)} · ${esc(t.severity)}</span>`).join(" ")
+      : emptyState("○", "No threats recorded", "");
+    card.innerHTML = `
+      <div class="card-row">
+        <div style="flex:1 1 300px">${speciesMiniCard(profile.organism, profile.risk, profile.conservation && profile.conservation.status && profile.conservation.status.external_conservation_status)}</div>
+        <div style="flex:1 1 320px">
+          <h3 class="section-heading">Population</h3>
+          <div class="kv-grid" style="margin-bottom:var(--space-4)">
+            <div class="kv"><div class="k">Trend</div><div>${trendBadge(profile.population.population_trend)}</div></div>
+            <div class="kv"><div class="k">Mature Individuals</div>${unknownSpan(profile.population.estimated_mature_individuals)}</div>
+          </div>
+          <h3 class="section-heading">Habitat</h3>
+          ${profile.habitat ? `<div class="kv-grid">
+            <div class="kv"><div class="k">Loss</div><div class="v">${profile.habitat.habitat_loss_percent}%</div></div>
+            <div class="kv"><div class="k">Trend</div>${trendBadge(profile.habitat.habitat_trend)}</div>
+          </div>` : `<p class="body-text meta-text">Habitat assessment unavailable for this taxon.</p>`}
+        </div>
+      </div>
+      <h3 class="section-heading" style="margin-top:var(--space-4)">Threats</h3>
+      <div>${threatTags}</div>
+    `;
   } catch (err) {
-    $("speciesDetailBody").innerHTML = `<div class="error-box">${esc(err.message || String(err))}</div>`;
+    card.innerHTML = errorBox(err.message);
   }
 }
 
-function renderSpeciesDetail(profile) {
-  const { organism, population, habitat, threats, conservation, risk } = profile;
-  $("speciesDetailTitle").innerHTML =
-    `<span class="sci-name">${esc(organism.scientific_name)}</span> ` +
-    `<span class="muted" style="font-weight:400">— ${esc(organism.common_name)}</span>`;
+/* ===========================================================================
+   RISK ASSESSMENT
+   =========================================================================== */
+async function loadRisk() {
+  await loadCoreReference();
+  await loadRiskLayer();
+  const orgById = indexBy(CACHE.organisms, "organism_id");
+  const rows = CACHE.risk.slice().sort((a, b) => (b.gaia_risk_score ?? -1) - (a.gaia_risk_score ?? -1));
+  $("riskBody").innerHTML = rows.map(r => {
+    const org = orgById[r.organism_id];
+    if (!org) return "";
+    return `<tr data-id="${r.organism_id}">
+      <td class="sci-name">${esc(org.scientific_name)}</td>
+      <td class="num">${r.gaia_risk_score ?? "—"}</td>
+      <td>${riskBadge(r.risk_level)}</td>
+    </tr>`;
+  }).join("");
+  qsa("#riskBody tr").forEach(tr => tr.onclick = () => openRiskDetail(tr.dataset.id));
+  if (rows.length) openRiskDetail(rows[0].organism_id);
+}
+async function openRiskDetail(organismId) {
+  qsa("#riskBody tr").forEach(tr => tr.classList.toggle("selected", tr.dataset.id === organismId));
+  const panel = $("riskDetailPanel");
+  panel.innerHTML = loadingState("Loading…");
+  try {
+    const profile = await getJSON(`/species/${organismId}`);
+    const risk = profile.risk;
+    const tone = RISK_TONE[risk.risk_level] || "neutral";
+    const weights = risk.score_weights || {};
+    const components = risk.score_components || {};
 
-  const threatTags = threats.length
-    ? threats.map(t => `<span class="threat-tag">${esc(t.threat_name)} (${esc(t.severity)})</span>`).join("")
-    : '<span class="muted">None recorded</span>';
+    function factorBar(key, label) {
+      const weight = weights[key];
+      const has = components[key] !== undefined && weight;
+      const raw = has ? Math.min(100, components[key] / weight) : null;
+      return `<div class="risk-bar-row">
+        <div class="rb-head"><span class="rb-label">${esc(label)}</span>
+          <span class="rb-value">${has ? Math.round(raw) + "%" : "Insufficient data"}</span></div>
+        <div class="risk-bar-track"><div class="risk-bar-fill tone-${tone}" style="width:${has ? raw : 0}%;background:${has ? "" : "transparent"}"></div></div>
+      </div>`;
+    }
 
-  const explanation = (risk.explanation || []).map(line => `<li>${esc(line)}</li>`).join("");
+    panel.innerHTML = `
+      <h2 class="species-name-heading">${esc(profile.organism.scientific_name)}</h2>
+      <p class="meta-text" style="margin:-6px 0 var(--space-4)">${esc(profile.organism.common_name)}</p>
+      <div class="risk-score-hero">
+        <span class="score-num" style="color:var(--${tone === "neutral" ? "neutral" : tone})">${risk.gaia_risk_score ?? "—"}</span>
+        <span class="score-max">/ 100</span>
+        <span class="tone-badge tone-${tone}" style="font-size:13px">${esc(risk.risk_level)}</span>
+      </div>
+      <p class="meta-text" style="margin-top:6px">Assessment confidence: ${Math.round((risk.risk_confidence || 0) * 100)}%</p>
 
-  $("speciesDetailBody").innerHTML = `
-    <div class="detail-grid">
-      <div class="detail-block">
-        <h4>Population</h4>
-        <dl>
-          <dt>Trend</dt><dd>${esc(population.population_trend)}</dd>
-          <dt>Decline</dt><dd>${population.population_decline_percent ?? "—"}%</dd>
-          <dt>Mature individuals</dt><dd>${population.estimated_mature_individuals ?? "—"}</dd>
-          <dt>Confidence</dt><dd>${population.population_confidence ?? "—"}</dd>
-        </dl>
+      <div style="margin-top:var(--space-5)">
+        ${factorBar("population_decline", "Population Decline")}
+        ${factorBar("habitat_loss", "Habitat Loss")}
+        ${factorBar("range_restriction", "Range Restriction")}
+        ${factorBar("threat_pressure", "Threat Pressure")}
       </div>
-      <div class="detail-block">
-        <h4>Habitat</h4>
-        ${habitat ? `<dl>
-          <dt>Loss</dt><dd>${habitat.habitat_loss_percent}%</dd>
-          <dt>Trend</dt><dd>${esc(habitat.habitat_trend)}</dd>
-          <dt>Fragmentation</dt><dd>${esc(habitat.fragmentation)}</dd>
-          <dt>Quality</dt><dd>${esc(habitat.habitat_quality)}</dd>
-        </dl>` : '<p class="muted">Not assessed (e.g. bacterial/archaeal taxa).</p>'}
-      </div>
-      <div class="detail-block">
-        <h4>Conservation status</h4>
-        <dl>
-          <dt>Status</dt><dd>${esc(conservation?.status?.external_conservation_status)}</dd>
-          <dt>Verified</dt><dd>${conservation?.status?.is_verified ? "Yes" : "No"}</dd>
-        </dl>
-        <p class="muted" style="margin-top:8px;font-size:12px">
-          ${esc(conservation?.status?.note)}
-        </p>
-      </div>
-      <div class="detail-block">
-        <h4>Gaia Prototype Risk Score</h4>
-        <dl>
-          <dt>Score</dt><dd>${risk.gaia_risk_score ?? "—"} / 100</dd>
-          <dt>Level</dt><dd>${esc(risk.risk_level)}</dd>
-          <dt>Confidence</dt><dd>${risk.risk_confidence}</dd>
-        </dl>
-      </div>
-    </div>
-    <div class="detail-block" style="margin-top:14px">
-      <h4>Threats</h4>
-      ${threatTags}
-    </div>
-    <ul class="explanation-list">${explanation}</ul>
-  `;
+
+      <h3 class="section-heading" style="margin-top:var(--space-5)">Why this score?</h3>
+      <ul class="explanation-list">${(risk.explanation || []).map(l => `<li>${esc(l)}</li>`).join("")}</ul>
+      <p class="meta-text" style="margin-top:var(--space-3)">${esc(risk.score_disclaimer || "")}</p>
+    `;
+  } catch (err) {
+    panel.innerHTML = errorBox(err.message);
+  }
 }
 
-// Dashboard is the default visible tab, so load it immediately rather
-// than waiting for a tab click that may never come.
-loadDashboard();
+/* ===========================================================================
+   HISTORY
+   =========================================================================== */
+async function loadHistory() {
+  try {
+    const history = await getJSON("/history");
+    if (!history.length) {
+      $("historyList").innerHTML = emptyState("◷", "No analyses run yet", "Upload a sample from the Analysis tab to see it here.");
+      return;
+    }
+    $("historyList").innerHTML = `<div class="table-scroll"><table class="data-table"><thead><tr>
+        <th>Sample</th><th>Status</th><th class="num">Species Richness</th><th class="num">Mean Confidence</th>
+      </tr></thead><tbody>` + history.map((h, i) => `
+        <tr data-i="${i}">
+          <td class="mono">${esc(h.sample_id)}</td>
+          <td>${statusBadge(h.status)}</td>
+          <td class="num">${dash(h.metrics && h.metrics.species_richness)}</td>
+          <td class="num">${h.results && h.results.length ? confidenceBadge(h.results.reduce((s, r) => s + r.confidence.confidence, 0) / h.results.length, "—") : "—"}</td>
+        </tr>`).join("") + `</tbody></table></div>`;
+    qsa("#historyList tr[data-i]").forEach(tr => tr.onclick = () => {
+      const card = $("historyDetailCard");
+      card.classList.remove("hidden");
+      card.innerHTML = renderAnalysisDetail(history[tr.dataset.i], "live");
+      card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+  } catch (err) {
+    $("historyList").innerHTML = errorBox(err.message);
+  }
+}
+
+/* ===========================================================================
+   Init
+   =========================================================================== */
+(async function init() {
+  try {
+    const status = await getJSON("/status");
+    $("statusPill").className = "badge-pill status-ok";
+    $("statusPill").innerHTML = `<span class="dot"></span>Operational · ${status.seed_dataset.record_count} records loaded`;
+  } catch {
+    $("statusPill").className = "badge-pill";
+    $("statusPill").textContent = "Backend unreachable";
+  }
+  showView((location.hash.replace("#/", "") || "dashboard"));
+})();
 </script>
 </body>
 </html>

@@ -127,6 +127,11 @@ def list_biodiversity_assessments(
 
 # -- Population / habitat / threats / conservation / risk ------------------
 
+@router.get("/population")
+def list_population_assessments(controller: ExploreController = Depends(get_explore_controller)):
+    return controller.list_population_assessments()
+
+
 @router.get("/population/{organism_id}")
 def get_population(organism_id: str, controller: ExploreController = Depends(get_explore_controller)):
     return controller.get_population(organism_id)
@@ -135,6 +140,11 @@ def get_population(organism_id: str, controller: ExploreController = Depends(get
 @router.get("/population/{organism_id}/timeseries")
 def get_population_timeseries(organism_id: str, controller: ExploreController = Depends(get_explore_controller)):
     return controller.get_population_timeseries(organism_id)
+
+
+@router.get("/habitat")
+def list_habitat_assessments(controller: ExploreController = Depends(get_explore_controller)):
+    return controller.list_habitat_assessments()
 
 
 @router.get("/habitat/{organism_id}")

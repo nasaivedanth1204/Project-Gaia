@@ -51,6 +51,9 @@ class ExploreController:
     ) -> List[Dict[str, Any]]:
         return self._service.list_biodiversity_assessments(sample_id, severity)
 
+    def list_population_assessments(self) -> List[Dict[str, Any]]:
+        return self._service.list_population_assessments()
+
     def get_population(self, organism_id: str) -> Dict[str, Any]:
         try:
             return self._service.get_population(organism_id)
@@ -59,6 +62,9 @@ class ExploreController:
 
     def get_population_timeseries(self, organism_id: str) -> List[Dict[str, Any]]:
         return self._service.get_population_timeseries(organism_id)
+
+    def list_habitat_assessments(self) -> List[Dict[str, Any]]:
+        return self._service.list_habitat_assessments()
 
     def get_habitat(self, organism_id: str) -> Optional[Dict[str, Any]]:
         return self._service.get_habitat(organism_id)

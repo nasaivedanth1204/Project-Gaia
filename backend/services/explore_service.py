@@ -92,6 +92,9 @@ class ExploreService:
     # ------------------------------------------------------------------
     # Population / habitat / threats / conservation
     # ------------------------------------------------------------------
+    def list_population_assessments(self) -> List[Dict[str, Any]]:
+        return self._repository.list_records("population_assessments")
+
     def get_population(self, organism_id: str) -> Dict[str, Any]:
         records = self._repository.list_records("population_assessments", {"organism_id": organism_id})
         if not records:
@@ -101,6 +104,9 @@ class ExploreService:
     def get_population_timeseries(self, organism_id: str) -> List[Dict[str, Any]]:
         rows = self._repository.list_records("population_timeseries", {"organism_id": organism_id})
         return sorted(rows, key=lambda r: r["year"])
+
+    def list_habitat_assessments(self) -> List[Dict[str, Any]]:
+        return self._repository.list_records("habitat_assessments")
 
     def get_habitat(self, organism_id: str) -> Optional[Dict[str, Any]]:
         records = self._repository.list_records("habitat_assessments", {"organism_id": organism_id})

@@ -8,10 +8,13 @@ would normally be required.
 
 There is intentionally **no auth, no persistent database, and no
 deployment tooling** in this codebase — see "Explicit non-goals" below. A
-prototype UI does exist (`../frontend/`, served at `/ui`) with two views:
-a **Live Pipeline** runner for the upload-through-analyze flow below, and
-a **Biodiversity Dashboard** over the synthetic Gaia dataset described
-next.
+prototype UI does exist (`../frontend/`, served at `/ui`): a scientific
+application shell (sidebar navigation, restrained forest-green/off-white
+palette, semantic color for status only) over eight pages — Dashboard,
+Samples, Analysis, Taxonomy, Biodiversity, Conservation, Risk Assessment,
+History. Analysis embeds the live upload-through-analyze pipeline
+described next; every other page reads the synthetic Gaia dataset via the
+Explore API below.
 
 ## Quick start
 
@@ -179,8 +182,8 @@ architecture around both — not production styling or infrastructure.
 | GET | `/taxonomy` | Taxonomic records (`?kingdom=`) |
 | GET | `/samples` `/samples/{id}` `/identifications` | Seed-side samples and identifications |
 | GET | `/biodiversity/metrics` `/biodiversity/assessments` | Diversity indices and ecological findings (`?sample_id=`) |
-| GET | `/population/{organism_id}` `/population/{organism_id}/timeseries` | Population assessment + 2020-2026 timeseries |
-| GET | `/habitat/{organism_id}` | Habitat loss/quality/fragmentation |
+| GET | `/population` `/population/{organism_id}` `/population/{organism_id}/timeseries` | Population assessments (bulk list, one, or its 2020-2026 timeseries) |
+| GET | `/habitat` `/habitat/{organism_id}` | Habitat loss/quality/fragmentation (bulk list or one) |
 | GET | `/threats` `/threats?organism_id=` `/threats?ecosystem_id=` | Threat records |
 | GET | `/conservation` `/conservation/{organism_id}` | Conservation status (deliberately Unknown/Data Deficient — see `data/README.md`) |
 | GET | `/risk` `/risk/{organism_id}` | Gaia Prototype Risk Score — `/risk/{id}` recomputes **live** via `GaiaRiskEngine`, not just echoed from the seed |

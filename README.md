@@ -30,7 +30,7 @@ uvicorn app:app --reload
 
 | URL | What |
 |---|---|
-| http://127.0.0.1:8000/ui | Two tabs: **Biodiversity Dashboard** (browse the synthetic dataset — species, risk scores, distributions) and **Live Pipeline** (upload a file, or click **Use Demo Dataset**, and watch it run) |
+| http://127.0.0.1:8000/ui | Scientific application shell — Dashboard, Samples, Analysis (upload a file, or click **Use Demo Dataset**), Taxonomy, Biodiversity, Conservation, Risk Assessment, History |
 | http://127.0.0.1:8000/docs | Interactive OpenAPI reference |
 
 ## Repository layout
@@ -64,8 +64,13 @@ so the database can be chosen later without touching either side.
 ### `frontend/`
 
 One self-contained `index.html` — no build step, no npm, no external
-assets. The backend mounts it at `/ui`. Two tabs: Biodiversity Dashboard
-(Explore API) and Live Pipeline (upload flow).
+assets. The backend mounts it at `/ui`. A sidebar-navigated application
+shell (Dashboard / Samples / Analysis / Taxonomy / Biodiversity /
+Conservation / Risk Assessment / History) in a restrained scientific
+palette — deep forest green navigation, off-white content, color used
+only to carry meaning (positive/warning/critical/neutral), never for
+decoration. The Analysis page embeds the live upload pipeline; every
+other page reads the Explore API.
 
 ### `data/`
 

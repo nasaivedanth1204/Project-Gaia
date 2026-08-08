@@ -158,6 +158,7 @@ def compute_gaia_risk(
         "risk_level": _risk_level(score, confidence),
         "risk_confidence": confidence,
         "score_components": components,
+        "score_weights": w,
         "risk_indicators": indicators,
         "explanation": explain_risk(raw, indicators, threats, fragmentation, score),
         "score_name": "Gaia Prototype Risk Score",
